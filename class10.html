@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBSE Study Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  /*  body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 30px;
+    }
+*/
+    .subject-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .subject {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+
+    .subject:hover {
+      transform: translateY(-5px);
+    }
+
+    .subject h2 {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .subject ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .subject li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      color: #0077cc;
+      font-weight: 500;
+    }
+
+    .subject li:hover {
+      text-decoration: underline;
+    }
+
+    #assetsection {
+      margin-top: 40px;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    #pdfTitle {
+      color: #004080;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    #pdfList li {
+      margin-bottom: 10px;
+    }
+
+    #pdfList a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    #pdfList a:hover {
+      color: #0077cc;
+      text-decoration: underline;
+    }
+/*
+    footer {
+      text-align: center;
+      background-color: #004080;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+*/
+    /* Mobile Styles Only */
+   @media (max-width: 600px) {
+     /* header {
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        margin-top: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 5px;
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 5px;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+*/
+      .subject h2 {
+        font-size: 1rem;
+      }
+
+      #pdfTitle {
+        font-size: 1rem;
+      }
+
+      .subject li {
+        font-size: 0.95rem;
+      }
+    }
+    /* Shared header styles */
+/*
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004080;
+  padding: 10px 20px;
+  color: white;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Hide menu toggle button on large screens */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigation links (shown horizontally by default) */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #004080;
+}
+
+.nav-links a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  background-color: #0059b3;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 20px;
+  }
+} 
+
+  </style>
+</head>
+<body>
+  <button id="back-to-top" title="Back to top">↑</button>
+ <header>
+    <h1>CBSE Study Portal</h1>
+    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="class10.html">Class 9</a> 
+      <a href="class10.html">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="#">Class 12</a>
+      <a href="#">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Class 10 Resources</h2>
+
+    <div class="subject-container">
+      <section class="subject" id="maths">
+        <h2>Mathematics</h2>
+        <ul>
+          <li onclick="showPDFList('maths', 'notes')">Notes</li>
+          <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('maths', 'previous')">Previous Year Questions</li>
+        </ul>
+      </section>
+
+      <section class="subject" id="science">
+        <h2>Science</h2>
+        <ul>
+          <li onclick="showPDFList('science', 'notes')">Notes</li>
+          <li onclick="showPDFList('science', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('science', 'previous')">Previous Year Questions</li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="assetsection">
+      <h3 id="pdfTitle"></h3>
+      <ul id="pdfList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p> Created with ❤️ by MD ABDAAL KHAN</p>
+    <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
+    
+  </footer>
+
+  <script>
+    const pdfData = {
+      maths: {
+        notes: [
+          { name: "Real Numbers", url: "https://drive.google.com/file/d/1lt7mP3BhKmGtBRtqHLL8C4Hng47LmVIw/view?usp=drive_link" },
+          { name: "Polynomials", url: "https://drive.google.com/file/d/1G7wgsQU12w3hmzqriBSjWuleHMMaBSn9/view?usp=drive_link" },
+          { name: "Linear Equations in two Variables", url: "https://drive.google.com/file/d/1ksGPYt5p9mT6bL-38uWjzp1cr3EdQbXq/view?usp=drive_link" },
+          { name: "Quadratic Equations", url: "https://drive.google.com/file/d/1Iu_syE_gtsX8KvZVtOobPe41GmWqXMBv/view?usp=drive_link" },
+          { name: "Arithmetic Progression", url: "https://drive.google.com/file/d/1Iu_syE_gtsX8KvZVtOobPe41GmWqXMBv/view?usp=drive_link" },
+          { name: "Triangles", url: "https://drive.google.com/file/d/1VwkerElO-wFP2IwfbXLDoe3SPOvPQzhE/view?usp=drive_link" },
+          { name: "Coordinate Geometry", url: "https://drive.google.com/file/d/1Lk0KdRI-cem78CMxTAhYWH3o0ccotHd-/view?usp=drive_link" },
+          { name: "Trigonometry", url: "https://drive.google.com/file/d/1shxt2w2edh3apksreIE7jpQvanP8bnSJ/view?usp=drive_link" },
+          { name: "Application of Trigonometry", url: "https://drive.google.com/file/d/1V6TS-tcaqti2lzKFXD0lXvIajrA-mIHd/view?usp=drive_link" },
+          { name: "Circles", url: "https://drive.google.com/file/d/1-wEpB0S5Cr-jNE_t1OF9bN3Q8kMT2NUH/view?usp=drive_link" },
+          { name: "Areas related to Circles", url: "https://drive.google.com/file/d/1Uxos9h5CBzlhvInOzBWQJu43x_IeuUVA/view?usp=drive_link" },
+          { name: "Surface areas and volumes", url: "https://drive.google.com/file/d/1BlwYLMumi0HlTqaJS5VcrRN2NgaEr6p2/view?usp=drive_link" },
+          { name: "Statistics", url: "https://drive.google.com/file/d/1rhbjoREnl_muEqudwJYNRMkLOInbbuuQ/view?usp=drive_link" },
+          { name: "Probability", url: "https://drive.google.com/file/d/1M1rEAupCCw36mymnxeXoYT2ZQTUmft-k/view?usp=drive_link" }
+        ],
+        assignments: [
+          { name: "Chapter 1", url: "assets/class10/maths/assignments/assign1.pdf" },
+          { name: "Chapter 2", url: "assets/class10/maths/assignments/assign2.pdf" },
+          { name: "Chapter 3", url: "assets/class10/maths/assignments/assign3.pdf" },
+          { name: "Chapter 4", url: "assets/class10/maths/assignments/assign4.pdf" },
+          { name: "Chapter 5", url: "assets/class10/maths/assignments/assign5.pdf" },
+          { name: "Chapter 6", url: "assets/class10/maths/assignments/assign6.pdf" },
+          { name: "Chapter 7", url: "assets/class10/maths/assignments/assign7.pdf" },
+          { name: "Chapter 8", url: "assets/class10/maths/assignments/assign8.pdf" },
+          { name: "Chapter 9", url: "assets/class10/maths/assignments/assign9.pdf" },
+          { name: "Chapter 10", url: "assets/class10/maths/assignments/assign10.pdf" },
+          { name: "Chapter 11", url: "assets/class10/maths/assignments/assign11.pdf" },
+          { name: "Chapter 12", url: "assets/class10/maths/assignments/assign12.pdf" },
+          { name: "Chapter 13", url: "assets/class10/maths/assignments/assign13.pdf" },
+          { name: "Chapter 14", url: "assets/class10/maths/assignments/assign14.pdf" }
+        ],
+        samplepapers: [
+          { name: "Sample Paper 2023", url: "assets/class10/maths/sample/sample2023.pdf" }
+        ],
+        previous: [
+          { name: "Previous Year 2022", url: "assets/class10/maths/previous/prev2022.pdf" }
+        ]
+      },
+      science: {
+        notes: [
+          { name: "Chemical Reaction and Equations", url: "assets/class10/science/notes/ch1.pdf" },
+          { name: "Acid,Bases and Salts", url: "assets/class10/science/notes/ch2.pdf" },
+          { name: "Metals and Non-Metals", url: "assets/class10/science/notes/ch3.pdf" },
+          { name: "Carbon and it's compounds", url: "assets/class10/science/notes/ch4.pdf" },
+          { name: "Life Process", url: "assets/class10/science/notes/ch5.pdf" },
+          { name: "Control and Coordination", url: "assets/class10/science/notes/ch6.pdf" },
+          { name: "How do Organism Reproduce", url: "assets/class10/science/notes/ch7.pdf" },
+          { name: "Heredity and Evolution", url: "assets/class10/science/notes/ch8.pdf" },
+          { name: "Light:Reflection and Refraction", url: "assets/class10/science/notes/ch9.pdf" },
+          { name: "The Human Eye and Colourful World", url: "assets/class10/science/notes/ch10.pdf" },
+          { name: "Electricity", url: "assets/class10/science/notes/ch11.pdf" },
+          { name: "Magnetic Effects of Electric Current", url: "assets/class10/science/notes/ch12.pdf" },
+          { name: "Our Environment", url: "assets/class10/science/notes/ch13.pdf" },
+        ],
+        assignments: [
+           { name: "Chapter 1", url: "assets/class10/science/assignments/assign1.pdf" },
+          { name: "Chapter 2", url: "assets/class10/science/assignments/assign2.pdf" },
+          { name: "Chapter 3", url: "assets/class10/science/assignments/assign3.pdf" },
+          { name: "Chapter 4", url: "assets/class10/science/assignments/assign4.pdf" },
+          { name: "Chapter 5", url: "assets/class10/science/assignments/assign5.pdf" },
+          { name: "Chapter 6", url: "assets/class10/sience/assignments/assign6.pdf" },
+          { name: "Chapter 7", url: "assets/class10/science/assignments/assign7.pdf" },
+          { name: "Chapter 8", url: "assets/class10/science/assignments/assign8.pdf" },
+          { name: "Chapter 9", url: "assets/class10/science/assignments/assign9.pdf" },
+          { name: "Chapter 10", url: "assets/class10/science/assignments/assign10.pdf" },
+          { name: "Chapter 11", url: "assets/class10/science/assignments/assign11.pdf" },
+          { name: "Chapter 12", url: "assets/class10/science/assignments/assign12.pdf" },
+          { name: "Chapter 13", url: "assets/class10/science/assignments/assign13.pdf" }
+        ],
+        samplepapers: [
+          { name: "Sample Paper 2023", url: "assets/class10/science/sample/sample2023.pdf" }
+        ],
+        previous: [
+          { name: "Previous Year 2022", url: "assets/class10/science/previous/prev2022.pdf" }
+        ]
+      }
+    };
+
+   function showPDFList(subject, type) {
+  const list = pdfData[subject][type];
+  const listEl = document.getElementById('pdfList');
+  const title = document.getElementById('pdfTitle');
+
+  listEl.innerHTML = '';
+  title.textContent = `${capitalize(subject)} - ${formatType(type)}`;
+
+  list.forEach(pdf => {
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = pdf.url;
+    link.textContent = pdf.name;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    li.appendChild(link);
+    listEl.appendChild(li);
+  });
+
+  // 👇 This ensures the user sees the PDF section
+  document.getElementById('assetsection').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+    function capitalize(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function formatType(type) {
+      switch(type) {
+        case 'notes': return 'Notes';
+        case 'assignments': return 'Assignments';
+        case 'samplepapers': return 'Sample Papers';
+        case 'previous': return 'Previous Year Questions';
+      }
+    }
+      function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+
+   // Navigation toggle
+    const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Sticky header nav on scroll
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        nav.classList.remove('active'); // close nav on scroll up
+      }
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Testimonial carousel auto scroll
+    const carousel = document.querySelector('.testimonial-carousel');
+    let scrollAmount = 0;
+    const scrollStep = 280; // width + gap
+    const delay = 1500; // 1.5 sec
+    let intervalId;
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    function startAutoScroll() {
+      intervalId = setInterval(autoScroll, delay);
+    }
+    function stopAutoScroll() {
+      clearInterval(intervalId);
+    }
+
+    startAutoScroll();
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+  </script>
+</body>
+</html>

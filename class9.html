@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBSE Study Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  /*  body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 30px;
+    }
+*/
+    .subject-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .subject {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s;
+    }
+
+    .subject:hover {
+      transform: translateY(-5px);
+    }
+
+    .subject h2 {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    .subject ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .subject li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      color: #0077cc;
+      font-weight: 500;
+    }
+
+    .subject li:hover {
+      text-decoration: underline;
+    }
+
+    #assetsection {
+      margin-top: 40px;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    #pdfTitle {
+      color: #004080;
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    #pdfList li {
+      margin-bottom: 10px;
+    }
+
+    #pdfList a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    #pdfList a:hover {
+      color: #0077cc;
+      text-decoration: underline;
+    }
+/*
+    footer {
+      text-align: center;
+      background-color: #004080;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+*/
+    /* Mobile Styles Only */
+   @media (max-width: 600px) {
+     /* header {
+        padding: 10px;
+      }
+
+      header h1 {
+        font-size: 1.4rem;
+      }
+
+      nav {
+        margin-top: 5px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      nav a {
+        margin: 5px;
+        font-size: 0.9rem;
+        padding: 5px 10px;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-radius: 5px;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+*/
+      .subject h2 {
+        font-size: 1rem;
+      }
+
+      #pdfTitle {
+        font-size: 1rem;
+      }
+
+      .subject li {
+        font-size: 0.95rem;
+      }
+    }
+    /* Shared header styles */
+/*
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004080;
+  padding: 10px 20px;
+  color: white;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Hide menu toggle button on large screens */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Navigation links (shown horizontally by default) */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #004080;
+}
+
+.nav-links a {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  background-color: #0059b3;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 20px;
+  }
+} 
+
+  </style>
+</head>
+<body>
+  <button id="back-to-top" title="Back to top">↑</button>
+ <header>
+    <h1>CBSE Study Portal</h1>
+    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="class9.html">Class 9</a> 
+      <a href="class10.html">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="#">Class 12</a>
+      <a href="#">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Class 9 Resources</h2>
+
+    <div class="subject-container">
+      <section class="subject" id="maths">
+        <h2>Mathematics</h2>
+        <ul>
+          <li onclick="showPDFList('maths', 'notes')">Notes</li>
+          <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('maths', 'previous')">Previous Year Questions</li>
+        </ul>
+      </section>
+
+      <section class="subject" id="science">
+        <h2>Science</h2>
+        <ul>
+          <li onclick="showPDFList('science', 'notes')">Notes</li>
+          <li onclick="showPDFList('science', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('science', 'previous')">Previous Year Questions</li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="assetsection">
+      <h3 id="pdfTitle"></h3>
+      <ul id="pdfList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p> Created with ❤️ by MD ABDAAL KHAN</p>
+    <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
+    
+  </footer>
+
+  <script>
+    const pdfData = {
+      maths: {
+        notes: [
+          { name: "Number Systems", url: "https://drive.google.com/file/d/1RDYE21PMh_-NwO8mPeUfNTskDw9G_kh2/view?usp=sharing" },
+          { name: "Polynomials", url: "https://drive.google.com/file/d/1iry579Tvql0-BoyEgL-XajUWSP-yvgKs/view?usp=sharing" },
+          { name: "Coordinate Geometry", url: "https://drive.google.com/file/d/1g2GlOvotnyQI9xLOUqfdz-rAM6CtJP1F/view?usp=drive_link" },
+          { name: "Linear Equations in two variables", url: "https://drive.google.com/file/d/1BcmjxjUHMucpXMbWle-dtmROwEiyg5AB/view?usp=drive_link" },
+          { name: "Introduction to Euclids Geometry", url: "https://drive.google.com/file/d/1BcmjxjUHMucpXMbWle-dtmROwEiyg5AB/view?usp=drive_link" },
+          { name: "Lines and Angles", url: "https://drive.google.com/file/d/1oc9l7xt1zeaoSe7i04Pkfua-qKVP3f_A/view?usp=drive_link" },
+          { name: "Triangles", url: "https://drive.google.com/file/d/1WWnIQJSIhI_Zr6kQXskIlsm9s71KKbnd/view?usp=drive_link" },
+          { name: "QUadrilaterals", url: "https://drive.google.com/file/d/1Xz9hO1zUHkpj-QDiwMTBd8-N1eK6GMed/view?usp=drive_link" },
+          { name: "Circles", url: "https://drive.google.com/file/d/1xoiOLm6wVAtbZSKaT_x64UcNkdxU3BnA/view?usp=drive_link" },
+          { name: "Heron's Formula", url: "https://drive.google.com/file/d/1Qg6Y1lm6TYlXDvDhk5tylMeXUn7Fvo33/view?usp=drive_link" },
+          { name: "Surface Area and Volume", url: "assets/class9/maths/notes/ch11.pdf" },
+          { name: "Statistics", url: "assets/class9/maths/notes/ch12.pdf" } 
+        ],
+        assignments: [
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/1CwjjmI4LKEGU6rpNjP87RfC6f3jIgFML/view?usp=sharing" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1SF1xYpJGKBm7zQ1tnqxOzSlMpixgv_Jo/view?usp=drive_link" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/1GgCdzfyJeZpAA0QdxCiEeMKyTP4718aj/view?usp=drive_link" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/18iC7UmMco80_aNUkqHvJJaUQiKESA1Hq/view?usp=drive_link" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/15yxh1jmftZjj_cWo96JRo5aceMHJRlhu/view?usp=drive_link" },
+          { name: "Chapter 6", url: "https://drive.google.com/file/d/1ZFe9MgNIx-I3EnYTsIZ60N3JBssdfFDS/view?usp=drive_link" },
+          { name: "Chapter 7", url: "https://drive.google.com/file/d/1twz1UdLyNZgXSDhHxht-werJmsxewmGu/view?usp=drive_link" },
+          { name: "Chapter 8", url: "https://drive.google.com/file/d/1otes9_hKyWYjMYkR6weZEfo6580XJOBo/view?usp=drive_link" },
+          { name: "Chapter 9", url: "https://drive.google.com/file/d/1yoSbXPdBAmqDg79kybpZdEtkz4oXwa9v/view?usp=drive_link" },
+          { name: "Chapter 10", url: "https://drive.google.com/file/d/1SOGcgbkLyVTxA_VQD8jLcRUiGnByGmWh/view?usp=drive_link" },
+          { name: "Chapter 11", url: "https://drive.google.com/file/d/14PYy6q6NJTD8iTwWjkKDOfYhW3lnFwZh/view?usp=drive_link" },
+          { name: "Chapter 12", url: "https://drive.google.com/file/d/1tYZFfJ9DUM7AY7AtYad_eYDq5sKtDr90/view?usp=drive_link" }
+        ],
+        samplepapers: [
+          { name: "Sample Paper 2023", url: "assets/class9/maths/sample/sample2023.pdf" }
+        ],
+        previous: [
+          { name: "Previous Year 2022", url: "assets/class9/maths/previous/prev2022.pdf" }
+        ]
+      },
+      science: {
+        notes: [
+          { name: "Matter in Our Surroundings", url: "https://drive.google.com/file/d/1W9NmwbvdFtPnhxb_t6_VAvvDEyThLMwi/view?usp=sharing" },
+          { name: "Is Matter Around Us Pure ?", url: "https://drive.google.com/file/d/1GmeqdPY8aDwakwTPoP6xi63Q73MKYnWk/view?usp=drive_link" },
+          { name: "Atoms and Molecules", url: "https://drive.google.com/file/d/10hOF_hKcDYRg_uma8QK76J0crf5obKTO/view?usp=drive_link" },
+          { name: "Structure of Atoms", url: "assets/class9/science/notes/ch4.pdf" },
+          { name: "Motion", url: "https://drive.google.com/file/d/1hbj4efN2BcsXTC8gPXW0etk6CBKRM-2_/view?usp=drive_link" },
+          { name: "Force and Laws of Motion", url: "https://drive.google.com/file/d/1A29PxzN8ZaY8luI-kvuwAB6c0-aA6XYf/view?usp=drive_link" },
+          { name: "Gravitation", url: "https://drive.google.com/file/d/1JdKZ15VgvwID_l6CvarR05_JBih4u3_A/view?usp=drive_link" },
+          { name: "Work and Energy", url: "https://drive.google.com/file/d/1OySx9v-SXDUPWofQfAPd3RC9VUXIrGVH/view?usp=drive_link" },
+          { name: "Sound", url: "https://drive.google.com/file/d/1SaylMqb6SHg8olEvGWZjfEFEia2iif65/view?usp=drive_link" }
+        ],
+        assignments: [
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/1DOW52abam8lQE7SnhiV72JgeEq-LAQ9C/view?usp=sharing" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1D3f6BUsXxPMe0dwQrGYVgB17L_ujbrvD/view?usp=drive_link" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/1yuABWGJXsaYen7qVUq7m0gZAkZTz0kGe/view?usp=drive_link" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/1yfxtD8ln8YjIuIVY44qVFdWiekEXMun3/view?usp=drive_link" },
+          { name: "Chapter 7", url: "https://drive.google.com/file/d/1xZZaXGWW_uJ0rFd30gysvP6LtiXQC8l8/view?usp=drive_link" },
+          { name: "Chapter 8", url: "https://drive.google.com/file/d/1H9PysANiRHDXRSB2w6359vG9-hEN7eEm/view?usp=drive_link" },
+          { name: "Chapter 9", url: "https://drive.google.com/file/d/1uTUNoyO8CHx4gXeTktq2jCWgzpRvgyVT/view?usp=drive_link" },
+          { name: "Chapter 10", url: "https://drive.google.com/file/d/1OFrmJDzvbgC7HyoGVD4m4EL0ne0hag2u/view?usp=drive_link" },
+          { name: "Chapter 11", url: "https://drive.google.com/file/d/14ErIN-chw6OEyxgz5exfmWlUu7aiL_Q4/view?usp=drive_link" }
+        ],
+        samplepapers: [
+          { name: "Sample Paper 2023", url: "assets/class9/science/sample/sample2023.pdf" }
+        ],
+        previous: [
+          { name: "Previous Year 2022", url: "assets/class9/science/previous/prev2022.pdf" }
+        ]
+      }
+    };
+
+   function showPDFList(subject, type) {
+  const list = pdfData[subject][type];
+  const listEl = document.getElementById('pdfList');
+  const title = document.getElementById('pdfTitle');
+
+  listEl.innerHTML = '';
+  title.textContent = `${capitalize(subject)} - ${formatType(type)}`;
+
+  list.forEach(pdf => {
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.href = pdf.url;
+    link.textContent = pdf.name;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    li.appendChild(link);
+    listEl.appendChild(li);
+  });
+
+  // 👇 This ensures the user sees the PDF section
+  document.getElementById('assetsection').scrollIntoView({ behavior: 'smooth' });
+}
+
+
+    function capitalize(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function formatType(type) {
+      switch(type) {
+        case 'notes': return 'Notes';
+        case 'assignments': return 'Assignments';
+        case 'samplepapers': return 'Sample Papers';
+        case 'previous': return 'Previous Year Questions';
+      }
+    }
+      function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+
+   // Navigation toggle
+    const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Sticky header nav on scroll
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        nav.classList.remove('active'); // close nav on scroll up
+      }
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Testimonial carousel auto scroll
+    const carousel = document.querySelector('.testimonial-carousel');
+    let scrollAmount = 0;
+    const scrollStep = 280; // width + gap
+    const delay = 1500; // 1.5 sec
+    let intervalId;
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    function startAutoScroll() {
+      intervalId = setInterval(autoScroll, delay);
+    }
+    function stopAutoScroll() {
+      clearInterval(intervalId);
+    }
+
+    startAutoScroll();
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+  </script>
+</body>
+</html>

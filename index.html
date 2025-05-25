@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CBSE Study Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <button id="back-to-top" title="Back to top">↑</button>
+
+  <header>
+    <h1>CBSE Study Portal</h1>
+    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="class9.html">Class 9</a> 
+      <a href="class10.html">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="#">Class 12</a>
+      <a href="#">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Welcome to CBSE Study Portal</h2>
+      <p>Access free notes, sample papers, assignments, and previous year question papers for CBSE Classes 9 to 12.</p>
+    </section>
+
+    <section class="class-grid">
+      <div class="class-card">
+        <h3>Class 9</h3>
+        <p>Notes, Assignments, PYQs, and more</p>
+        <a href="class9.html" class="btn">View Resources</a>
+      </div>
+      <div class="class-card">
+        <h3>Class 10</h3>
+        <p>Notes, Assignments, PYQs, and more</p>
+        <a href="class10.html" class="btn">View Resources</a>
+      </div>
+      <div class="class-card">
+        <h3>Class 11</h3>
+        <p>Coming Soon</p>
+        <a href="#" class="btn disabled">View Resources</a>
+      </div>
+      <div class="class-card">
+        <h3>Class 12</h3>
+        <p>Coming Soon</p>
+        <a href="#" class="btn disabled">View Resources</a>
+      </div>
+    </section>
+
+    <section class="about-site">
+      <h2>About This Site</h2>
+      <p>This platform is built to help CBSE students from Class 9 to 12. You can find handwritten notes, sample papers, previous year question papers, and assignments — all in one place. It's completely free to use and created by an educator who loves teaching!</p>
+    </section>
+
+    <section class="feedback">
+      <h2>What Students Say</h2>
+      <div class="testimonial-carousel">
+        <div class="testimonial">
+          <p>"These notes helped me score 95% in my Class 10 board exams!"</p>
+          <span>– Riya Sharma</span>
+        </div>
+        <div class="testimonial">
+          <p>"The assignments are very well-organized and easy to follow."</p>
+          <span>– Ankit Verma</span>
+        </div>
+        <div class="testimonial">
+          <p>"I found all the previous year questions I needed in one place."</p>
+          <span>– Meenal Patel</span>
+        </div>
+        <div class="testimonial">
+          <p>"This site is better than any paid study app I tried."</p>
+          <span>– Harsh Raj</span>
+        </div>
+        <div class="testimonial">
+          <p>"I use these notes to teach my younger brother. Super helpful!"</p>
+          <span>– Neha D.</span>
+        </div>
+        <div class="testimonial">
+          <p>"Loved the clean layout. So easy to download and revise!"</p>
+          <span>– Arjun Mehta</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="donate-section">
+      <h2>Support the Site</h2>
+      <p>If you find this helpful, consider supporting the site to keep it free and growing.</p>
+      <a href="#" class="btn">Donate</a>
+    </section>
+  </main>
+
+  <footer>
+    <p> Created with ❤️ by MD ABDAAL KHAN</p>
+     <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
+      
+  </footer>
+
+  <script>
+    // Navigation toggle
+    const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Sticky header nav on scroll
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 80) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        nav.classList.remove('active'); // close nav on scroll up
+      }
+    });
+
+    // Back to top button
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Testimonial carousel auto scroll
+    const carousel = document.querySelector('.testimonial-carousel');
+    let scrollAmount = 0;
+    const scrollStep = 280; // width + gap
+    const delay = 1500; // 1.5 sec
+    let intervalId;
+
+    function autoScroll() {
+      scrollAmount += scrollStep;
+      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
+        scrollAmount = 0;
+      }
+      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    function startAutoScroll() {
+      intervalId = setInterval(autoScroll, delay);
+    }
+    function stopAutoScroll() {
+      clearInterval(intervalId);
+    }
+
+    startAutoScroll();
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+  </script>
+
+</body>
+</html>
