@@ -107,12 +107,21 @@
       color: #004080;
       font-size: 1.2em;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     #pdfList li {
       margin-bottom: 10px;
     }
+#pdfList > div {
+  width: 220px;
+  text-align: center;
+}
 
+#pdfList ul {
+  list-style-type: none;
+  padding: 0;
+}
     #pdfList a {
       color: #333;
       text-decoration: none;
@@ -238,6 +247,30 @@
     padding: 10px 20px;
   }
 } 
+.pdf-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pdf-table th,
+.pdf-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.pdf-table a {
+  display: inline-block;
+  margin: 4px 0;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.pdf-table a:hover {
+  text-decoration: underline;
+}
 
   </style>
 </head>
@@ -261,6 +294,7 @@
 
     <div class="subject-container">
       <section class="subject" id="maths">
+        
         <h2>Mathematics</h2>
         <ul>
           <li onclick="showPDFList('maths', 'notes')">Notes</li>
@@ -283,7 +317,8 @@
 
     <section id="assetsection">
       <h3 id="pdfTitle"></h3>
-      <ul id="pdfList"></ul>
+      <div id="pdfList" style="display: flex; gap: 40px; flex-wrap: wrap;"></div>
+
     </section>
   </main>
 
@@ -313,27 +348,66 @@
           { name: "Probability", url: "https://drive.google.com/file/d/1M1rEAupCCw36mymnxeXoYT2ZQTUmft-k/view?usp=drive_link" }
         ],
         assignments: [
-          { name: "Chapter 1", url: "assets/class10/maths/assignments/assign1.pdf" },
-          { name: "Chapter 2", url: "assets/class10/maths/assignments/assign2.pdf" },
-          { name: "Chapter 3", url: "assets/class10/maths/assignments/assign3.pdf" },
-          { name: "Chapter 4", url: "assets/class10/maths/assignments/assign4.pdf" },
-          { name: "Chapter 5", url: "assets/class10/maths/assignments/assign5.pdf" },
-          { name: "Chapter 6", url: "assets/class10/maths/assignments/assign6.pdf" },
-          { name: "Chapter 7", url: "assets/class10/maths/assignments/assign7.pdf" },
-          { name: "Chapter 8", url: "assets/class10/maths/assignments/assign8.pdf" },
-          { name: "Chapter 9", url: "assets/class10/maths/assignments/assign9.pdf" },
-          { name: "Chapter 10", url: "assets/class10/maths/assignments/assign10.pdf" },
-          { name: "Chapter 11", url: "assets/class10/maths/assignments/assign11.pdf" },
-          { name: "Chapter 12", url: "assets/class10/maths/assignments/assign12.pdf" },
-          { name: "Chapter 13", url: "assets/class10/maths/assignments/assign13.pdf" },
-          { name: "Chapter 14", url: "assets/class10/maths/assignments/assign14.pdf" }
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/1AITUIqTY-ZTHJ6DeIEXmF41wV79ARVAo/view?usp=drive_link" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1xb0ipPGsKOV61Mycb6RfLkXKyMCGAeOt/view?usp=drive_link" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/19jp1HigAN--0U7aOgBDsa705EVUyzMNL/view?usp=drive_link" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/1kbDl2uvP_GwTXUps_HFI2l1i3eLdRUn9/view?usp=drive_link" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/14Zb7yfz7mmHtP0sVuSr0EPCKkDo-fvWt/view?usp=drive_link" },
+          { name: "Chapter 6", url: "https://drive.google.com/file/d/1rpRUyFtZBUN8LIJX-Zxb8jO-Ad0nF1SF/view?usp=drive_link" },
+          { name: "Chapter 7", url: "https://drive.google.com/file/d/158VrQ7NykZs6irM7cJO8B1vpSHqh3aQc/view?usp=drive_link" },
+          { name: "Chapter 8", url: "https://drive.google.com/file/d/1Ou7PUTqN8qD3JD8QIcUR8nEdSIsS8720/view?usp=drive_link" },
+          { name: "Chapter 9", url: "https://drive.google.com/file/d/1Z6qkldxTuOzKbiu4VG4svDSE67L84_Fr/view?usp=drive_link" },
+          { name: "Chapter 10", url: "https://drive.google.com/file/d/1OeRUZtViStVoHk2Oo1-4adpGh06aI7Oc/view?usp=drive_link" },
+          { name: "Chapter 11", url: "https://drive.google.com/file/d/18gA06GUHMhUFNhnqI76E6K5Ucys9rCLU/view?usp=drive_link" },
+          { name: "Chapter 12", url: "https://drive.google.com/file/d/196rMQVNe5QMVVih_TLjEBFIMlMtA_dmq/view?usp=drive_link" },
+          { name: "Chapter 13", url: "https://drive.google.com/file/d/1B-r8mmF3dLeIFzwrXpV1fWTTFoCip3Hs/view?usp=drive_link" },
+          { name: "Chapter 14", url: "https://drive.google.com/file/d/1HHFlDr2k11oR8dqWDBa6PbONrcCuYzau/view?usp=drive_link" }
         ],
-        samplepapers: [
-          { name: "Sample Paper 2023", url: "assets/class10/maths/sample/sample2023.pdf" }
+        samplepapers: {
+          standard: [
+          { name: "Sample Paper 01(Standard)", url: "https://drive.google.com/file/d/1hqELNpe2HUMxMm_ZG9lOIdB4MgHL8on5/view?usp=drive_link" },
+          { name: "Sample Paper 02(Standard)", url: "https://drive.google.com/file/d/1aOQ4RNbfuO6nCAiyJKb4zmMkX1xPI7km/view?usp=drive_link" },
+          { name: "Sample Paper 03(Standard)", url: "https://drive.google.com/file/d/12nwLHwZYcvZ-V6ExwIxjOWjodAqQnhRf/view?usp=drive_link" },
+          { name: "Sample Paper 04(Standard)", url: "https://drive.google.com/file/d/1G0JGkGsNnzNzjSVi7Il3K_TRHh_NtJOE/view?usp=drive_link" },
+          { name: "Sample Paper 05(Standard)", url: "https://drive.google.com/file/d/1AeQVOkSsxhXiZ7XcfJm3sqQKPgt_1IVL/view?usp=drive_link" },
+          { name: "Sample Paper 06(Standard)", url: "https://drive.google.com/file/d/1aqT3ll73N5AWZQ06coMB3Z8pMLpwTd7Q/view?usp=drive_link" },
+          { name: "Sample Paper 07(Standard)", url: "https://drive.google.com/file/d/1GpE4P1XJhcICyeENFedsbfCP8v-76Ay0/view?usp=drive_link" },
+          { name: "Sample Paper 08(Standard)", url: "https://drive.google.com/file/d/1vrZsSL106pi06BaBQhWumuHcJEA90cMt/view?usp=drive_link" },
+          { name: "Sample Paper 09(Standard)", url: "https://drive.google.com/file/d/1_cMiKbHs58tMyXPfXAqbFiCWcd_AaIPn/view?usp=drive_link" },
+          { name: "Sample Paper 10(Standard)", url: "https://drive.google.com/file/d/1xvr1hiGlwE6yYb-HMlyDVuIzLaoCaHXj/view?usp=drive_link" },
         ],
-        previous: [
-          { name: "Previous Year 2022", url: "assets/class10/maths/previous/prev2022.pdf" }
+        basic: [
+          {name: "Sample Paper 01(Basic)", url: "https://drive.google.com/file/d/1NkkFCZVuEz2jR2HQfK2rNm5HG5Z5wwqi/view?usp=drive_link"},
+          {name: "Sample Paper 02(Basic)", url: "https://drive.google.com/file/d/1Jctkq9JeBnrc95E4PZBOLwjmlBfCHRsO/view?usp=drive_link"},
+          {name: "Sample Paper 03(Basic)", url: "https://drive.google.com/file/d/1dclT8zzMW0mmL85xizXIjowcxMCL1xKZ/view?usp=drive_link"},
+          {name: "Sample Paper 04(Basic)", url: "https://drive.google.com/file/d/12XKwt2JI6FwbV32fb8qZI67gIbzPOYPj/view?usp=drive_link"},
+          {name: "Sample Paper 05(Basic)", url: "https://drive.google.com/file/d/1W2yStZYGlNWLLBlZPcN6Dc7673sHBDXO/view?usp=drive_link"},
+          {name: "Sample Paper 06(Basic)", url: "https://drive.google.com/file/d/1ONZpjb3iupuh8XVjmk1LynW9KKDoJACL/view?usp=drive_link"},
+          {name: "Sample Paper 07(Basic)", url: "https://drive.google.com/file/d/1z_CpFjzffLFYSptA21bb6FsBuylNMkqf/view?usp=drive_link"},
+          {name: "Sample Paper 08(Basic)", url: "https://drive.google.com/file/d/1nvolDXiLrbNr-bcVVW2JtjBc3nZ0PeW6/view?usp=drive_link"},
+          {name: "Sample Paper 09(Basic)", url: "https://drive.google.com/file/d/185LqRk6fugBjnozjjtzojPnanEon_b_r/view?usp=drive_link"},
+          {name: "Sample Paper 10(Basic)", url: "https://drive.google.com/file/d/1GFXldoER_G7jAdmN9yYQj5dq-cOnhaTa/view?usp=drive_link"},  
         ]
+        },
+        previous: {
+  2025: [
+    { name: "Maths Previous 2025 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" },
+    { name: "Maths Previous 2025 Paper 2", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2024: [
+    { name: "Maths Previous 2024 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2023: [
+    { name: "Maths Previous 2023 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2022: [
+    { name: "Maths Previous 2022 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2021: [
+    { name: "Maths Previous 2021 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+}
+
       },
       science: {
         notes: [
@@ -367,32 +441,108 @@
           { name: "Chapter 13", url: "assets/class10/science/assignments/assign13.pdf" }
         ],
         samplepapers: [
-          { name: "Sample Paper 2023", url: "assets/class10/science/sample/sample2023.pdf" }
+          { name: "Sample Paper 02(Standard)", url: "assets/class10/science/sample/sample2023.pdf" }
         ],
-        previous: [
-          { name: "Previous Year 2022", url: "assets/class10/science/previous/prev2022.pdf" }
-        ]
+       previous: {
+  2025: [
+    { name: "Maths Previous 2025 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" },
+    { name: "Maths Previous 2025 Paper 2", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2024: [
+    { name: "Maths Previous 2024 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2023: [
+    { name: "Maths Previous 2023 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2022: [
+    { name: "Maths Previous 2022 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+  2021: [
+    { name: "Maths Previous 2021 Paper 1", url: "https://drive.google.com/uc?export=view&id=xxx" }
+  ],
+}
+
       }
     };
 
-   function showPDFList(subject, type) {
-  const list = pdfData[subject][type];
+  function showPDFList(subject, type) {
   const listEl = document.getElementById('pdfList');
-  const title = document.getElementById('pdfTitle');
+  const titleEl = document.getElementById('pdfTitle');
+  const data = pdfData[subject][type];
 
   listEl.innerHTML = '';
-  title.textContent = `${capitalize(subject)} - ${formatType(type)}`;
+  titleEl.textContent = `${subject.toUpperCase()} - ${type.toUpperCase()}`;
 
-  list.forEach(pdf => {
-    const li = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = pdf.url;
-    link.textContent = pdf.name;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    li.appendChild(link);
-    listEl.appendChild(li);
-  });
+  listEl.style.display = 'block';
+
+  if (type === 'previous') {
+    const table = document.createElement('table');
+    table.className = 'pdf-table';
+
+    const headerRow = document.createElement('tr');
+    for (const year of Object.keys(data)) {
+      const th = document.createElement('th');
+      th.textContent = year;
+      headerRow.appendChild(th);
+    }
+    table.appendChild(headerRow);
+
+    const row = document.createElement('tr');
+    for (const year of Object.keys(data)) {
+      const td = document.createElement('td');
+      data[year].forEach(pdf => {
+        const link = document.createElement('a');
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+
+        const br = document.createElement('br');
+        td.appendChild(link);
+        td.appendChild(br);
+      });
+      row.appendChild(td);
+    }
+
+    table.appendChild(row);
+    listEl.appendChild(table);
+  } else if (type === 'samplepapers') {
+    listEl.style.display = 'flex';
+    listEl.style.justifyContent = 'center';
+    listEl.style.gap = '40px';
+
+    for (const level in data) {
+      const column = document.createElement('div');
+      const heading = document.createElement('h4');
+      heading.textContent = level.toUpperCase();
+      column.appendChild(heading);
+
+      const ul = document.createElement('ul');
+      data[level].forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+
+      column.appendChild(ul);
+      listEl.appendChild(column);
+    }
+  } else {
+    data.forEach(pdf => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = pdf.url;
+      link.textContent = pdf.name;
+      link.target = "_blank";
+      li.appendChild(link);
+      listEl.appendChild(li);
+    });
+  }
+
 
   // 👇 This ensures the user sees the PDF section
   document.getElementById('assetsection').scrollIntoView({ behavior: 'smooth' });
