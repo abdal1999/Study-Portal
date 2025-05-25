@@ -281,7 +281,7 @@
     <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     <nav id="nav-menu">
       <a href="index.html">Home</a>
-      <a href="class9.html">Class 9</a> 
+      <a href="class10.html">Class 9</a> 
       <a href="class10.html">Class 10</a>
       <a href="#">Class 11</a>
       <a href="#">Class 12</a>
@@ -309,7 +309,7 @@
         <ul>
           <li onclick="showPDFList('science', 'notes')">Notes</li>
           <li onclick="showPDFList('science', 'assignments')">Assignments</li>
-          <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('science', 'samplepaper')">Sample Papers</li>
           <li onclick="showPDFList('science', 'previous')">Previous Year Questions</li>
         </ul>
       </section>
@@ -325,7 +325,7 @@
   <footer>
     <p> Created with ❤️ by MD ABDAAL KHAN</p>
     <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
-    
+    <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=yjs6nhdy88g2b5f3b4rjhwfkzuk6tuuu" border="0" title="website hit counter" alt="website hit counter"></a>
   </footer>
 
   <script>
@@ -511,7 +511,7 @@
           { name: "Chapter 12", url: "assets/class10/science/assignments/assign12.pdf" },
           { name: "Chapter 13", url: "assets/class10/science/assignments/assign13.pdf" }
         ],
-        samplepapers: [
+        samplepaper: [
           { name: "Sample Paper 01", url: "https://drive.google.com/file/d/1ioXyBi4Jsd9_hxFCq4BWDOPxsxnNYMD8/view?usp=sharing" },
           { name: "Sample Paper 02", url: "https://drive.google.com/file/d/1XTRd-kJUIGgeZZNOPTWAxppewjE-mJoT/view?usp=drive_link" },
           { name: "Sample Paper 03", url: "https://drive.google.com/file/d/14lOuRs3TrMBQz655xp9QE9RZ0jfXENmo/view?usp=drive_link" },
@@ -639,6 +639,7 @@
         case 'assignments': return 'Assignments';
         case 'samplepapers': return 'Sample Papers';
         case 'previous': return 'Previous Year Questions';
+        case 'samplepaper': return 'Sample Papers';
       }
     }
       function toggleMenu() {
