@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog | Career & Skills</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .blog-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .blog-post {
+      margin-bottom: 40px;
+    }
+
+    .blog-post h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .blog-post .date {
+      color: #888;
+      font-size: 0.9em;
+      margin-bottom: 15px;
+    }
+
+    .blog-post p {
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 10px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CBSE Study Portal</h1>
+    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="class9.html">Class 9</a> 
+      <a href="class10.html">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="#">Class 12</a>
+      <a href="blog.html">Blog</a>
+
+    </nav>
+  </header>
+
+  <main>
+    <div class="blog-container">
+      <h1 style="text-align: center; color: #007bff; margin-bottom: 30px;">
+        📘 Monthly Blog – Career Opportunities & Skills
+      </h1>
+
+      <!-- Blog Post: May 2025 -->
+       <div class="blog-post">
+      <h2>🌱 May 2025 – Emerging Career Paths After 10th & 12th</h2>
+      <div class="date">Published: May 27, 2025</div>
+      <p>
+        Are you confused about which path to choose after your school education? Whether it's tech, design, finance, or entrepreneurship—new career paths are opening up like never before.
+        In this blog, we’ll explore trending careers, skill sets required, and how you can prepare early to gain an edge over others.
+      </p>
+
+      <a class="read-more" href="#" id="read-more-link" onclick="toggleBlog()">Read Full Blog →</a>
+
+      <div id="full-blog" style="display: none; margin-top: 20px;">
+        <h2>💻 1. Technology & Coding</h2>
+        <p>Fields like Artificial Intelligence, Data Science, and Web Development are booming in India. Platforms like Coding Ninjas, WhiteHat Jr., and NPTEL offer early learning opportunities.</p>
+        <p><strong>Skills Needed:</strong> Problem-solving, Python/JavaScript, Logical Reasoning</p>
+
+        <h2>🎨 2. Design & Creativity</h2>
+        <p>From UI/UX design to animation, digital design is highly sought-after. Courses on Canva, Adobe XD, or even free YouTube channels can get you started.</p>
+        <p><strong>Skills Needed:</strong> Creativity, Communication, Graphic Tools</p>
+
+        <h2>📈 3. Business & Entrepreneurship</h2>
+        <p>Startups are thriving, especially with government support like <em>Startup India</em>. Young minds are turning innovative ideas into real ventures!</p>
+        <p><strong>Skills Needed:</strong> Communication, Financial Literacy, Leadership</p>
+
+        <h2>🔬 4. Research & Science</h2>
+        <p>If you're curious about how things work — from chemicals to space — consider careers in research, pharmacy, or engineering.</p>
+        <p><strong>Skills Needed:</strong> Analytical Thinking, Curiosity, Lab Skills</p>
+
+        <h2>🧠 5. Psychology, Law & Humanities</h2>
+        <p>There's growing interest in social sciences. Psychologists, lawyers, and public administrators are in demand more than ever.</p>
+        <p><strong>Skills Needed:</strong> Reading, Writing, Empathy, Public Speaking</p>
+
+        <div class="highlight" style="background-color: #fffbe6; border-left: 4px solid orange; padding: 10px; margin: 20px 0;">
+          Remember: Start early, stay curious, and build your skills bit by bit. Great things take time!
+        </div>
+
+        <p>✨ <strong>Next Month’s Blog (June 2025):</strong> “Top Free Online Resources for Students”</p>
+      </div>
+    </div>
+
+      <!-- Blog Post: Placeholder for June -->
+      <div class="blog-post">
+        <h2>🔍 June 2025 – Skills Needed to Succeed in a Tech-Driven World</h2>
+        <div class="date">Coming Soon</div>
+        <p>
+          In the digital era, skills matter more than degrees. Find out which skills top companies are looking for and how school students can start building them early through free tools, online resources, and mini projects.
+        </p>
+        <a class="read-more" href="#">Coming Soon →</a>
+      </div>
+
+      <!-- Add more months below-->
+    </div>
+  </main>
+
+  <footer>
+    <p> Created with ❤️ by MD ABDAAL KHAN</p>
+     <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
+     <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=yjs6nhdy88g2b5f3b4rjhwfkzuk6tuuu" border="0" title="website hit counter" alt="website hit counter"></a> 
+  </footer>
+  <script>
+  function toggleBlog() {
+    const blog = document.getElementById('full-blog');
+    const readMoreLink = document.getElementById('read-more-link');
+    blog.style.display = 'block';
+    readMoreLink.style.display = 'none';
+  }
+</script>
+
+
+</body>
+</html>
