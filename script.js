@@ -87,10 +87,21 @@ function showMathFact() {
   popup.innerHTML = `📘 Math Fact: ${fact}`;
 
   document.body.appendChild(popup);
+    // Create the close button
+    const closeBtn = document.createElement('span');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.onclick = () => popup.remove();
+
+    // Append fact and close button to popup
+    popup.appendChild(closeBtn);
+    popup.appendChild(document.createTextNode(fact));
+
+    document.body.appendChild(popup);
 
   setTimeout(() => {
     popup.remove();
-  }, 11000);
+  }, 8000);
 }
 
 window.onload = showMathFact;
