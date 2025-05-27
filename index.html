@@ -6,6 +6,43 @@
   <title>CBSE Study Portal</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>.math-fact-popup {
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #f0f8ff;
+  color: #333;
+  border: 2px solid #007bff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  font-size: 16px;
+  text-align: center;
+  z-index: 9999;
+  max-width: 90%;
+  width: 350px;
+  animation: fadeInScale 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
+.close-btn:hover {
+  color: red;
+}
+</style>
 </head>
   <header>
     <h1>CBSE Study Portal</h1>
@@ -167,6 +204,49 @@
     startAutoScroll();
     carousel.addEventListener('mouseenter', stopAutoScroll);
     carousel.addEventListener('mouseleave', startAutoScroll);
+    const mathFacts = [
+  "Zero is the only number that can't be represented in Roman numerals.",
+  "A 'googol' is 1 followed by 100 zeros!",
+  "The word 'hundred' comes from the old Norse term, 'hundrath', which actually means 120.",
+  "Did you know? A circle has infinite lines of symmetry!",
+  "The number π (pi) has been calculated to over 31 trillion digits.",
+  "The Fibonacci sequence appears in nature, like in pinecones and sunflowers!",
+  "‘Four’ is the only number with the same number of letters as its value.",
+  "In a room of 23 people, there's a 50% chance two share a birthday!",
+  "A perfect number is equal to the sum of its proper divisors. 28 is one of them!",
+  "You can cut a cake into 8 pieces with just 3 cuts!"
+];
+const scienceFacts = [
+    "The human body has 206 bones.",
+    "Water can boil and freeze at the same time!",
+    "Lightning is 5 times hotter than the surface of the sun.",
+    "Plants can communicate using chemical signals.",
+    "Saturn could float on water—it’s that light!"
+  ];
+
+function showRandomFact() {
+    const allFacts = [...mathFacts, ...scienceFacts];
+    const fact = allFacts[Math.floor(Math.random() * allFacts.length)];
+
+    const popup = document.createElement('div');
+    popup.className = 'math-fact-popup';
+
+    const closeBtn = document.createElement('span');
+    closeBtn.className = 'close-btn';
+    closeBtn.innerHTML = '&times;';
+    closeBtn.onclick = () => popup.remove();
+
+    popup.appendChild(closeBtn);
+    popup.appendChild(document.createTextNode(fact));
+
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+      if (document.body.contains(popup)) popup.remove();
+    }, 8000);
+  }
+
+  window.onload = showRandomFact;
   </script>
 
 </body>
