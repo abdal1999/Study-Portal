@@ -297,3 +297,21 @@ p {
     font-size: 0.95rem;
   }
 }
+.news-ticker {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.news-ticker a {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.news-ticker a:hover {
+  text-decoration: underline;
+}
