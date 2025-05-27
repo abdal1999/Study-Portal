@@ -59,19 +59,3 @@ window.addEventListener('scroll', () => {
     backToTopBtn.classList.remove('show');
   }
 });
-
-  document.getElementById("darkModeToggle").addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-
-    // Save preference
-    const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("darkMode", isDark);
-  });
-
-  // Load preference on page load
-  window.addEventListener("DOMContentLoaded", () => {
-    const darkPref = localStorage.getItem("darkMode") === "true";
-    if (darkPref) {
-      document.body.classList.add("dark-mode");
-    }
-  });
