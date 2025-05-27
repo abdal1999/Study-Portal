@@ -44,6 +44,17 @@
 .close-btn:hover {
   color: red;
 }
+.popup-heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.popup-fact {
+  font-size: 14px;
+}
+
 </style>
 </head>
   <header>
@@ -227,26 +238,36 @@ const scienceFacts = [
   ];
 
 function showRandomFact() {
-    const allFacts = [...mathFacts, ...scienceFacts];
-    const fact = allFacts[Math.floor(Math.random() * allFacts.length)];
+  const allFacts = [...mathFacts, ...scienceFacts];
+  const fact = allFacts[Math.floor(Math.random() * allFacts.length)];
 
-    const popup = document.createElement('div');
-    popup.className = 'math-fact-popup';
+  const popup = document.createElement('div');
+  popup.className = 'math-fact-popup';
 
-    const closeBtn = document.createElement('span');
-    closeBtn.className = 'close-btn';
-    closeBtn.innerHTML = '&times;';
-    closeBtn.onclick = () => popup.remove();
+  const heading = document.createElement('div');
+  heading.className = 'popup-heading';
+  heading.textContent = 'Do You Know?';
 
-    popup.appendChild(closeBtn);
-    popup.appendChild(document.createTextNode(fact));
+  const closeBtn = document.createElement('span');
+  closeBtn.className = 'close-btn';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.onclick = () => popup.remove();
 
-    document.body.appendChild(popup);
+  const factText = document.createElement('div');
+  factText.className = 'popup-fact';
+  factText.textContent = fact;
 
-    setTimeout(() => {
-      if (document.body.contains(popup)) popup.remove();
-    }, 6000);
-  }
+  popup.appendChild(closeBtn);
+  popup.appendChild(heading);
+  popup.appendChild(factText);
+
+  document.body.appendChild(popup);
+
+  setTimeout(() => {
+    if (document.body.contains(popup)) popup.remove();
+  }, 10000);
+}
+
 
   window.onload = showRandomFact;
   </script>
