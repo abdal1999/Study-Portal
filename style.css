@@ -84,7 +84,7 @@ footer {
 .intro,
 .about-site,
 .feedback,
-.donate-section {
+.share-section {
   background-color: white;
   padding: 25px;
   border-radius: 12px;
@@ -315,4 +315,35 @@ p {
 
 .news-ticker a:hover {
   text-decoration: underline;
+}
+
+.whatsapp-share-btn {
+  background-color: #25D366;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.whatsapp-share-btn:hover {
+  background-color: #1ebe5b;
+}
+
+.whatsapp-share-btn::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
