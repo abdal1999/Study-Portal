@@ -47,27 +47,7 @@
     .read-more:hover {
       text-decoration: underline;
     }
-    .like-container {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 18px;
-}
 
-#like-btn {
-  background-color: #007bff;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-right: 10px;
-  font-size: 16px;
-  transition: background 0.3s;
-}
-
-#like-btn:hover {
-  background-color: #0056b3;
-}
 
   </style>
 </head>
@@ -121,10 +101,6 @@
         <div class="highlight" style="background-color: #fffbe6; border-left: 4px solid orange; padding: 10px; margin: 20px 0;">
                 And to every adult reading this be the support system, not the scoreboard. What students need most right now isn’t judgment. It’s understanding.
         </div>
-<div class="like-container">
-  <button id="like-btn">👍 Like</button>
-  <span id="like-count">0</span> people liked this
-</div>
 
         <p>✨ <strong>Next Month’s Blog (June 2025):</strong> “Skills Needed to Succeed in a Tech-Driven World”</p>
       </div>
@@ -158,33 +134,6 @@
   }
 </script>
 
-<script>
-  const likeBtn = document.getElementById("like-btn");
-  const likeCountEl = document.getElementById("like-count");
-  const blogKey = "blog_like_count_may"; // Change this key for other blogs
-  const userLikedKey = "user_liked_may";
-
-  // Load stored count
-  let count = parseInt(localStorage.getItem(blogKey)) || 0;
-  likeCountEl.textContent = count;
-
-  // Disable button if user already liked
-  if (localStorage.getItem(userLikedKey)) {
-    likeBtn.disabled = true;
-    likeBtn.textContent = "✅ Liked";
-  }
-
-  likeBtn.addEventListener("click", () => {
-    if (!localStorage.getItem(userLikedKey)) {
-      count += 1;
-      localStorage.setItem(blogKey, count);
-      localStorage.setItem(userLikedKey, "true");
-      likeCountEl.textContent = count;
-      likeBtn.disabled = true;
-      likeBtn.textContent = "✅ Liked";
-    }
-  });
-</script>
 
 </body>
 </html>
