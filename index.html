@@ -6,70 +6,101 @@
   <title>CBSE Study Portal</title>
   <link rel="stylesheet" href="style.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>.math-fact-popup {
-    position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #f0f8ff;
-  color: #333;
-  border: 2px solid #007bff;
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4 15px rgba(0,0,0,0.2);
-  font-size: 16px;
-  text-align: center;
-  z-index: 9999;
-  max-width: 90%;
-  width: 300px; 
-  box-sizing: border-box;
-  animation: fadeInScale 0.4s ease-out;
-  word-wrap: break-word;
-}
+  <style>
+    /* Popup Fact Styles */
+    .math-fact-popup {
+      position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #f0f8ff;
+      border: 2px solid #007bff;
+      padding: 16px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      font-size: 16px;
+      text-align: center;
+      z-index: 9999;
+      max-width: 90%;
+      width: 300px;
+      animation: fadeIn 0.4s ease-out;
+    }
+    .close-btn {
+      position: absolute;
+      top: 6px; right: 12px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .popup-heading {
+      font-size: 20px; margin-bottom: 10px; font-weight: bold;
+    }
+    .popup-fact { font-size: 16px; }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, -60%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
-}
+    /* Countdown Button */
+    #countdownBtn {
+      position: fixed;
+      bottom: 20px; right: 20px;
+      background-color: #ffcc00;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      animation: blink 1.5s infinite;
+      z-index: 1000;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+    }
 
-.close-btn {
-  position: absolute;
-  top: 6px;
-  right: 12px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #444;
-  cursor: pointer;
-}
-.close-btn:hover {
-  color: red;
-}
-.popup-heading {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.popup-fact {
-  font-size: 16px;
-}
-
-</style>
+    /* Countdown Modal */
+    #countdownModal {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+    }
+    #countdownModal .modal-content {
+      background: white;
+      max-width: 600px;
+      width: 100%;
+      height: 80vh;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+    #countdownModal iframe {
+      width: 100%; height: 100%;
+      border: none;
+      border-radius: 0 0 12px 12px;
+    }
+    #countdownModal .close-modal {
+      position: absolute;
+      top: 10px; right: 15px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #444;
+    }
+  </style>
 </head>
+<body>
   <header>
     <h1>CBSE Study Portal</h1>
-    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <button id="nav-toggle">&#9776;</button>
     <nav id="nav-menu">
       <a href="index.html">Home</a>
-      <a href="class9.html">Class 9</a> 
+      <a href="class9.html">Class 9</a>
       <a href="class10.html">Class 10</a>
       <a href="#">Class 11</a>
       <a href="#">Class 12</a>
       <a href="blog.html">Blog</a>
-
     </nav>
   </header>
+
+  <main>
+    <!-- Your existing content: intro, class-grid, feedback, share-section -->
+    <!-- … -->
   
 <body>
   <!-----------<button id="back-to-top" title="Back to top"></button>---------->
@@ -164,143 +195,59 @@
   </a>
 </section>
   </main>
+    <!-- Floating countdown button -->
+    <div id="countdownBtn" title="Exam Countdown">📅EXAM</div>
+  </main>
+
+  <!-- Countdown modal -->
+  <div id="countdownModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <iframe src="examcountdown.html"></iframe>
+    </div>
+  </div>
 
   <footer>
-    <p> Created with ❤️ by MD ABDAAL KHAN</p>
-     <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
-    <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=yjs6nhdy88g2b5f3b4rjhwfkzuk6tuuu" border="0" title="website hit counter" alt="website hit counter"></a> 
+    <p>Created with ❤️ by MD ABDAAL KHAN</p>
+    <p>&copy; 2025 CBSE Study Portal</p>
+         <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=yjs6nhdy88g2b5f3b4rjhwfkzuk6tuuu" border="0" title="website hit counter" alt="website hit counter"></a> 
+
   </footer>
 
   <script>
-    // Navigation toggle
-    const nav = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const header = document.querySelector('header');
+    // Hamburger toggle
+    document.getElementById('nav-toggle').onclick = () => {
+      document.getElementById('nav-menu').classList.toggle('active');
+    };
 
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
+    // Fact popup
+    const facts = [
+      "Did you know? A circle has infinite lines of symmetry!",
+      "Fibonacci sequence appears in sunflowers!",
+      "Lightning is 5× hotter than the sun's surface!"
+    ];
+    window.onload = () => {
+      const fact = facts[Math.floor(Math.random() * facts.length)];
+      const popup = document.createElement('div');
+      popup.className = 'math-fact-popup';
+      popup.innerHTML = `
+        <span class="close-btn" onclick="this.parentElement.remove()">&times;</span>
+        <div class="popup-heading">Do You Know?</div>
+        <div class="popup-fact">${fact}</div>`;
+      document.body.appendChild(popup);
+      setTimeout(() => popup.remove(), 5000);
+    };
+
+    // Countdown modal open/close
+    const btn = document.getElementById('countdownBtn');
+    const modal = document.getElementById('countdownModal');
+    const closeModal = modal.querySelector('.close-modal');
+
+    btn.addEventListener('click', () => modal.style.display = 'flex');
+    closeModal.addEventListener('click', () => modal.style.display = 'none');
+    window.addEventListener('click', e => {
+      if (e.target === modal) modal.style.display = 'none';
     });
-
-    // Sticky header nav on scroll
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 80) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-        nav.classList.remove('active'); // close nav on scroll up
-      }
-    });
-
-    // Back to top button
-    const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
-    });
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Testimonial carousel auto scroll
-    const carousel = document.querySelector('.testimonial-carousel');
-    let scrollAmount = 0;
-    const scrollStep = 280; // width + gap
-    const delay = 1500; // 1.5 sec
-    let intervalId;
-
-    function autoScroll() {
-      scrollAmount += scrollStep;
-      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0;
-      }
-      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }
-
-    function startAutoScroll() {
-      intervalId = setInterval(autoScroll, delay);
-    }
-    function stopAutoScroll() {
-      clearInterval(intervalId);
-    }
-
-    startAutoScroll();
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-    const mathFacts = [
-  "Zero is the only number that can't be represented in Roman numerals.",
-  "A 'googol' is 1 followed by 100 zeros!",
-  "The word 'hundred' comes from the old Norse term, 'hundrath', which actually means 120.",
-  "Did you know? A circle has infinite lines of symmetry!",
-  "The number π (pi) has been calculated to over 31 trillion digits.",
-  "The Fibonacci sequence appears in nature, like in pinecones and sunflowers!",
-  "‘Four’ is the only number with the same number of letters as its value.",
-  "In a room of 23 people, there's a 50% chance two share a birthday!",
-  "A perfect number is equal to the sum of its proper divisors. 28 is one of them!",
-  "You can cut a cake into 8 pieces with just 3 cuts!"
-];
-const scienceFacts = [
-    "The human body has 206 bones.",
-    "Water can boil and freeze at the same time!",
-    "Lightning is 5 times hotter than the surface of the sun.",
-    "Plants can communicate using chemical signals.",
-    "Saturn could float on water—it’s that light!"
-  ];
-
-function showRandomFact() {
-  const allFacts = [...mathFacts, ...scienceFacts];
-  const fact = allFacts[Math.floor(Math.random() * allFacts.length)];
-
-  const popup = document.createElement('div');
-  popup.className = 'math-fact-popup';
-
-  const heading = document.createElement('div');
-  heading.className = 'popup-heading';
-  heading.textContent = 'Do You Know?';
-
-  const closeBtn = document.createElement('span');
-  closeBtn.className = 'close-btn';
-  closeBtn.innerHTML = '&times;';
-  closeBtn.onclick = () => popup.remove();
-
-  const factText = document.createElement('div');
-  factText.className = 'popup-fact';
-  factText.textContent = fact;
-
-  popup.appendChild(closeBtn);
-  popup.appendChild(heading);
-  popup.appendChild(factText);
-
-  document.body.appendChild(popup);
-
-  setTimeout(() => {
-    if (document.body.contains(popup)) popup.remove();
-  }, 4000);
-}
-
-
-  window.onload = showRandomFact;
-  
-  // Disable right-click
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
-
-  // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-  document.addEventListener("keydown", function (e) {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-    }
-  });
-
-//(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
   </script>
-
 </body>
 </html>

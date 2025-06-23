@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Student Exam Countdown</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the Inter font and body background */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Using Tailwind classes for background */
+            /* Tailwind equivalent of linear-gradient: bg-gradient-to-br from-amber-50 to-sky-200 */
+        }
+        /* Custom animation (Tailwind does not directly support keyframe animations, so keeping this custom) */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        /* Floating Button */
+#countdownBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #ffcc00;
+  color: #333;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  animation: blink 1.5s infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+
+    </style>
+    
+</head>
+<body class="bg-gradient-to-br from-amber-50 to-sky-200 flex items-center justify-center min-h-screen p-4">
+
+    <div class="container bg-white p-8 rounded-2xl shadow-xl text-center max-w-2xl w-full animate-float">
+        <h1 class="text-4xl font-extrabold text-indigo-800 mb-4 tracking-tight">📚 Exam Countdown</h1>
+
+        <!-- Board Exam Countdown Section -->
+        <div class="section mb-8 p-6 bg-blue-50 rounded-xl border-2 border-blue-200 shadow-md">
+            <div class="text-5xl mb-3">🏁</div>
+            <h3 class="text-2xl font-semibold text-pink-600 mb-4">Board Exam: 16th Feb 2026</h3>
+            <div id="boardOutput" class="output bg-blue-100 p-4 rounded-lg border-2 border-dashed border-blue-400 text-blue-800 text-lg">
+                <!-- Board exam countdown will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Custom School Exam Section -->
+        <div class="section p-6 bg-pink-50 rounded-xl border-2 border-pink-200 shadow-md">
+            <div class="text-5xl mb-3">📅</div>
+            <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Your Upcoming School Exam</h3>
+            <input type="date" id="schoolExamDate" class="w-full p-3 mb-4 border-2 border-pink-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-pink-500 transition duration-200 ease-in-out" />
+            <button onclick="calculateSchoolExam()" class="w-full py-3 bg-indigo-700 text-white font-bold rounded-lg text-xl shadow-lg hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50 transition duration-300 ease-in-out transform hover:scale-105">
+                🎯 Check School Exam Countdown
+            </button>
+            <div id="schoolOutput" class="output mt-4 bg-pink-100 p-4 rounded-lg border-2 border-dashed border-pink-400 text-pink-800 text-lg">
+                <!-- School exam countdown will be displayed here -->
+            </div>
+        </div>
+
+        <footer class="mt-8 text-gray-600 text-base font-medium">Made with ❤️ for Super Students</footer>
+    </div>
+
+    <script>
+        // Function to provide motivational messages based on days remaining
+        function getMotivation(days) {
+            if (days < 0) return "🎉 Yay! Exams are over — time to celebrate!";
+            if (days === 0) return "🎯 It's today! Stay calm and do your best!";
+            if (days <= 5) return "🌟 Almost there! Keep revising and stay strong!";
+            if (days <= 15) return "📘 You're doing great! Keep pushing!";
+            if (days <= 30) return "💡 Keep the momentum going. You’ve got this!";
+            if (days <= 100) return "🚀 Start strong. One page at a time!";
+            return "🧠 Start early, revise wisely, and believe in yourself!";
+        }
+
+        // Function to calculate and display the Board Exam countdown
+        function calculateBoardExam() {
+            const boardDate = new Date("2026-02-16");
+            const today = new Date();
+            // Reset time for accurate day calculation
+            today.setHours(0, 0, 0, 0);
+            boardDate.setHours(0, 0, 0, 0);
+
+            // Calculate difference in milliseconds, then convert to days
+            const diffTime = boardDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            // Update the board exam output section
+            document.getElementById("boardOutput").innerHTML = `
+                <p class="font-bold text-xl mb-2">${diffDays >= 0 ? `${diffDays} day(s) to go!` : 'Board Exam passed.'}</p>
+                <p>${getMotivation(diffDays)}</p>
+            `;
+        }
+
+        // Function to calculate and display the Custom School Exam countdown
+        function calculateSchoolExam() {
+            const inputDateValue = document.getElementById("schoolExamDate").value;
+            const schoolOutputDiv = document.getElementById("schoolOutput");
+
+            // Check if a date has been selected
+            if (!inputDateValue) {
+                schoolOutputDiv.innerHTML = `<p class="text-red-600 font-bold">❗ Please pick your exam date.</p>`;
+                return;
+            }
+
+            const examDate = new Date(inputDateValue);
+            const today = new Date();
+            // Reset time for accurate day calculation
+            today.setHours(0, 0, 0, 0);
+            examDate.setHours(0, 0, 0, 0);
+
+            // Calculate difference in milliseconds, then convert to days
+            const diffTime = examDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            // Update the school exam output section
+            schoolOutputDiv.innerHTML = `
+                <p class="font-bold text-xl mb-2">${diffDays >= 0 ? `${diffDays} day(s) left until your school exam.` : 'Exam date passed.'}</p>
+                <p>${getMotivation(diffDays)}</p>
+            `;
+        }
+
+        // Call the board exam calculation on page load
+        calculateBoardExam();
+    </script>
+   
+
+</body>
+</html>
