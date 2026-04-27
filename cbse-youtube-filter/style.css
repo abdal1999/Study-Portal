@@ -1,0 +1,4 @@
+ytd-video-renderer,
+ytd-rich-item-renderer {
+  transition: opacity 0.3s ease;
+}

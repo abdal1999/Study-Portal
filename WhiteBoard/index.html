@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Teaching Whiteboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+  <div class="toolbar">
+    <button onclick="setTool('pen')">✏️ Pen</button>
+    <button onclick="setTool('eraser')">🧽 Eraser</button>
+    <button onclick="clearCanvas()">🗑️ Clear</button>
+    <button onclick="undo()">↩️ Undo</button>
+    <button onclick="redo()">↪️ Redo</button>
+    <button onclick="printCanvas()">🖨️ Print</button>
+    <button onclick="downloadCanvas()">💾 Download PNG</button>
+
+    <!-- Subject Tools -->
+    <select onchange="handleSubjectTool(this.value)">
+      <option disabled selected>📐 Maths</option>
+      <option value="circle">Circle</option>
+      <option value="rectangle">Rectangle</option>
+      <option value="graph">Graph Paper</option>
+      <option value="equation">Insert Equation</option>
+    </select>
+
+    <select onchange="handleSubjectTool(this.value)">
+      <option disabled selected>🧪 Science</option>
+      <option value="flask">Flask</option>
+      <option value="battery">Battery</option>
+      <option value="resistor">Resistor</option>
+    </select>
+
+    <select onchange="handleSubjectTool(this.value)">
+      <option disabled selected>🌍 Social Studies</option>
+      <option value="map">Insert Map</option>
+      <option value="arrow">Arrow</option>
+    </select>
+
+    <select onchange="handleSubjectTool(this.value)">
+      <option disabled selected>📝 English</option>
+      <option value="text">Add Text</option>
+      <option value="highlight">Highlighter</option>
+      <option value="grammar">Grammar Marks</option>
+    </select>
+  </div>
+
+  <canvas id="whiteboard" width="1000" height="600"></canvas>
+  <div id="equationInput" style="display:none;">
+    <input type="text" id="latex" placeholder="Type LaTeX e.g. \\frac{a}{b}" />
+    <button onclick="renderEquation()">Insert</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

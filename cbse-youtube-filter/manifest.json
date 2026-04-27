@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "CBSE YouTube Education Filter",
+  "version": "1.0",
+  "description": "Shows only CBSE and educational content for Class 1 to 12 on YouTube",
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["style.css"]
+    }
+  ]
+}
