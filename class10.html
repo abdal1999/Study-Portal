@@ -54,224 +54,221 @@
       margin-bottom: 30px;
     }
 */
-    .subject-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .subject {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s;
-    }
-
-    .subject:hover {
-      transform: translateY(-5px);
-    }
-
-    .subject h2 {
-      border-bottom: 2px solid #004080;
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-      font-size: 1.2rem;
-    }
-
-    .subject ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .subject li {
-      margin-bottom: 10px;
-      cursor: pointer;
-      color: #0077cc;
-      font-weight: 500;
-    }
-
-    .subject li:hover {
-      text-decoration: underline;
-    }
-
-    #assetsection {
-      margin-top: 40px;
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    #pdfTitle {
-      color: #004080;
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    #pdfList li {
-      margin-bottom: 10px;
-    }
-#pdfList > div {
-  width: 220px;
-  text-align: center;
+   /* ===== GLOBAL ===== */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #eef2f7, #f8fafc);
+  color: #222;
+  user-select: none;
 }
 
-#pdfList ul {
-  list-style-type: none;
+/* ===== SUBJECT CARDS ===== */
+.subject-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.subject {
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.subject:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== SUBJECT TITLE ===== */
+.subject h2 {
+  font-size: 1.5rem;
+  color: #004080;
+  margin-bottom: 18px;
+  border-left: 6px solid #007bff;
+  padding-left: 12px;
+}
+
+/* ===== MENU ITEMS ===== */
+.subject li {
+  background: #f1f5f9;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  transition: 0.25s;
+  font-size: 1.05rem;
+  cursor: pointer; /* 👈 hand cursor */
+}
+
+.subject li:hover {
+  background: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ===== PDF SECTION ===== */
+#assetsection {
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== TITLE ===== */
+#pdfTitle {
+  text-align: center;
+  font-size: 1.6rem;
+  color: #004080;
+  margin-bottom: 25px;
+}
+
+/* ===== FLEX GRID ===== */
+#pdfList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* ===== COLUMN CARDS ===== */
+.pdf-column {
+  background: white;
+  border: 2px solid #e3e8ef;
+  border-radius: 15px;
+  padding: 20px;
+  min-width: 320px;   /* 👈 bigger width */
+  max-width: 380px;
+  flex: 1;            /* 👈 responsive equal width */
+  transition: 0.3s;
+}
+
+.pdf-column:hover {
+  border-color: #007bff;
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.pdf-column a {
+  display: block;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-size: 1.05rem;
+  transition: 0.25s;
+  text-align: left;
+}
+
+/* 👇 Strong hover effect */
+.pdf-column a:hover {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  transform: translateX(5px);
+  cursor: pointer;
+}
+.pdf-column a::before {
+  content: "📘 ";
+}
+.pdf-column {
+  border: 2px solid #e3e8ef;
+  border-top: 5px solid #007bff; /* 👈 highlight */
+}
+.pdf-column:hover {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+/* ===== COLUMN TITLE ===== */
+.pdf-column h4 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #007bff;
+  font-size: 1.2rem;
+}
+
+/* ===== LIST ===== */
+.pdf-column ul {
+  list-style: none;
   padding: 0;
 }
-    #pdfList a {
-      color: #333;
-      text-decoration: none;
-    }
 
-    #pdfList a:hover {
-      color: #0077cc;
-      text-decoration: underline;
-    }
-/*
-    footer {
-      text-align: center;
-      background-color: #004080;
-      color: white;
-      padding: 15px;
-      margin-top: 40px;
-    }
-*/
-    /* Mobile Styles Only */
-   @media (max-width: 600px) {
-     /* header {
-        padding: 10px;
-      }
-
-      header h1 {
-        font-size: 1.4rem;
-      }
-
-      nav {
-        margin-top: 5px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        margin: 5px;
-        font-size: 0.9rem;
-        padding: 5px 10px;
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 5px;
-      }
-
-      main {
-        padding: 20px 15px;
-      }
-*/
-      .subject h2 {
-        font-size: 1rem;
-      }
-
-      #pdfTitle {
-        font-size: 1rem;
-      }
-
-      .subject li {
-        font-size: 0.95rem;
-      }
-    }
-    /* Shared header styles */
-/*
-    .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #004080;
-  padding: 10px 20px;
-  color: white;
+/* ===== LIST ITEMS ===== */
+.pdf-column li {
+  margin: 8px 0;
 }
 
-.site-title {
-  margin: 0;
-  font-size: 1.5rem;
+/* ===== LINKS ===== */
+.pdf-column a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.05rem;
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  transition: 0.2s;
 }
 
-/* Hide menu toggle button on large screens */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
+/* 👇 clickable feel */
+.pdf-column a:hover {
+  background: #007bff;
   color: white;
-  border: none;
   cursor: pointer;
 }
 
-/* Navigation links (shown horizontally by default) */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: #004080;
-}
-
-.nav-links a {
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  background-color: #0059b3;
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 10px 20px;
-  }
-} 
+/* ===== TABLE ===== */
 .pdf-table {
   width: 100%;
   border-collapse: collapse;
-  text-align: center;
-  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.pdf-table th,
+.pdf-table th {
+  background: #004080;
+  color: white;
+  padding: 12px;
+  font-size: 1.05rem;
+}
+
 .pdf-table td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  vertical-align: top;
+  border: 1px solid #ddd;
+  padding: 12px;
 }
 
 .pdf-table a {
-  display: inline-block;
-  margin: 4px 0;
-  color: #007bff;
-  text-decoration: none;
+  display: block;
+  padding: 5px;
 }
 
 .pdf-table a:hover {
-  text-decoration: underline;
+  color: #007bff;
+  cursor: pointer;
 }
 
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .pdf-column {
+    min-width: 100%;
+  }
+
+  .subject h2 {
+    font-size: 1.2rem;
+  }
+}
+.pdf-column a::before {
+  content: "📄 ";
+}
+.pdf-column {
+  flex: 1 1 350px;
+}
+select {
+  border: 1px solid #ccc;
+  background: white;
+}
+
+select:hover {
+  border-color: #007bff;
+}
   </style>
 </head>
 <header>
@@ -312,6 +309,7 @@
           <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
           <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
           <li onclick="showPDFList('maths', 'previous')">Previous Year Questions</li>
+          <li onclick="showPDFList('maths', 'Coming Soon')">School Question Papers</li>
         </ul>
       </section>
 
@@ -320,8 +318,9 @@
         <ul>
           <li onclick="showPDFList('science', 'notes')">Notes</li>
           <li onclick="showPDFList('science', 'assignments')">Assignments</li>
-          <li onclick="showPDFList('science', 'samplepaper')">Sample Papers</li>
+          <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
           <li onclick="showPDFList('science', 'previous')">Previous Year Questions</li>
+          <li onclick="showPDFList('science', 'Coming Soon')">School Question Papers</li>
         </ul>
       </section>
     </div>
@@ -358,7 +357,8 @@
           { name: "Statistics", url: "https://drive.google.com/file/d/108k_45HlMlNsdtU9CtsKiu7968c9w_mj/view?usp=drive_link" },
           { name: "Probability", url: "https://drive.google.com/file/d/1AceThTsOSlWGpEhYE7gt75HM3KtjrTA7/view?usp=drive_link" }
         ],
-        assignments: [
+        assignments: {
+          "Chapter wise  Assignment":[
           { name: "Chapter 1", url: "https://drive.google.com/file/d/1AITUIqTY-ZTHJ6DeIEXmF41wV79ARVAo/view?usp=drive_link" },
           { name: "Chapter 2", url: "https://drive.google.com/file/d/1xb0ipPGsKOV61Mycb6RfLkXKyMCGAeOt/view?usp=drive_link" },
           { name: "Chapter 3", url: "https://drive.google.com/file/d/19jp1HigAN--0U7aOgBDsa705EVUyzMNL/view?usp=drive_link" },
@@ -372,8 +372,25 @@
           { name: "Chapter 11", url: "https://drive.google.com/file/d/18gA06GUHMhUFNhnqI76E6K5Ucys9rCLU/view?usp=drive_link" },
           { name: "Chapter 12", url: "https://drive.google.com/file/d/196rMQVNe5QMVVih_TLjEBFIMlMtA_dmq/view?usp=drive_link" },
           { name: "Chapter 13", url: "https://drive.google.com/file/d/1B-r8mmF3dLeIFzwrXpV1fWTTFoCip3Hs/view?usp=drive_link" },
-          { name: "Chapter 14", url: "https://drive.google.com/file/d/1HHFlDr2k11oR8dqWDBa6PbONrcCuYzau/view?usp=drive_link" }
+          { name: "Chapter 14", url: "https://drive.google.com/file/d/1HHFlDr2k11oR8dqWDBa6PbONrcCuYzau/view?usp=drive_link" },
         ],
+        "Chapter Wise PYQ's": [
+               { name: "Chapter 1", url: "https://drive.google.com/file/d/1iZUXrNe6YjDWw3mGDLiufGP_toYddeyA/view?usp=sharing" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1WY4j8dIPjvpbrqonW6kS841UCx5KcaTj/preview?usp=sharing" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/1iX_Rsh_q2cxr3ajTwGAtqWgIeyxAWST4/view?usp=drive_link" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/1OxAQbpE2xkbzcv4JOqIOo45Vd5St4eYw/view?usp=drive_link" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/1_gq7bO-uGGeHCTd_YIiuu-JqoVaGwM5a/view?usp=drive_link" },
+          { name: "Chapter 6", url: "https://drive.google.com/file/d/1ImD8Sf3yMc7kruxf6zJ0ACDlwubKo2Vq/view?usp=drive_link" },
+          { name: "Chapter 7", url: "https://drive.google.com/file/d/1P7zoAEChi5IZj2RiBHnW5mQQ-7tWXpNx/view?usp=drive_link" },
+          { name: "Chapter 8", url: "https://drive.google.com/file/d/1XQtex7ZttuXsi9ketFscW5Dkhu9nH45S/view?usp=drive_link" },
+          { name: "Chapter 9", url: "https://drive.google.com/file/d/12cdGAwJtUooC8cqTn09ptoyYLldLYeBh/view?usp=drive_link" },
+          { name: "Chapter 10", url: "https://drive.google.com/file/d/1AwvNy2iVoMuGn1H24wMRWubLJChPHLfr/view?usp=drive_link" },
+          { name: "Chapter 11", url: "https://drive.google.com/file/d/19gU9O2fztS7D2jLM_9_hlb4oRlwUBE_3/view?usp=drive_link" },
+          { name: "Chapter 12", url: "https://drive.google.com/file/d/1pxfJoYxz4zQ4lJsW7c1ylWngmsyfRI_M/view?usp=sharing" },
+          { name: "Chapter 13", url: "https://drive.google.com/file/d/1yqLSoeVKDhKNNQu7oFptgPFly5O18uv8/view?usp=sharing" },
+          { name: "Chapter 14", url: "https://drive.google.com/file/d/1-RFRyH5oX5j3ijpQB5Qw7kr6nPYd76k9/view?usp=sharing" },
+        ]
+        },
         samplepapers: {
           standard: [
           { name: "Sample Paper 01(Standard)", url: "https://drive.google.com/file/d/1hqELNpe2HUMxMm_ZG9lOIdB4MgHL8on5/view?usp=drive_link" },
@@ -519,8 +536,9 @@
           { name: "Magnetic Effects of Electric Current", url: "https://drive.google.com/file/d/17s-a_f6G00UE3RFvqDY5L2dZHeJlSR-U/view?usp=drive_link" },
           { name: "Our Environment", url: "https://drive.google.com/file/d/1O8HCi_4jy0mR6wCu1qx9RZ9yeitIsh9g/view?usp=drive_link" }
         ],
-        assignments: [
-           { name: "Chapter 1", url: "https://drive.google.com/file/d/1N41l4OtTBESX3_GrMh971iYjqpMbUMq1/view?usp=sharing" },
+        assignments: {
+          "Assignment 01":[
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/1N41l4OtTBESX3_GrMh971iYjqpMbUMq1/view?usp=sharing" },
           { name: "Chapter 2", url: "https://drive.google.com/file/d/1-Cr_8FOoKteaEAe4as99xzT8SJum3coz/view?usp=drive_link" },
           { name: "Chapter 3", url: "https://drive.google.com/file/d/1qNkIpu3vENe6X7dh9TPCUvwI9OWQyfvF/view?usp=drive_link" },
           { name: "Chapter 4", url: "https://drive.google.com/file/d/17YgD67udn65CH7ws4NGtCFBBcjosYtlK/view?usp=drive_link" },
@@ -534,7 +552,23 @@
           { name: "Chapter 12", url: "https://drive.google.com/file/d/1S1qv4v2jnkVpGLaeT-let4cGkULpO9pM/view?usp=drive_link" },
           { name: "Chapter 13", url: "https://drive.google.com/file/d/17fGyAY-XP4YfkdeHMTvlPVE_Rd7N_C1i/view?usp=drive_link" }
         ],
-        samplepaper: [
+        "Assignment 02": [
+            { name: "Chapter 1", url: "" },
+          { name: "Chapter 2", url: "" },
+          { name: "Chapter 3", url: "" },
+          { name: "Chapter 4", url: "" },
+          { name: "Chapter 5", url: "" },
+          { name: "Chapter 6", url: "" },
+          { name: "Chapter 7", url: "" },
+          { name: "Chapter 8", url: "" },
+          { name: "Chapter 9", url: "" },
+          { name: "Chapter 10", url: "" },
+          { name: "Chapter 11", url: "" },
+          { name: "Chapter 12", url: "" },
+          { name: "Chapter 13", url: "" }
+      ]
+        },
+        samplepapers: [
           { name: "Sample Paper 01", url: "https://drive.google.com/file/d/1ioXyBi4Jsd9_hxFCq4BWDOPxsxnNYMD8/view?usp=sharing" },
           { name: "Sample Paper 02", url: "https://drive.google.com/file/d/1XTRd-kJUIGgeZZNOPTWAxppewjE-mJoT/view?usp=drive_link" },
           { name: "Sample Paper 03", url: "https://drive.google.com/file/d/14lOuRs3TrMBQz655xp9QE9RZ0jfXENmo/view?usp=drive_link" },
@@ -628,59 +662,103 @@
   const data = pdfData[subject][type];
 
   listEl.innerHTML = '';
-  titleEl.textContent = `${capitalize(subject)} - ${formatType(type)}`;
+  titleEl.textContent = `${subject.charAt(0).toUpperCase() + subject.slice(1)} - ${formatType(type)}`;
 
-  listEl.style.display = 'block';
+  // RESET STYLE (important)
+  listEl.style.display = 'flex';
+  listEl.style.flexWrap = 'wrap';
+  listEl.style.justifyContent = 'center';
+  listEl.style.gap = '30px';
 
+  // ================= PREVIOUS YEAR (NEW DROPDOWN) =================
   if (type === 'previous') {
-    const table = document.createElement('table');
-    table.className = 'pdf-table';
 
-    const headerRow = document.createElement('tr');
-    for (const year of Object.keys(data)) {
-      const th = document.createElement('th');
-      th.textContent = year;
-      headerRow.appendChild(th);
-    }
-    table.appendChild(headerRow);
+    listEl.style.display = 'block'; // override
 
-    const row = document.createElement('tr');
-    for (const year of Object.keys(data)) {
-      const td = document.createElement('td');
+    const wrapper = document.createElement('div');
+    wrapper.style.display = "flex";
+    wrapper.style.flexDirection = "column";
+    wrapper.style.alignItems = "center";
+    wrapper.style.marginTop = "20px";
+
+    const select = document.createElement('select');
+    select.style.padding = "10px 15px";
+    select.style.marginBottom = "20px";
+    select.style.borderRadius = "8px";
+    select.style.fontSize = "1rem";
+    select.style.cursor = "pointer";
+
+    const years = Object.keys(data).sort((a, b) => b - a);
+
+    years.forEach(year => {
+      const option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      select.appendChild(option);
+    });
+
+    wrapper.appendChild(select);
+
+    const column = document.createElement('div');
+    column.className = 'pdf-column';
+    column.style.maxWidth = "420px";
+    column.style.width = "100%";
+
+    const heading = document.createElement('h4');
+    column.appendChild(heading);
+
+    const ul = document.createElement('ul');
+    column.appendChild(ul);
+
+    function loadYear(year) {
+      heading.textContent = "📊 " + year;
+      ul.innerHTML = "";
+
       data[year].forEach(pdf => {
-        const link = document.createElement('a');
-        link.href = pdf.url;
-        link.textContent = pdf.name;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-
-        const br = document.createElement('br');
-        td.appendChild(link);
-        td.appendChild(br);
-      });
-      row.appendChild(td);
-    }
-
-    table.appendChild(row);
-    listEl.appendChild(table);
-  } else if (type === 'samplepapers') {
-    listEl.style.display = 'flex';
-    listEl.style.justifyContent = 'center';
-    listEl.style.gap = '40px';
-
-    for (const level in data) {
-      const column = document.createElement('div');
-      const heading = document.createElement('h4');
-      heading.textContent = level.toUpperCase();
-      column.appendChild(heading);
-
-      const ul = document.createElement('ul');
-      data[level].forEach(pdf => {
         const li = document.createElement('li');
         const link = document.createElement('a');
+
         link.href = pdf.url;
         link.textContent = pdf.name;
         link.target = "_blank";
+
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+    }
+
+    // load latest year by default
+    loadYear(years[0]);
+
+    select.addEventListener('change', () => {
+      loadYear(select.value);
+    });
+
+    wrapper.appendChild(column);
+    listEl.appendChild(wrapper);
+  }
+
+  // ================= ASSIGNMENTS + SAMPLE PAPERS (OLD WORKING STYLE) =================
+  else if (typeof data === 'object' && !Array.isArray(data)) {
+
+    for (const key in data) {
+      const column = document.createElement('div');
+      column.className = 'pdf-column'; // 🔥 important (restores UI)
+
+      const heading = document.createElement('h4');
+      heading.textContent = key.toUpperCase();
+      column.appendChild(heading);
+
+      const ul = document.createElement('ul');
+
+      data[key].forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+
         li.appendChild(link);
         ul.appendChild(li);
       });
@@ -688,116 +766,66 @@
       column.appendChild(ul);
       listEl.appendChild(column);
     }
-  } else {
+  }
+
+  // ================= NOTES (SINGLE COLUMN) =================
+  else {
+    const column = document.createElement('div');
+    column.className = 'pdf-column';
+
+    const heading = document.createElement('h4');
+    heading.textContent = formatType(type);
+    column.appendChild(heading);
+
+    const ul = document.createElement('ul');
+
     data.forEach(pdf => {
       const li = document.createElement('li');
       const link = document.createElement('a');
+
       link.href = pdf.url;
       link.textContent = pdf.name;
       link.target = "_blank";
+
       li.appendChild(link);
-      listEl.appendChild(li);
+      ul.appendChild(li);
     });
+
+    column.appendChild(ul);
+    listEl.appendChild(column);
   }
 
-
-  // 👇 This ensures the user sees the PDF section
-  document.getElementById('assetsection').scrollIntoView({ behavior: 'smooth' });
+  document.getElementById('assetsection')
+    .scrollIntoView({ behavior: 'smooth' });
 }
 
 
-    function capitalize(text) {
-      return text.charAt(0).toUpperCase() + text.slice(1);
-    }
-
-    function formatType(type) {
-      switch(type) {
-        case 'notes': return 'Notes';
-        case 'assignments': return 'Assignments';
-        case 'samplepapers': return 'Sample Papers';
-        case 'previous': return 'Previous Year Questions';
-        case 'samplepaper': return 'Sample Papers';
-      }
-    }
-      function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('show');
+// 🔥 SAFE FORMAT FUNCTION
+function formatType(type) {
+  switch(type) {
+    case 'notes': return 'Notes';
+    case 'assignments': return 'Assignments';
+    case 'samplepapers': return 'Sample Papers';
+    case 'previous': return 'Previous Year Questions';
+    default: return type;
   }
-
-   // Navigation toggle
-    const nav = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const header = document.querySelector('header');
-
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-
-    // Sticky header nav on scroll
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 80) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-        nav.classList.remove('active'); // close nav on scroll up
-      }
-    });
-
-    // Back to top button
-    const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
-    });
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Testimonial carousel auto scroll
-    const carousel = document.querySelector('.testimonial-carousel');
-    let scrollAmount = 0;
-    const scrollStep = 280; // width + gap
-    const delay = 1500; // 1.5 sec
-    let intervalId;
-
-    function autoScroll() {
-      scrollAmount += scrollStep;
-      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0;
-      }
-      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }
-
-    function startAutoScroll() {
-      intervalId = setInterval(autoScroll, delay);
-    }
-    function stopAutoScroll() {
-      clearInterval(intervalId);
-    }
-
-    startAutoScroll();
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-  </script>
-  <script>
-  // Disable right-click
-  document.addEventListener("contextmenu", function (e) {
+}
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+document.addEventListener("keydown", function (e) {
+  // Disable Ctrl combinations
+  if (
+    (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+    e.key === "F12"
+  ) {
     e.preventDefault();
-  });
-
-  // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-  document.addEventListener("keydown", function (e) {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-    }
-  });
+  }
+});
   //(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 
 </script>
