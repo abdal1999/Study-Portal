@@ -269,6 +269,7 @@ select {
 select:hover {
   border-color: #007bff;
 }
+
   </style>
 </head>
 <header>
@@ -826,6 +827,14 @@ document.addEventListener("keydown", function (e) {
     e.preventDefault();
   }
 });
+ // Navigation toggle
+    const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
   //(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 
 </script>
