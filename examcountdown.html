@@ -24,62 +24,77 @@ body {
 
 /* glass effect */
 .glass {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
 }
 
 /* button glow */
 .glow-btn:hover {
-  box-shadow: 0 0 15px rgba(99,102,241,0.6);
+  box-shadow: 0 0 18px rgba(99,102,241,0.5);
+}
+
+/* FIX: better mobile alignment */
+@media (max-width: 640px) {
+  .input-row {
+    flex-direction: column;
+  }
+
+  .input-row input,
+  .input-row button {
+    width: 100%;
+  }
 }
 </style>
 </head>
 
-<body class="bg-gradient-to-br from-indigo-50 via-sky-100 to-pink-100 min-h-screen flex items-center justify-center p-4">
+<body class="bg-gradient-to-br from-indigo-50 via-sky-100 to-pink-100 min-h-screen flex items-center justify-center p-3">
 
 <div class="w-full max-w-3xl animate-float">
 
-  <!-- MAIN CARD -->
-  <div class="glass p-6 md:p-10 rounded-2xl shadow-2xl border border-white">
+  <div class="glass p-5 md:p-10 rounded-2xl shadow-2xl border border-white">
 
     <!-- TITLE -->
-    <h1 class="text-3xl md:text-4xl font-extrabold text-center text-indigo-800 mb-8">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-indigo-800 mb-6 md:mb-8">
       📚 Exam Countdown Dashboard
     </h1>
 
-    <!-- BOARD EXAM -->
-    <div class="mb-8 p-6 rounded-xl bg-white shadow-md border border-blue-100">
-      <h2 class="text-xl font-bold text-indigo-700 mb-2">
+    <!-- BOARD -->
+    <div class="mb-6 p-5 rounded-xl bg-white shadow-md border border-blue-100">
+      <h2 class="text-lg md:text-xl font-bold text-indigo-700 mb-2">
         🏁 Board Exam (Expected: 15 Feb 2027)
       </h2>
 
       <div id="boardOutput"
-        class="mt-3 p-4 rounded-lg bg-blue-50 border border-dashed border-blue-300 text-blue-800 text-lg">
+        class="p-4 rounded-lg bg-blue-50 border border-dashed border-blue-300 text-blue-800 text-base md:text-lg">
       </div>
     </div>
 
-    <!-- SCHOOL EXAM -->
-    <div class="p-6 rounded-xl bg-white shadow-md border border-pink-100">
-      <h2 class="text-xl font-bold text-pink-600 mb-4">
+    <!-- SCHOOL -->
+    <div class="p-5 rounded-xl bg-white shadow-md border border-pink-100">
+
+      <h2 class="text-lg md:text-xl font-bold text-pink-600 mb-4">
         📅 Your School Exam
       </h2>
 
-      <input type="date"
-        id="schoolExamDate"
-        class="w-full p-3 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400 outline-none mb-4"/>
-
-      <button onclick="calculateSchoolExam()"
-        class="w-full py-3 rounded-lg bg-indigo-600 text-white font-bold glow-btn transition transform hover:scale-105">
-        🎯 Check Countdown
-      </button>
+      <!-- FIXED ROW -->
+      <div class="input-row flex gap-3 mb-4">
+        <input type="date"
+          id="schoolExamDate"
+          class="flex-1 p-3 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400 outline-none"/>
+        
+        <button onclick="calculateSchoolExam()"
+          class="px-5 py-3 rounded-lg bg-indigo-600 text-white font-bold glow-btn transition transform hover:scale-105 whitespace-nowrap">
+          🎯 Check
+        </button>
+      </div>
 
       <div id="schoolOutput"
-        class="mt-4 p-4 rounded-lg bg-pink-50 border border-dashed border-pink-300 text-pink-800 text-lg">
+        class="p-4 rounded-lg bg-pink-50 border border-dashed border-pink-300 text-pink-800 text-base md:text-lg">
       </div>
     </div>
 
     <!-- FOOTER -->
-    <p class="text-center text-gray-500 mt-6 text-sm">
+    <p class="text-center text-gray-500 mt-5 text-sm">
       Made with ❤️ for Super Students
     </p>
 
@@ -107,7 +122,7 @@ function calculateBoardExam() {
   const diffDays = Math.ceil((boardDate - today) / (1000*60*60*24));
 
   document.getElementById("boardOutput").innerHTML =
-    `<p class="font-bold text-xl">${diffDays >= 0 ? diffDays + " days left" : "Exam passed"}</p>
+    `<p class="font-bold text-lg md:text-xl">${diffDays >= 0 ? diffDays + " days left" : "Exam passed"}</p>
      <p class="mt-1">${getMotivation(diffDays)}</p>`;
 }
 
@@ -129,7 +144,7 @@ function calculateSchoolExam() {
   const diffDays = Math.ceil((exam - today)/(1000*60*60*24));
 
   out.innerHTML =
-    `<p class="font-bold text-xl">${diffDays >= 0 ? diffDays + " days left" : "Date passed"}</p>
+    `<p class="font-bold text-lg md:text-xl">${diffDays >= 0 ? diffDays + " days left" : "Date passed"}</p>
      <p class="mt-1">${getMotivation(diffDays)}</p>`;
 }
 
