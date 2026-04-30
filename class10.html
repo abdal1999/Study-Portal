@@ -269,7 +269,67 @@ select {
 select:hover {
   border-color: #007bff;
 }
+/* ===== HEADER WITH BUTTON (SCIENCE) ===== */
+.subject-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.subject-header h2 {
+  margin: 0;
+}
+.practical-btn {
+  background: linear-gradient(90deg, #28a745, #1e7e34);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  min-width: 220px;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  
+
+  /* 🔥 Glow base */
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* 🔥 Hover effect */
+.practical-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 20px rgba(40, 167, 69, 0.8),
+              0 0 40px rgba(40, 167, 69, 0.5);
+}
+
+/* 🔥 Click effect */
+.practical-btn:active {
+  transform: scale(0.97);
+}
+
+.practical-btn:hover {
+  background: #218838;
+}
+
+@media (max-width: 600px) {
+  .subject-header {
+    display: flex;
+    flex-direction: row; /* IMPORTANT FIX */
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+  }
+
+  .practical-btn {
+    margin-top: 0;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}
   </style>
 </head>
 <header>
@@ -282,12 +342,14 @@ select:hover {
       <a href="#">Class 11</a>
       <a href="#">Class 12</a>
       <a href="blog.html">Blog</a>
-
+      <a href="https://www.khanclasses.in" target="_blank" class="learn-btn">
+  🚀 Learn With Me
+</a>
     </nav>
   </header>
 <body>
   <!--button id="back-to-top" title="Back to top">↑</button-->
-    
+
 <div id="navbar-placeholder"></div>
 
 <script>
@@ -315,7 +377,13 @@ select:hover {
       </section>
 
       <section class="subject" id="science">
-        <h2>Science</h2>
+  <div class="subject-header">
+    <h2>Science</h2>
+<a href="ray-simulator.html" class="practical-btn">
+  🧪 Learn Ray Diagram
+</a>
+  </div>
+        
         <ul>
           <li onclick="showPDFList('science', 'notes')">Notes</li>
           <li onclick="showPDFList('science', 'assignments')">Assignments</li>
@@ -656,7 +724,18 @@ select:hover {
 
       }
     };
+<div id="simulationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
 
+    <iframe 
+      src="https://phet.colorado.edu/sims/html/geometric-optics/latest/geometric-optics_en.html"
+      width="100%" 
+      height="500">
+    </iframe>
+
+  </div>
+</div>
   function showPDFList(subject, type) {
   const listEl = document.getElementById('pdfList');
   const titleEl = document.getElementById('pdfTitle');
@@ -841,6 +920,18 @@ document.addEventListener("keydown", function (e) {
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+<script>
+function openSciencePractical() {
+  window.location.href = "science-practical.html";
+}
+</script>
+<script>
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
 
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+</script>
 </body>
 </html>
