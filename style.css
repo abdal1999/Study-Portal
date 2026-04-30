@@ -6,8 +6,14 @@ body {
   color: #333;
   line-height: 1.6;
   user-select: none;
+   -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-
+img, a {
+  -webkit-user-drag: none;
+  user-drag: none;
+}
 main {
   max-width: 1100px;
   margin: 0 auto;
@@ -353,12 +359,31 @@ p {
   padding: 8px 16px;
   border-radius: 20px;
   text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: 0.3s;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.25s ease;
+  white-space: nowrap;
 }
 
-.learn-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 10px rgba(0,198,255,0.6);
+/* hover only for devices that support hover */
+@media (hover: hover) {
+  .learn-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,198,255,0.6);
+  }
+}
+
+/* 🔥 MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+  .learn-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 14px;
+    gap: 4px;
+  }
+}
+.learn-btn {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
