@@ -24,16 +24,16 @@ body {
 
 /* glass effect */
 .glass {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(14px);
 }
 
-/* button glow */
+/* glow */
 .glow-btn:hover {
-  box-shadow: 0 0 18px rgba(99,102,241,0.5);
+  box-shadow: 0 0 18px rgba(99,102,241,0.55);
 }
 
-/* FIX: better mobile alignment */
+/* MOBILE FIX (IMPORTANT IMPROVEMENT) */
 @media (max-width: 640px) {
   .input-row {
     flex-direction: column;
@@ -42,6 +42,10 @@ body {
   .input-row input,
   .input-row button {
     width: 100%;
+  }
+
+  .input-row button {
+    padding: 12px;
   }
 }
 </style>
@@ -60,13 +64,20 @@ body {
 
     <!-- BOARD -->
     <div class="mb-6 p-5 rounded-xl bg-white shadow-md border border-blue-100">
-      <h2 class="text-lg md:text-xl font-bold text-indigo-700 mb-2">
-        🏁 Board Exam 15th Feb 2027
-      </h2>
+
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-1 sm:gap-0">
+        <h2 class="text-lg md:text-xl font-bold text-indigo-700">
+          🏁 Board Exam
+        </h2>
+        <span class="text-sm text-gray-500 font-medium">
+          15 Feb 2027
+        </span>
+      </div>
 
       <div id="boardOutput"
-        class="p-4 rounded-lg bg-blue-50 border border-dashed border-blue-300 text-blue-800 text-base md:text-lg">
+        class="mt-3 p-4 rounded-lg bg-blue-50 border border-dashed border-blue-300 text-blue-800 text-base md:text-lg">
       </div>
+
     </div>
 
     <!-- SCHOOL -->
@@ -76,21 +87,24 @@ body {
         📅 Your School Exam
       </h2>
 
-      <!-- FIXED ROW -->
-      <div class="input-row flex gap-3 mb-4">
+      <!-- INPUT ROW -->
+      <div class="input-row flex items-stretch gap-3 mb-4">
+
         <input type="date"
           id="schoolExamDate"
           class="flex-1 p-3 rounded-lg border border-pink-200 focus:ring-2 focus:ring-pink-400 outline-none"/>
-        
+
         <button onclick="calculateSchoolExam()"
           class="px-5 py-3 rounded-lg bg-indigo-600 text-white font-bold glow-btn transition transform hover:scale-105 whitespace-nowrap">
           🎯 Check
         </button>
+
       </div>
 
       <div id="schoolOutput"
         class="p-4 rounded-lg bg-pink-50 border border-dashed border-pink-300 text-pink-800 text-base md:text-lg">
       </div>
+
     </div>
 
     <!-- FOOTER -->
@@ -122,8 +136,10 @@ function calculateBoardExam() {
   const diffDays = Math.ceil((boardDate - today) / (1000*60*60*24));
 
   document.getElementById("boardOutput").innerHTML =
-    `<p class="font-bold text-lg md:text-xl">${diffDays >= 0 ? diffDays + " days left" : "Exam passed"}</p>
-     <p class="mt-1">${getMotivation(diffDays)}</p>`;
+    `<p class="font-bold text-lg md:text-xl">
+      ${diffDays >= 0 ? diffDays + " days left" : "Exam passed"}
+    </p>
+    <p class="mt-1">${getMotivation(diffDays)}</p>`;
 }
 
 function calculateSchoolExam() {
@@ -144,8 +160,10 @@ function calculateSchoolExam() {
   const diffDays = Math.ceil((exam - today)/(1000*60*60*24));
 
   out.innerHTML =
-    `<p class="font-bold text-lg md:text-xl">${diffDays >= 0 ? diffDays + " days left" : "Date passed"}</p>
-     <p class="mt-1">${getMotivation(diffDays)}</p>`;
+    `<p class="font-bold text-lg md:text-xl">
+      ${diffDays >= 0 ? diffDays + " days left" : "Date passed"}
+    </p>
+    <p class="mt-1">${getMotivation(diffDays)}</p>`;
 }
 
 calculateBoardExam();
