@@ -418,7 +418,7 @@ select:hover {
 
   <footer>
     <p>Created with ❤️ by <a href="https://khanclasses.in/" title="About Me" style="color: white; text-decoration: none; cursor: pointer;">MD ABDAAL KHAN</p></a>
-     <p>&copy; 2025 CBSE Study Portal.</p> 
+     <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p> 
      <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=yjs6nhdy88g2b5f3b4rjhwfkzuk6tuuu" border="0" title="website hit counter" alt="website hit counter"></a> 
   </footer>
 
@@ -739,7 +739,6 @@ select:hover {
 
       }
     };
-
   function showPDFList(subject, type) {
   const listEl = document.getElementById('pdfList');
   const titleEl = document.getElementById('pdfTitle');
@@ -965,6 +964,17 @@ document.addEventListener("keydown", function (e) {
   }
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.getElementById('nav-menu');
+  const navToggle = document.getElementById('nav-toggle');
 
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
+});
+</script>
 </body>
 </html>
