@@ -305,7 +305,39 @@ function formatType(type) {
 document.getElementById("nav-toggle").onclick = () => {
   document.getElementById("nav-menu").classList.toggle("show");
 };
+// 🔥 SAFE FORMAT FUNCTION
+function formatType(type) {
+  switch(type) {
+    case 'notes': return 'Notes';
+    case 'assignments': return 'Assignments';
+    case 'samplepapers': return 'Sample Papers';
+    case 'previous': return 'Previous Year Questions';
+    default: return type;
+  }
+}
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+document.addEventListener("keydown", function (e) {
+  // Disable Ctrl combinations
+  if (
+    (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+    e.key === "F12"
+  ) {
+    e.preventDefault();
+  }
+});
+  const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
 
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 </script>
 
 </body>
