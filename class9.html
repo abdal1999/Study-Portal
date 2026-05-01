@@ -1,313 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CBSE Study Portal</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-  /*  body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f6f8;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>CBSE Study Portal</title>
 
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      position: relative;
-    }
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 30px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      text-align: center;
-      color: #004080;
-      margin-bottom: 30px;
-    }
-*/
-    .subject-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .subject {
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s;
-    }
-
-    .subject:hover {
-      transform: translateY(-5px);
-    }
-
-    .subject h2 {
-      border-bottom: 2px solid #004080;
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-      font-size: 1.2rem;
-    }
-
-    .subject ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .subject li {
-      margin-bottom: 10px;
-      cursor: pointer;
-      color: #0077cc;
-      font-weight: 500;
-    }
-
-    .subject li:hover {
-      text-decoration: underline;
-    }
-
-    #assetsection {
-      margin-top: 40px;
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    }
-
-    #pdfTitle {
-      color: #004080;
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    #pdfList li {
-      margin-bottom: 10px;
-    }
-
-    #pdfList a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    #pdfList a:hover {
-      color: #0077cc;
-      text-decoration: underline;
-    }
-/*
-    footer {
-      text-align: center;
-      background-color: #004080;
-      color: white;
-      padding: 15px;
-      margin-top: 40px;
-    }
-*/
-    /* Mobile Styles Only */
-   @media (max-width: 600px) {
-     /* header {
-        padding: 10px;
-      }
-
-      header h1 {
-        font-size: 1.4rem;
-      }
-
-      nav {
-        margin-top: 5px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      nav a {
-        margin: 5px;
-        font-size: 0.9rem;
-        padding: 5px 10px;
-        background-color: rgba(255, 255, 255, 0.15);
-        border-radius: 5px;
-      }
-
-      main {
-        padding: 20px 15px;
-      }
-*/
-      .subject h2 {
-        font-size: 1rem;
-      }
-
-      #pdfTitle {
-        font-size: 1rem;
-      }
-
-      .subject li {
-        font-size: 0.95rem;
-      }
-    }
-    /* Shared header styles */
-/*
-    .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #004080;
-  padding: 10px 20px;
-  color: white;
-}
-
-.site-title {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-/* Hide menu toggle button on large screens */
-.menu-toggle {
-  display: none;
-  font-size: 1.5rem;
-  background: none;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-/* Navigation links (shown horizontally by default) */
-.nav-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: #004080;
-}
-
-.nav-links a {
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  background-color: #0059b3;
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    width: 100%;
-    padding: 10px 20px;
-  }
-} 
-
-  </style>
 </head>
- <header>
-    <h1><a href="index.html" style="color: white; text-decoration: none; cursor: pointer;">CBSE Study Portal</h1></a>
-    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-    <nav id="nav-menu">
-      <a href="index.html">Home</a>
-      <a href="class9.html">Class 9</a> 
-      <a href="class10.html">Class 10</a>
-      <a href="#">Class 11</a>
-      <a href="#">Class 12</a>
-      <a href="blog.html">Blog</a>
-<a href="https://www.khanclasses.in" target="_blank" class="learn-btn">
-  🚀 Learn With Me
-</a>
-    </nav>
-  </header>
+
+<header>
+  <h1>
+    <a href="index.html" style="color: white; text-decoration: none;">
+      CBSE Study Portal
+    </a>
+  </h1>
+
+  <button id="nav-toggle">&#9776;</button>
+
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="class9.html">Class 9</a> 
+    <a href="class10.html">Class 10</a>
+    <a href="#">Class 11</a>
+    <a href="#">Class 12</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://www.khanclasses.in" target="_blank" class="learn-btn">
+      🚀 Learn With Me
+    </a>
+  </nav>
+</header>
+<style>.pdf-column {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}</style>
 <body>
-  <!--button id="back-to-top" title="Back to top">↑</button-->
+
 <div id="navbar-placeholder"></div>
 
-<script>
-  fetch('navbar.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar-placeholder').innerHTML = data;
-    });
-</script>
+<main>
+  <h2>Class 9 Resources</h2>
 
-  <main>
-    <h2>Class 9 Resources</h2>
+  <div class="subject-container">
 
-    <div class="subject-container">
-      <section class="subject" id="maths">
-        <h2>Mathematics</h2>
-        <ul>
-          <li onclick="showPDFList('maths', 'notes')">Notes</li>
-          <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
-          <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
-          <li onclick="showPDFList('maths', 'previous')">Previous Year Questions</li>
-        </ul>
-      </section>
-
-      <section class="subject" id="science">
-        <h2>Science</h2>
-        <ul>
-          <li onclick="showPDFList('science', 'notes')">Notes</li>
-          <li onclick="showPDFList('science', 'assignments')">Assignments</li>
-          <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
-          <li onclick="showPDFList('science', 'previous')">Previous Year Questions</li>
-        </ul>
-      </section>
-    </div>
-
-    <section id="assetsection">
-      <h3 id="pdfTitle"></h3>
-      <ul id="pdfList"></ul>
+    <!-- MATHS -->
+    <section class="subject" id="maths">
+      <h2>Mathematics</h2>
+      <ul>
+        <li onclick="showPDFList('maths', 'notes')">Notes</li>
+        <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
+        <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
+        <li onclick="showPDFList('maths', 'schoolpapers')">School Question Papers</li>
+      </ul>
     </section>
-  </main>
 
-  <footer>
-        <p>Created with ❤️ by <a href="https://khanclasses.in/" title="About Me" style="color: white; text-decoration: none; cursor: pointer;">MD ABDAAL KHAN</p></a>
+    <!-- SCIENCE -->
+    <section class="subject" id="science">
+      <h2>Science</h2>
+      <ul>
+        <li onclick="showPDFList('science', 'notes')">Notes</li>
+        <li onclick="showPDFList('science', 'assignments')">Assignments</li>
+        <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
+        <li onclick="showPDFList('science', 'schoolpapers')">School Question Papers</li>
+      </ul>
+    </section>
 
-    <p>&copy; 2025 CBSE Study Portal.</p> 
-    <a href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=yjs6nhdy88g2b5f3b4rjhwfkzuk6tuuu" border="0" title="website hit counter" alt="website hit counter"></a>
-  </footer>
+  </div>
 
-  <script>
+  <!-- 🔥 FIXED CONTAINER -->
+  <section id="assetsection">
+    <h3 id="pdfTitle"></h3>
+    <div id="pdfList" style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;"></div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Created with ❤️ by 
+    <a href="https://khanclasses.in/" style="color:white;text-decoration:none;">
+      MD ABDAAL KHAN
+    </a>
+  </p>
+  <p>&copy; 2025 CBSE Study Portal.</p>
+</footer>
+
+<script>
+
+/* NAVBAR LOAD (same as class 10) */
+fetch('navbar.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+  });
+  
     const pdfData = {
       maths: {
         notes: [
@@ -351,7 +140,7 @@
            { name: "Sample Paper 09", url: "https://drive.google.com/file/d/14MR6xPEpX00-hIuW9jjuSq9B667JGhKL/view?usp=drive_link" },
            { name: "Sample Paper 10", url: "https://drive.google.com/file/d/1TkdE2OumJ2hSBUZ70eaTFZnrsf6ysZxJ/view?usp=drive_link" },
         ],
-        previous: [
+        schoolpapers: [
           { name: "Paper 01", url: "https://drive.google.com/file/d/1b2JIYfKp0klpNxb2ZDfKR2kuoSYvn_58/view?usp=drive_link" },
           { name: "Paper 02", url: "https://drive.google.com/file/d/1LLxM1SBYEhl731hUNvrI_kATCuT25Ilr/view?usp=drive_link" },
           { name: "Paper 03", url: "https://drive.google.com/file/d/1kO77SkcKAAcwQZv99dKcUYou-10jmor-/view?usp=drive_link" },
@@ -407,7 +196,7 @@
           { name: "Sample Paper 09", url: "https://drive.google.com/file/d/1SGzki4fhf4ihm98qk7Dvw_nmVTxT7KAv/view?usp=drive_link" },
           { name: "Sample Paper 10", url: "https://drive.google.com/file/d/18SzY9dK5WIvcp6VDkR6S8fSLVQJkrgtD/view?usp=drive_link" },
         ],
-        previous: [
+        schoolpapers: [
           { name: "Paper 01", url: "https://drive.google.com/file/d/1LjRtj499P12jNEa4E1kbOXIrGrSvn0q4/view?usp=drive_link" },
           { name: "Paper 02", url: "https://drive.google.com/file/d/198MjNroQv7vIp0FdQzx4QgAkcxQWAe7a/view?usp=drive_link" },
           { name: "Paper 03", url: "https://drive.google.com/file/d/1EV7SAMZBfp5sW3BTs5rdwzfnZ04NGCJ0/view?usp=drive_link" },
@@ -422,122 +211,100 @@
       }
     };
 
-   function showPDFList(subject, type) {
-  const list = pdfData[subject][type];
+function showPDFList(subject, type) {
+
   const listEl = document.getElementById('pdfList');
-  const title = document.getElementById('pdfTitle');
+  const titleEl = document.getElementById('pdfTitle');
+  const data = pdfData[subject][type];
 
   listEl.innerHTML = '';
-  title.textContent = `${capitalize(subject)} - ${formatType(type)}`;
 
-  list.forEach(pdf => {
-    const li = document.createElement('li');
-    const link = document.createElement('a');
-    link.href = pdf.url;
-    link.textContent = pdf.name;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    li.appendChild(link);
-    listEl.appendChild(li);
-  });
+  titleEl.textContent =
+    subject.charAt(0).toUpperCase() + subject.slice(1) +
+    " - " + formatType(type);
 
-  // 👇 This ensures the user sees the PDF section
-  document.getElementById('assetsection').scrollIntoView({ behavior: 'smooth' });
+  listEl.style.display = 'flex';
+  listEl.style.flexWrap = 'wrap';
+  listEl.style.justifyContent = 'center';
+  listEl.style.gap = '30px';
+
+  // Handle object (future safe)
+  if (typeof data === 'object' && !Array.isArray(data)) {
+
+    for (const key in data) {
+      const column = document.createElement('div');
+      column.className = 'pdf-column';
+
+      const heading = document.createElement('h4');
+      heading.textContent = key.toUpperCase();
+      column.appendChild(heading);
+
+      const ul = document.createElement('ul');
+
+      data[key].forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+
+      column.appendChild(ul);
+      listEl.appendChild(column);
+    }
+
+  } else {
+
+    const column = document.createElement('div');
+    column.className = 'pdf-column';
+
+    const heading = document.createElement('h4');
+    heading.textContent = formatType(type);
+    column.appendChild(heading);
+
+    const ul = document.createElement('ul');
+
+    data.forEach(pdf => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+
+      link.href = pdf.url;
+      link.textContent = pdf.name;
+      link.target = "_blank";
+
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+
+    column.appendChild(ul);
+    listEl.appendChild(column);
+  }
+
+  document.getElementById('assetsection')
+    .scrollIntoView({ behavior: 'smooth' });
 }
 
 
-    function capitalize(text) {
-      return text.charAt(0).toUpperCase() + text.slice(1);
-    }
-
-    function formatType(type) {
-      switch(type) {
-        case 'notes': return 'Notes';
-        case 'assignments': return 'Assignments';
-        case 'samplepapers': return 'Sample Papers';
-        case 'previous': return 'Previous Year Questions';
-      }
-    }
-      function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('show');
+/* FORMAT */
+function formatType(type) {
+  switch(type) {
+    case 'notes': return 'Notes';
+    case 'assignments': return 'Assignments';
+    case 'samplepapers': return 'Sample Papers';
+    case 'schoolpapers': return 'School Question Papers';
+    default: return type;
   }
+}
 
-   // Navigation toggle
-    const nav = document.getElementById('nav-menu');
-    const navToggle = document.getElementById('nav-toggle');
-    const header = document.querySelector('header');
 
-    navToggle.addEventListener('click', () => {
-      nav.classList.toggle('active');
-    });
-
-    // Sticky header nav on scroll
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 80) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-        nav.classList.remove('active'); // close nav on scroll up
-      }
-    });
-
-    // Back to top button
-    const backToTopBtn = document.getElementById('back-to-top');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 300) {
-        backToTopBtn.style.display = 'block';
-      } else {
-        backToTopBtn.style.display = 'none';
-      }
-    });
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // Testimonial carousel auto scroll
-    const carousel = document.querySelector('.testimonial-carousel');
-    let scrollAmount = 0;
-    const scrollStep = 280; // width + gap
-    const delay = 1500; // 1.5 sec
-    let intervalId;
-
-    function autoScroll() {
-      scrollAmount += scrollStep;
-      if(scrollAmount >= carousel.scrollWidth - carousel.clientWidth) {
-        scrollAmount = 0;
-      }
-      carousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-    }
-
-    function startAutoScroll() {
-      intervalId = setInterval(autoScroll, delay);
-    }
-    function stopAutoScroll() {
-      clearInterval(intervalId);
-    }
-
-    startAutoScroll();
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-  </script>
-  <script>
-  // Disable right-click
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
-
-  // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-  document.addEventListener("keydown", function (e) {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-    }
-  });
-  //(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+/* MOBILE NAV */
+document.getElementById("nav-toggle").onclick = () => {
+  document.getElementById("nav-menu").classList.toggle("show");
+};
 
 </script>
 

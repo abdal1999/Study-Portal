@@ -65,3 +65,77 @@ const menu = document.getElementById("nav-menu");
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
+
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+function openSciencePractical() {
+  window.location.href = "science-practical.html";
+}
+
+const toggle = document.getElementById("nav-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener("copy", function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener("cut", function (e) {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", function (e) {
+  // Ctrl + U (view source)
+  if (e.ctrlKey && e.key.toLowerCase() === "u") {
+    e.preventDefault();
+  }
+
+  // Ctrl + S (save page)
+  if (e.ctrlKey && e.key.toLowerCase() === "s") {
+    e.preventDefault();
+  }
+
+  // Ctrl + C / Ctrl + A
+  if (e.ctrlKey && (e.key.toLowerCase() === "c" || e.key.toLowerCase() === "a")) {
+    e.preventDefault();
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.getElementById('nav-menu');
+  const navToggle = document.getElementById('nav-toggle');
+
+  if (navToggle && nav) {
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  }
+});
+
+  const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+     if (
+    (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+    e.key === "F12"
+  ) {
+    e.preventDefault();
+  }
+ document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  
+
