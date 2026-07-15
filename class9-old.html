@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Khan Study Portal</title>
+
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<header>
+  <h1>
+    <a href="index.html" style="color: white; text-decoration: none;">
+      Khan Study Portal
+    </a>
+  </h1>
+
+  <button id="nav-toggle">&#9776;</button>
+
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="class9.html">Class 9</a> 
+    <a href="class10.html">Class 10</a>
+    <a href="#">Class 11</a>
+    <a href="#">Class 12</a>
+    <a href="blog.html">Blog</a>
+    <a href="https://www.khanclasses.in" target="_blank" class="learn-btn">
+      🚀 Learn With Me
+    </a>
+  </nav>
+</header>
+<style>.pdf-column {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.syllabus-banner{
+    background:#fff8d6;
+    border:2px solid #ffd54f;
+    border-radius:12px;
+    padding:20px;
+    margin:20px auto 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.new-btn{
+    background:#0d6efd;
+    color:white;
+    padding:12px 20px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.new-btn:hover{
+    background:#084298;
+}
+</style>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<main>
+  <h2>Class 9 Resources (Old Syllabus)</h2>
+
+<div class="syllabus-banner">
+    <div>
+        <strong>📢 CBSE has introduced a new syllabus for Class 9.</strong><br>
+        These notes are based on the previous syllabus.
+    </div>
+
+    <a href="class9.html" class="new-btn">
+        View New Syllabus →
+    </a>
+</div>
+
+  <div class="subject-container">
+
+    <!-- MATHS -->
+    <section class="subject" id="maths">
+      <h2>Mathematics</h2>
+      <ul>
+        <li onclick="showPDFList('maths', 'notes')">Notes</li>
+        <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
+        <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
+        <li onclick="showPDFList('maths', 'schoolpapers')">School Question Papers</li>
+      </ul>
+    </section>
+
+    <!-- SCIENCE -->
+    <section class="subject" id="science">
+      <h2>Science</h2>
+      <ul>
+        <li onclick="showPDFList('science', 'notes')">Notes</li>
+        <li onclick="showPDFList('science', 'assignments')">Assignments</li>
+        <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
+        <li onclick="showPDFList('science', 'schoolpapers')">School Question Papers</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <!-- 🔥 FIXED CONTAINER -->
+  <section id="assetsection">
+    <h3 id="pdfTitle"></h3>
+    <div id="pdfList" style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;"></div>
+  </section>
+
+</main>
+
+<footer>
+    <p>Created with ❤️ by <a href="https://khanclasses.in/" title="About Me" style="color: white; text-decoration: none; cursor: pointer;">MD ABDAAL KHAN</p></a>
+    <p>&copy; 2025 Khan Study Portal</p>
+         
+
+  </footer>
+
+<script>
+
+/* NAVBAR LOAD (same as class 10) */
+fetch('navbar.html')
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById('navbar-placeholder').innerHTML = data;
+  });
+  
+    const pdfData = {
+      maths: {
+        notes: [
+          { name: "Number Systems", url: "https://drive.google.com/file/d/1RDYE21PMh_-NwO8mPeUfNTskDw9G_kh2/view?usp=sharing" },
+          { name: "Polynomials", url: "https://drive.google.com/file/d/1iry579Tvql0-BoyEgL-XajUWSP-yvgKs/view?usp=sharing" },
+          { name: "Coordinate Geometry", url: "https://drive.google.com/file/d/1g2GlOvotnyQI9xLOUqfdz-rAM6CtJP1F/view?usp=drive_link" },
+          { name: "Linear Equations in two variables", url: "https://drive.google.com/file/d/1RWP18ee_fj7fYraNY7x4P5nHOdDXwLg2/view?usp=drive_link" },
+          { name: "Introduction to Euclids Geometry", url: "https://drive.google.com/file/d/1BcmjxjUHMucpXMbWle-dtmROwEiyg5AB/view?usp=drive_link" },
+          { name: "Lines and Angles", url: "https://drive.google.com/file/d/1oc9l7xt1zeaoSe7i04Pkfua-qKVP3f_A/view?usp=drive_link" },
+          { name: "Triangles", url: "https://drive.google.com/file/d/1WWnIQJSIhI_Zr6kQXskIlsm9s71KKbnd/view?usp=drive_link" },
+          { name: "Quadrilaterals", url: "https://drive.google.com/file/d/1Xz9hO1zUHkpj-QDiwMTBd8-N1eK6GMed/view?usp=drive_link" },
+          { name: "Circles", url: "https://drive.google.com/file/d/1xoiOLm6wVAtbZSKaT_x64UcNkdxU3BnA/view?usp=drive_link" },
+          { name: "Heron's Formula", url: "https://drive.google.com/file/d/1Qg6Y1lm6TYlXDvDhk5tylMeXUn7Fvo33/view?usp=drive_link" },
+          { name: "Surface Areas and Volume", url: "https://drive.google.com/file/d/1pjaaq43hoEulMeNTiXy8eEM1MEPm3BXS/view?usp=drive_link" },
+          { name: "Statistics", url: "https://drive.google.com/file/d/1s_hcVFXwH_u2qILm8Opi43NeZl0H1So3/view?usp=drive_link" },
+          
+        ],
+        assignments: [
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/1CwjjmI4LKEGU6rpNjP87RfC6f3jIgFML/view?usp=sharing" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1SF1xYpJGKBm7zQ1tnqxOzSlMpixgv_Jo/view?usp=drive_link" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/1GgCdzfyJeZpAA0QdxCiEeMKyTP4718aj/view?usp=drive_link" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/18iC7UmMco80_aNUkqHvJJaUQiKESA1Hq/view?usp=drive_link" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/15yxh1jmftZjj_cWo96JRo5aceMHJRlhu/view?usp=drive_link" },
+          { name: "Chapter 6", url: "https://drive.google.com/file/d/1ZFe9MgNIx-I3EnYTsIZ60N3JBssdfFDS/view?usp=drive_link" },
+          { name: "Chapter 7", url: "https://drive.google.com/file/d/1twz1UdLyNZgXSDhHxht-werJmsxewmGu/view?usp=drive_link" },
+          { name: "Chapter 8", url: "https://drive.google.com/file/d/1otes9_hKyWYjMYkR6weZEfo6580XJOBo/view?usp=drive_link" },
+          { name: "Chapter 9", url: "https://drive.google.com/file/d/1yoSbXPdBAmqDg79kybpZdEtkz4oXwa9v/view?usp=drive_link" },
+          { name: "Chapter 10", url: "https://drive.google.com/file/d/1SOGcgbkLyVTxA_VQD8jLcRUiGnByGmWh/view?usp=drive_link" },
+          { name: "Chapter 11", url: "https://drive.google.com/file/d/14PYy6q6NJTD8iTwWjkKDOfYhW3lnFwZh/view?usp=drive_link" },
+          { name: "Chapter 12", url: "https://drive.google.com/file/d/1tYZFfJ9DUM7AY7AtYad_eYDq5sKtDr90/view?usp=drive_link" },
+        ],
+        samplepapers: [
+           { name: "Sample Paper 01", url: "https://drive.google.com/file/d/1d6N2pbD2qwN_6BE39TUHNvbCcU9qk9c0/view?usp=drive_link" },
+           { name: "Sample Paper 02", url: "https://drive.google.com/file/d/1s8DytCXoQSjFxmDRkMMC0D2HVryZ48l6/view?usp=drive_link" },
+           { name: "Sample Paper 03", url: "https://drive.google.com/file/d/1QuVornV5ux-uL2mA2WvctC37aBRiUZiw/view?usp=drive_link" },
+           { name: "Sample Paper 04", url: "https://drive.google.com/file/d/1S3QnUvDKosGNPjDjd20-6e7U_0h2ZOa6/view?usp=drive_link" },
+           { name: "Sample Paper 05", url: "https://drive.google.com/file/d/1_oX09s8_YJD_3akbNEA4jYPEMGaxPIwo/view?usp=drive_link" },
+           { name: "Sample Paper 06", url: "https://drive.google.com/file/d/1u4ZEN0L2bLux9VkZTtN8xzq8XFTzvUow/view?usp=drive_link" },
+           { name: "Sample Paper 07", url: "https://drive.google.com/file/d/1-N14kDyZ4yEEhJhALDAg-TNsqHadArPt/view?usp=drive_link" },
+           { name: "Sample Paper 08", url: "https://drive.google.com/file/d/1sVLEkdajYMhDksovLwvDBEjK4IQzqnCT/view?usp=drive_link" },
+           { name: "Sample Paper 09", url: "https://drive.google.com/file/d/14MR6xPEpX00-hIuW9jjuSq9B667JGhKL/view?usp=drive_link" },
+           { name: "Sample Paper 10", url: "https://drive.google.com/file/d/1TkdE2OumJ2hSBUZ70eaTFZnrsf6ysZxJ/view?usp=drive_link" },
+        ],
+        schoolpapers: [
+          { name: "Paper 01", url: "https://drive.google.com/file/d/1b2JIYfKp0klpNxb2ZDfKR2kuoSYvn_58/view?usp=drive_link" },
+          { name: "Paper 02", url: "https://drive.google.com/file/d/1LLxM1SBYEhl731hUNvrI_kATCuT25Ilr/view?usp=drive_link" },
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1kO77SkcKAAcwQZv99dKcUYou-10jmor-/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1RYwZ_Doi-h6M0x72fiwHW-CSuhnO2y-I/view?usp=drive_link" },
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1zhzTnOHGHC8K3Z3tPvM4oB9XRP9Mvr88/view?usp=drive_link" },
+          { name: "Paper 06", url: "https://drive.google.com/file/d/1d06LyYPu2Ial9WOEfYFODw_fnxikWg8f/view?usp=drive_link" },
+          { name: "Paper 07", url: "https://drive.google.com/file/d/12M9QjA1UjndNIqFdy8ShU4zi7eSwDPHt/view?usp=drive_link" },
+          { name: "Paper 08", url: "https://drive.google.com/file/d/1HKK7IA7TJ8j9k2WBQSc6RcwYZbRaBDzU/view?usp=drive_link" },
+          { name: "Paper 09", url: "https://drive.google.com/file/d/1ZS75b_LYjuJe88K9Gtf9SOsFY1qX8yeO/view?usp=drive_link" },
+          { name: "Paper 10", url: "https://drive.google.com/file/d/1ad9AeAWUc_iq37Fc5lOczI4dy8Mq0lck/view?usp=drive_link" },
+        ]
+      },
+      science: {
+        notes: [
+          { name: "Matter in Our Surroundings", url: "https://drive.google.com/file/d/1W9NmwbvdFtPnhxb_t6_VAvvDEyThLMwi/view?usp=sharing" },
+          { name: "Is Matter Around Us Pure ?", url: "https://drive.google.com/file/d/1GmeqdPY8aDwakwTPoP6xi63Q73MKYnWk/view?usp=drive_link" },
+          { name: "Atoms and Molecules", url: "https://drive.google.com/file/d/10hOF_hKcDYRg_uma8QK76J0crf5obKTO/view?usp=drive_link" },
+          { name: "Structure of Atoms", url: "https://drive.google.com/file/d/1fOfDP_MCO-F7UCaKpPi1o2Xl7EY5OyJa/view?usp=drive_link" },
+          { name: "The Fundamental Unit of Life", url: "https://drive.google.com/file/d/1eKQ1nHp4VuwkBQuSDCSAacZlW-nrBl7i/view?usp=drive_link" },
+          { name: "Tissues", url: "https://drive.google.com/file/d/1oONM0b6ePuq4w-yt4a_DkzAEzvOtM6Jj/view?usp=drive_link" },
+          
+          { name: "Motion", url: "https://drive.google.com/file/d/1hbj4efN2BcsXTC8gPXW0etk6CBKRM-2_/view?usp=drive_link" },
+          { name: "Force and Laws of Motion", url: "https://drive.google.com/file/d/1A29PxzN8ZaY8luI-kvuwAB6c0-aA6XYf/view?usp=drive_link" },
+          { name: "Gravitation", url: "https://drive.google.com/file/d/1JdKZ15VgvwID_l6CvarR05_JBih4u3_A/view?usp=drive_link" },
+          { name: "Work and Energy", url: "https://drive.google.com/file/d/1OySx9v-SXDUPWofQfAPd3RC9VUXIrGVH/view?usp=drive_link" },
+          { name: "Sound", url: "https://drive.google.com/file/d/1SaylMqb6SHg8olEvGWZjfEFEia2iif65/view?usp=drive_link" },
+          { name: "Improvement in Food Resources", url: "https://drive.google.com/file/d/1oJYEbeV7Xs543BbRA8T6G-FUObRJCUBr/view?usp=drive_link" },
+        ],
+        assignments: [
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/1DOW52abam8lQE7SnhiV72JgeEq-LAQ9C/view?usp=sharing" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1D3f6BUsXxPMe0dwQrGYVgB17L_ujbrvD/view?usp=drive_link" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/1yuABWGJXsaYen7qVUq7m0gZAkZTz0kGe/view?usp=drive_link" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/1yfxtD8ln8YjIuIVY44qVFdWiekEXMun3/view?usp=drive_link" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/1BXYcQH_HskOVXExg3k42P1wUxKXQpdem/view?usp=drive_link" },
+          { name: "Chapter 6", url: "https://drive.google.com/file/d/1Dwpp5SBYK2Kg3YMBW-pzeekmuzESG4HX/view?usp=drive_link" },
+          { name: "Chapter 7", url: "https://drive.google.com/file/d/1xZZaXGWW_uJ0rFd30gysvP6LtiXQC8l8/view?usp=drive_link" },
+          { name: "Chapter 8", url: "https://drive.google.com/file/d/1H9PysANiRHDXRSB2w6359vG9-hEN7eEm/view?usp=drive_link" },
+          { name: "Chapter 9", url: "https://drive.google.com/file/d/1uTUNoyO8CHx4gXeTktq2jCWgzpRvgyVT/view?usp=drive_link" },
+          { name: "Chapter 10", url: "https://drive.google.com/file/d/1OFrmJDzvbgC7HyoGVD4m4EL0ne0hag2u/view?usp=drive_link" },
+          { name: "Chapter 11", url: "https://drive.google.com/file/d/14ErIN-chw6OEyxgz5exfmWlUu7aiL_Q4/view?usp=drive_link" },
+          { name: "Chapter 12", url: "https://drive.google.com/file/d/1JMEeWDKrAlniqcml3Mp5EUJKeiG77PjQ/view?usp=drive_link" },
+
+        ],
+        samplepapers: [
+          { name: "Sample Paper 01", url: "https://drive.google.com/file/d/1oi_lotQzIZsrDJwy0bIfcoM7sHnblVxh/view?usp=drive_link" },
+          { name: "Sample Paper 02", url: "https://drive.google.com/file/d/1w7Bkr016C_M_Uuolf2By1abN0asUsQ4e/view?usp=drive_link" },
+          { name: "Sample Paper 03", url: "https://drive.google.com/file/d/1jsSrwqM4jALOQWz4RjW6l8UvQIqphTUs/view?usp=drive_link" },
+          { name: "Sample Paper 04", url: "https://drive.google.com/file/d/1-oFcBZTkS7dNS8inU-xvorMW_T2qW3vb/view?usp=drive_link" },
+          { name: "Sample Paper 05", url: "https://drive.google.com/file/d/1gUKWptgSapMJ3mPbb11E-eHXSezNzTls/view?usp=drive_link" },
+          { name: "Sample Paper 06", url: "https://drive.google.com/file/d/1oOU982DcjHItUMa91blhfBXN4F6sBNXO/view?usp=drive_link" },
+          { name: "Sample Paper 07", url: "https://drive.google.com/file/d/1-yRXv0W1TIvwnZStbG-VFJwEXTkolPh1/view?usp=drive_link" },
+          { name: "Sample Paper 08", url: "https://drive.google.com/file/d/1LTSJS0VynHVIor6_CYeemaEGWKr7eunb/view?usp=drive_link" },
+          { name: "Sample Paper 09", url: "https://drive.google.com/file/d/1SGzki4fhf4ihm98qk7Dvw_nmVTxT7KAv/view?usp=drive_link" },
+          { name: "Sample Paper 10", url: "https://drive.google.com/file/d/18SzY9dK5WIvcp6VDkR6S8fSLVQJkrgtD/view?usp=drive_link" },
+        ],
+        schoolpapers: [
+          { name: "Paper 01", url: "https://drive.google.com/file/d/1LjRtj499P12jNEa4E1kbOXIrGrSvn0q4/view?usp=drive_link" },
+          { name: "Paper 02", url: "https://drive.google.com/file/d/198MjNroQv7vIp0FdQzx4QgAkcxQWAe7a/view?usp=drive_link" },
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1EV7SAMZBfp5sW3BTs5rdwzfnZ04NGCJ0/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/17hJGLpU0zPFo2Zf-CQ1AKsLeijNtBjcO/view?usp=drive_link" },
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1WynOeqP_vol03KU79NFS5_IiIXmhBP4W/view?usp=drive_link" },
+          { name: "Paper 06", url: "https://drive.google.com/file/d/1aew5Yp2oa8XzhRCskvVhidmDNdk_iY-M/view?usp=drive_link" },
+          { name: "Paper 07", url: "https://drive.google.com/file/d/1udATBrazp7d6tXGrEFQdmWUOH8a4IgMZ/view?usp=drive_link" },
+          { name: "Paper 08", url: "https://drive.google.com/file/d/1XY0ZDnBhtSUWMDWevQFoN6I4_lPv-iLR/view?usp=drive_link" },
+          { name: "Paper 09", url: "https://drive.google.com/file/d/1w2jN_6bqZ7pMXxnlfsyELNSHvM-iJDfD/view?usp=drive_link" },
+          { name: "Paper 10", url: "https://drive.google.com/file/d/1RB_J07a7Z9HM3CeNgwDhC9vUJxrfyMP8/view?usp=drive_link" },
+        ]
+      }
+    };
+
+function showPDFList(subject, type) {
+
+  const listEl = document.getElementById('pdfList');
+  const titleEl = document.getElementById('pdfTitle');
+  const data = pdfData[subject][type];
+
+  listEl.innerHTML = '';
+
+  titleEl.textContent =
+    subject.charAt(0).toUpperCase() + subject.slice(1) +
+    " - " + formatType(type);
+
+  listEl.style.display = 'flex';
+  listEl.style.flexWrap = 'wrap';
+  listEl.style.justifyContent = 'center';
+  listEl.style.gap = '30px';
+
+  // Handle object (future safe)
+  if (typeof data === 'object' && !Array.isArray(data)) {
+
+    for (const key in data) {
+      const column = document.createElement('div');
+      column.className = 'pdf-column';
+
+      const heading = document.createElement('h4');
+      heading.textContent = key.toUpperCase();
+      column.appendChild(heading);
+
+      const ul = document.createElement('ul');
+
+      data[key].forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+
+      column.appendChild(ul);
+      listEl.appendChild(column);
+    }
+
+  } else {
+
+    const column = document.createElement('div');
+    column.className = 'pdf-column';
+
+    const heading = document.createElement('h4');
+    heading.textContent = formatType(type);
+    column.appendChild(heading);
+
+    const ul = document.createElement('ul');
+
+    data.forEach(pdf => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+
+      link.href = pdf.url;
+      link.textContent = pdf.name;
+      link.target = "_blank";
+
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+
+    column.appendChild(ul);
+    listEl.appendChild(column);
+  }
+
+  document.getElementById('assetsection')
+    .scrollIntoView({ behavior: 'smooth' });
+}
+
+
+/* FORMAT */
+function formatType(type) {
+  switch(type) {
+    case 'notes': return 'Notes';
+    case 'assignments': return 'Assignments';
+    case 'samplepapers': return 'Sample Papers';
+    case 'schoolpapers': return 'School Question Papers';
+    default: return type;
+  }
+}
+
+
+/* MOBILE NAV */
+document.getElementById("nav-toggle").onclick = () => {
+  document.getElementById("nav-menu").classList.toggle("show");
+};
+// 🔥 SAFE FORMAT FUNCTION
+function formatType(type) {
+  switch(type) {
+    case 'notes': return 'Notes';
+    case 'assignments': return 'Assignments';
+    case 'samplepapers': return 'Sample Papers';
+    case 'previous': return 'Previous Year Questions';
+    default: return type;
+  }
+}
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+document.addEventListener("keydown", function (e) {
+  // Disable Ctrl combinations
+  if (
+    (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+    e.key === "F12"
+  ) {
+    e.preventDefault();
+  }
+});
+  const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+</script>
+
+</body>
+</html>

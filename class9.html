@@ -37,15 +37,56 @@
   border-radius: 10px;
   min-width: 250px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}</style>
+}
+.syllabus-banner{
+    background:#fff8d6;
+    border:2px solid #ffd54f;
+    border-radius:12px;
+    padding:20px;
+    margin:20px 0 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.new-btn{
+    background:#0d6efd;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.new-btn:hover{
+    background:#084298;
+}
+</style>
 <body>
 
 <div id="navbar-placeholder"></div>
 
 <main>
-  <h2>Class 9 Resources</h2>
 
-  <div class="subject-container">
+<h2>Class 9 Resources (New Syllabus)</h2>
+
+<div class="syllabus-banner">
+
+    <div>
+        <strong>Need resources based on the previous CBSE syllabus?</strong><br>
+        You can still access all the old notes, assignments and question papers.
+    </div>
+
+    <a href="class9-old.html" class="new-btn">
+        View Old Syllabus →
+    </a>
+
+</div>
+
+<div class="subject-container">
 
     <!-- MATHS -->
     <section class="subject" id="maths">
@@ -98,33 +139,27 @@ fetch('navbar.html')
     const pdfData = {
       maths: {
         notes: [
-          { name: "Number Systems", url: "https://drive.google.com/file/d/1RDYE21PMh_-NwO8mPeUfNTskDw9G_kh2/view?usp=sharing" },
-          { name: "Polynomials", url: "https://drive.google.com/file/d/1iry579Tvql0-BoyEgL-XajUWSP-yvgKs/view?usp=sharing" },
-          { name: "Coordinate Geometry", url: "https://drive.google.com/file/d/1g2GlOvotnyQI9xLOUqfdz-rAM6CtJP1F/view?usp=drive_link" },
-          { name: "Linear Equations in two variables", url: "https://drive.google.com/file/d/1RWP18ee_fj7fYraNY7x4P5nHOdDXwLg2/view?usp=drive_link" },
-          { name: "Introduction to Euclids Geometry", url: "https://drive.google.com/file/d/1BcmjxjUHMucpXMbWle-dtmROwEiyg5AB/view?usp=drive_link" },
-          { name: "Lines and Angles", url: "https://drive.google.com/file/d/1oc9l7xt1zeaoSe7i04Pkfua-qKVP3f_A/view?usp=drive_link" },
-          { name: "Triangles", url: "https://drive.google.com/file/d/1WWnIQJSIhI_Zr6kQXskIlsm9s71KKbnd/view?usp=drive_link" },
-          { name: "Quadrilaterals", url: "https://drive.google.com/file/d/1Xz9hO1zUHkpj-QDiwMTBd8-N1eK6GMed/view?usp=drive_link" },
-          { name: "Circles", url: "https://drive.google.com/file/d/1xoiOLm6wVAtbZSKaT_x64UcNkdxU3BnA/view?usp=drive_link" },
-          { name: "Heron's Formula", url: "https://drive.google.com/file/d/1Qg6Y1lm6TYlXDvDhk5tylMeXUn7Fvo33/view?usp=drive_link" },
-          { name: "Surface Areas and Volume", url: "https://drive.google.com/file/d/1pjaaq43hoEulMeNTiXy8eEM1MEPm3BXS/view?usp=drive_link" },
-          { name: "Statistics", url: "https://drive.google.com/file/d/1s_hcVFXwH_u2qILm8Opi43NeZl0H1So3/view?usp=drive_link" },
+          { name: "Orienting Yourself: The Use of Coordinates", url: "https://drive.google.com/file/d/1jfw6DtNl5Ph2bChc7ccmHwCface9SaNQ/view?usp=sharing" },
+          { name: "Introduction to Linear Polynomials ", url: "https://drive.google.com/file/d/190xb9bIXL2F3gRGDe26wE2PQZhTxr03Z/view?usp=sharing" },
+          { name: "The World of Numbers ", url: "https://drive.google.com/file/d/1LpjbnAN6UyYJUZ4wmGnFXovUfMZ0G-VR/view?usp=sharing" },
+          { name: "Exploring Algebraic Identities", url: "https://drive.google.com/file/d/18UTtG0tThD2Z-ckgyZF1puAX1BOvkQnK/view?usp=sharing" },
+          { name: "I’m Up and Down, and Round and Round", url: "https://drive.google.com/file/d/1eUoXOnqkI6mmrloQ69JE8cTSkO1MG5rY/view?usp=sharing" },
+          { name: "Measuring Space: Perimeter and Area ", url: "https://drive.google.com/file/d/1oc9l7xt1zeaoSe7i04Pkfua-qKVP3f_A/view?usp=drive_link" },
+          { name: "The Mathematics of Maybe: Introduction to Probability ", url: "https://drive.google.com/file/d/1LgXIhsemkNqj9FNMkfgDFYWjifcICGjw/view?usp=sharing" },
+          { name: "Predicting What Comes Next: Exploring Sequences and Progressions ", url: "https://drive.google.com/file/d/1Xz9hO1zUHkpj-QDiwMTBd8-N1eK6GMed/view?usp=drive_link" },
+      
           
         ],
         assignments: [
-          { name: "Chapter 1", url: "https://drive.google.com/file/d/1CwjjmI4LKEGU6rpNjP87RfC6f3jIgFML/view?usp=sharing" },
-          { name: "Chapter 2", url: "https://drive.google.com/file/d/1SF1xYpJGKBm7zQ1tnqxOzSlMpixgv_Jo/view?usp=drive_link" },
-          { name: "Chapter 3", url: "https://drive.google.com/file/d/1GgCdzfyJeZpAA0QdxCiEeMKyTP4718aj/view?usp=drive_link" },
+          { name: "Chapter 1", url: "https://drive.google.com/file/d/14Vi0RfkRuSwIj-y6CJk-80h3QAfNAHlN/view?usp=sharing" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1lp7f79qt7vAMmX7qU-yc-JQlZZ4OvL8D/view?usp=sharing" },
+          { name: "Chapter 3", url: "https://drive.google.com/file/d/14q6JxZR8-ho5YQnAwxUGsQxT4yHDsViy/view?usp=sharing" },
           { name: "Chapter 4", url: "https://drive.google.com/file/d/18iC7UmMco80_aNUkqHvJJaUQiKESA1Hq/view?usp=drive_link" },
-          { name: "Chapter 5", url: "https://drive.google.com/file/d/15yxh1jmftZjj_cWo96JRo5aceMHJRlhu/view?usp=drive_link" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/1IcU_4sn5XjkbY8gxNOb-GkFOtXpnl-uU/view?usp=sharing" },
           { name: "Chapter 6", url: "https://drive.google.com/file/d/1ZFe9MgNIx-I3EnYTsIZ60N3JBssdfFDS/view?usp=drive_link" },
           { name: "Chapter 7", url: "https://drive.google.com/file/d/1twz1UdLyNZgXSDhHxht-werJmsxewmGu/view?usp=drive_link" },
           { name: "Chapter 8", url: "https://drive.google.com/file/d/1otes9_hKyWYjMYkR6weZEfo6580XJOBo/view?usp=drive_link" },
-          { name: "Chapter 9", url: "https://drive.google.com/file/d/1yoSbXPdBAmqDg79kybpZdEtkz4oXwa9v/view?usp=drive_link" },
-          { name: "Chapter 10", url: "https://drive.google.com/file/d/1SOGcgbkLyVTxA_VQD8jLcRUiGnByGmWh/view?usp=drive_link" },
-          { name: "Chapter 11", url: "https://drive.google.com/file/d/14PYy6q6NJTD8iTwWjkKDOfYhW3lnFwZh/view?usp=drive_link" },
-          { name: "Chapter 12", url: "https://drive.google.com/file/d/1tYZFfJ9DUM7AY7AtYad_eYDq5sKtDr90/view?usp=drive_link" },
+         
         ],
         samplepapers: [
            { name: "Sample Paper 01", url: "https://drive.google.com/file/d/1d6N2pbD2qwN_6BE39TUHNvbCcU9qk9c0/view?usp=drive_link" },
@@ -153,33 +188,35 @@ fetch('navbar.html')
       },
       science: {
         notes: [
-          { name: "Matter in Our Surroundings", url: "https://drive.google.com/file/d/1W9NmwbvdFtPnhxb_t6_VAvvDEyThLMwi/view?usp=sharing" },
-          { name: "Is Matter Around Us Pure ?", url: "https://drive.google.com/file/d/1GmeqdPY8aDwakwTPoP6xi63Q73MKYnWk/view?usp=drive_link" },
-          { name: "Atoms and Molecules", url: "https://drive.google.com/file/d/10hOF_hKcDYRg_uma8QK76J0crf5obKTO/view?usp=drive_link" },
-          { name: "Structure of Atoms", url: "https://drive.google.com/file/d/1fOfDP_MCO-F7UCaKpPi1o2Xl7EY5OyJa/view?usp=drive_link" },
-          { name: "The Fundamental Unit of Life", url: "https://drive.google.com/file/d/1eKQ1nHp4VuwkBQuSDCSAacZlW-nrBl7i/view?usp=drive_link" },
-          { name: "Tissues", url: "https://drive.google.com/file/d/1oONM0b6ePuq4w-yt4a_DkzAEzvOtM6Jj/view?usp=drive_link" },
+          { name: "Exploration: Entering the World of Secondary Science", url: "https://drive.google.com/file/d/1V9AgBUnIN7L_rHhY1VG1XXmkrIGIC23n/view?usp=sharing" },
+          { name: "Cell: The Building Block of Life ", url: "https://drive.google.com/file/d/1qY37UpeatcQ_7FrLNae_JYAVRMF-xHoM/view?usp=sharing" },
+          { name: "Tissues in Action", url: "https://drive.google.com/file/d/1MHBlF3nIEaF9RV3Fthu2TE-Ay9e7wSVV/view?usp=sharing" },
+          { name: "Describing Motion Around Us ", url: "https://drive.google.com/file/d/1Sl_oAdrRNeJMWZqLMGO6sn9ZIAijCTU4/view?usp=sharing" },
+          { name: "Exploring Mixtures and their Separation", url: "https://drive.google.com/file/d/1vvbf2oFYH0CUKH9qY8FDCQuj-owAuHK4/view?usp=sharing" },
+          { name: "How Forces Affect Motion ", url: "" },
           
-          { name: "Motion", url: "https://drive.google.com/file/d/1hbj4efN2BcsXTC8gPXW0etk6CBKRM-2_/view?usp=drive_link" },
-          { name: "Force and Laws of Motion", url: "https://drive.google.com/file/d/1A29PxzN8ZaY8luI-kvuwAB6c0-aA6XYf/view?usp=drive_link" },
-          { name: "Gravitation", url: "https://drive.google.com/file/d/1JdKZ15VgvwID_l6CvarR05_JBih4u3_A/view?usp=drive_link" },
-          { name: "Work and Energy", url: "https://drive.google.com/file/d/1OySx9v-SXDUPWofQfAPd3RC9VUXIrGVH/view?usp=drive_link" },
-          { name: "Sound", url: "https://drive.google.com/file/d/1SaylMqb6SHg8olEvGWZjfEFEia2iif65/view?usp=drive_link" },
-          { name: "Improvement in Food Resources", url: "https://drive.google.com/file/d/1oJYEbeV7Xs543BbRA8T6G-FUObRJCUBr/view?usp=drive_link" },
+          { name: "Work, Energy, and Simple Machines ", url: "" },
+          { name: "Journey Inside the Atom ", url: "https://drive.google.com/file/d/1zBEnI7inDkRs4rVIX71EGkVYv1vrXcbY/view?usp=sharing" },
+          { name: "Atomic Foundations of Matter ", url: "" },
+          { name: "Sound Waves: Characteristics and Applications ", url: "" },
+          { name: "Reproduction: How Life Continues ", url: "" },
+          { name: "Patterns in Life: Diversity and Classification ", url: "" },
+          {name: "Earth as a System: Energy, Matter, and Life",url:""}
         ],
         assignments: [
-          { name: "Chapter 1", url: "https://drive.google.com/file/d/1DOW52abam8lQE7SnhiV72JgeEq-LAQ9C/view?usp=sharing" },
-          { name: "Chapter 2", url: "https://drive.google.com/file/d/1D3f6BUsXxPMe0dwQrGYVgB17L_ujbrvD/view?usp=drive_link" },
-          { name: "Chapter 3", url: "https://drive.google.com/file/d/1yuABWGJXsaYen7qVUq7m0gZAkZTz0kGe/view?usp=drive_link" },
-          { name: "Chapter 4", url: "https://drive.google.com/file/d/1yfxtD8ln8YjIuIVY44qVFdWiekEXMun3/view?usp=drive_link" },
-          { name: "Chapter 5", url: "https://drive.google.com/file/d/1BXYcQH_HskOVXExg3k42P1wUxKXQpdem/view?usp=drive_link" },
-          { name: "Chapter 6", url: "https://drive.google.com/file/d/1Dwpp5SBYK2Kg3YMBW-pzeekmuzESG4HX/view?usp=drive_link" },
-          { name: "Chapter 7", url: "https://drive.google.com/file/d/1xZZaXGWW_uJ0rFd30gysvP6LtiXQC8l8/view?usp=drive_link" },
-          { name: "Chapter 8", url: "https://drive.google.com/file/d/1H9PysANiRHDXRSB2w6359vG9-hEN7eEm/view?usp=drive_link" },
-          { name: "Chapter 9", url: "https://drive.google.com/file/d/1uTUNoyO8CHx4gXeTktq2jCWgzpRvgyVT/view?usp=drive_link" },
-          { name: "Chapter 10", url: "https://drive.google.com/file/d/1OFrmJDzvbgC7HyoGVD4m4EL0ne0hag2u/view?usp=drive_link" },
-          { name: "Chapter 11", url: "https://drive.google.com/file/d/14ErIN-chw6OEyxgz5exfmWlUu7aiL_Q4/view?usp=drive_link" },
-          { name: "Chapter 12", url: "https://drive.google.com/file/d/1JMEeWDKrAlniqcml3Mp5EUJKeiG77PjQ/view?usp=drive_link" },
+          { name: "Chapter 1", url: "" },
+          { name: "Chapter 2", url: "https://drive.google.com/file/d/1EFQoHm9XvtXkfD-LN16qbU1ZlqgBrCsP/view?usp=sharing" },
+          { name: "Chapter 3", url: "" },
+          { name: "Chapter 4", url: "https://drive.google.com/file/d/1hdw6gvOmuX129Df2R1Ci4H3zdWSGl1_7/view?usp=sharing" },
+          { name: "Chapter 5", url: "https://drive.google.com/file/d/1kY4hSZBPBTktwUJKrkJMrR-Sqw0KTBhf/view?usp=sharing" },
+          { name: "Chapter 6", url: "" },
+          { name: "Chapter 7", url: "" },
+          { name: "Chapter 8", url: "" },
+          { name: "Chapter 9", url: "" },
+          { name: "Chapter 10", url: "" },
+          { name: "Chapter 11", url: "" },
+          { name: "Chapter 12", url: "" },
+          { name: "Chapter 13", url: "" },
 
         ],
         samplepapers: [
