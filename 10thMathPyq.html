@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Class 10 Maths PYQ Practice · khanclasses.in</title>
+<title>Class 10 Maths PYQ Practice · Khan Study Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -114,9 +114,32 @@ sup,sub{line-height:0}
 .rt .rb{border-top:1px solid currentColor;padding:0 .1em}
 .ol{text-decoration:overline}
 
-footer{border-top:2px solid var(--red);background:var(--card)}
-footer .wrap{padding-top:16px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center;font-family:var(--display);font-weight:600;font-size:14px}
-footer .btn{min-height:38px;font-size:13px}
+/* ---- Khan Study Portal header / footer ---- */
+.sp-header{background:#14213D;color:#fff;position:relative;z-index:10}
+.sp-bar{max-width:1100px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.sp-title{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.01em;color:#fff;text-decoration:none}
+.sp-nav{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
+.sp-nav a{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;padding:8px 12px;border-radius:8px;min-height:40px;display:inline-flex;align-items:center}
+.sp-nav a:hover,.sp-nav a:focus-visible{background:rgba(255,255,255,.14)}
+.sp-nav a[aria-current="page"]{background:#2F5BEA}
+.sp-burger{display:none;background:transparent;border:1.5px solid rgba(255,255,255,.55);color:#fff;border-radius:8px;font-size:22px;line-height:1;min-width:44px;min-height:44px;cursor:pointer}
+.sp-crumb{background:var(--card);border-bottom:1px solid var(--line);font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink2)}
+.sp-crumb .wrap{padding-top:8px;padding-bottom:8px}
+.sp-crumb a{color:var(--pen);text-decoration:none}
+.sp-crumb a:hover{text-decoration:underline}
+.pyq-tools .wrap{padding-top:4px;padding-bottom:26px;text-align:right}
+.pyq-tools .btn{min-height:38px;font-size:13px}
+.sp-footer{background:#14213D;color:#fff;text-align:center;padding:20px 16px;margin:0;font-family:var(--display)}
+.sp-footer p{margin:4px 0;font-size:14.5px}
+.sp-footer a{color:#fff;font-weight:700;text-decoration:underline}
+@media (max-width:760px){
+  .sp-burger{display:inline-flex;align-items:center;justify-content:center}
+  .sp-nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding-top:6px}
+  .sp-nav.open{display:flex}
+  .sp-nav a{padding:12px 12px;font-size:16px}
+  .sp-title{font-size:20px}
+  .pyq-tools .wrap{text-align:center}
+}
 
 @media (max-width:560px){
   body{font-size:16px}
@@ -126,11 +149,82 @@ footer .btn{min-height:38px;font-size:13px}
   .opts{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){.bar>i{transition:none}}
+
+/* ============ responsive hardening (added) ============ */
+html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+body{overflow-wrap:break-word;max-width:100%}
+img,svg,video,canvas{max-width:100%}
+.wrap,main,header,footer,nav,.controls,.field{min-width:0}
+.field{max-width:100%}
+select{max-width:100%;min-width:0;text-overflow:ellipsis}
+.q{grid-template-columns:58px minmax(0,1fr)}
+.opts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.opts.one{grid-template-columns:minmax(0,1fr)}
+.opt,.bd,.part{min-width:0}
+.qt,.sol,.arlist{max-width:100%;overflow-x:auto;overflow-y:hidden;padding-top:3px;padding-bottom:3px}
+.sol{padding-left:14px;padding-right:14px}
+.fig{max-width:100%;overflow-x:auto}
+.figs{max-width:100%}
+.count,.prog-top,.sub,h1{max-width:100%}
+@media (max-width:640px){
+  .field{flex:1 1 100%}
+  .field select{width:100%}
+  .controls{gap:8px 10px}
+  .chips{max-width:100%}
+}
+@media (max-width:560px){
+  .q{grid-template-columns:44px minmax(0,1fr)}
+  .opts{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:425px){
+  body{font-size:15.5px}
+  .wrap{padding-left:12px;padding-right:12px}
+  .hero .wrap{padding-top:22px;padding-bottom:18px}
+  .sub{font-size:15px;margin-bottom:16px}
+  .bd{padding:10px}
+  .btn{padding:7px 12px}
+  .chip{padding:5px 11px;min-height:36px}
+  .opt{padding:8px 10px}
+  .sol{font-size:15px}
+  .lv{min-width:118px;padding:7px 11px}
+  .brandbar .wrap{font-size:13.5px}
+}
+@media (max-width:360px){
+  .q{grid-template-columns:38px minmax(0,1fr)}
+  .no{font-size:16px}
+  .mk{font-size:12px}
+  .lv{min-width:108px}
+  .tag{font-size:11.5px}
+  .act{gap:6px}
+  .btn{font-size:13px;padding:7px 10px}
+}
+/* ============ content protection (added) ============ */
+*{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
+html{-webkit-tap-highlight-color:transparent}
+img,svg{-webkit-user-drag:none;user-drag:none}
+input,textarea{-webkit-user-select:text;user-select:text}
 </style>
 </head>
 <body>
 
-<div class="brandbar"><div class="wrap">khanclasses.in by MD ABDAL KHAN</div></div>
+<!-- PORTAL HEADER (matches Khan Study Portal) -->
+<header class="sp-header">
+  <div class="sp-bar">
+    <a class="sp-title" href="https://abdal1999.github.io/Study-Portal/index.html">Khan Study Portal</a>
+    <button class="sp-burger" id="spBurger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="spNav">&#9776;</button>
+    <nav class="sp-nav" id="spNav" aria-label="Main">
+      <a href="https://abdal1999.github.io/Study-Portal/index.html">Home</a>
+      <a href="https://abdal1999.github.io/Study-Portal/class9.html">Class 9</a>
+      <a href="https://abdal1999.github.io/Study-Portal/class10.html" aria-current="page">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="#">Class 12</a>
+      <a href="https://abdal1999.github.io/Study-Portal/blog.html">Blog</a>
+      <a href="https://www.khanclasses.in">&#128640; Learn With Me</a>
+    </nav>
+  </div>
+</header>
+<div class="sp-crumb"><div class="wrap"><a href="https://abdal1999.github.io/Study-Portal/class10.html">&lsaquo; Class 10</a> <span>/ Mathematics / PYQ Practice</span></div></div>
+</div>
 
 <header class="hero">
   <div class="wrap">
@@ -165,11 +259,13 @@ footer .btn{min-height:38px;font-size:13px}
   </div>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span>khanclasses.in by MD ABDAL KHAN</span>
-    <button class="btn" id="reset" type="button">Reset my progress</button>
-  </div>
+<!-- reset button kept from the original page (progress is stored on the student's own device) -->
+<div class="pyq-tools"><div class="wrap"><button class="btn" id="reset" type="button">Reset my progress</button></div></div>
+
+<!-- PORTAL FOOTER (matches Khan Study Portal) -->
+<footer class="sp-footer">
+  <p>Created with &#10084;&#65039; by <a href="https://khanclasses.in/" title="About Me">MD ABDAAL KHAN</a></p>
+  <p>&copy; 2025 Khan Study Portal</p>
 </footer>
 
 <script>
@@ -188,7 +284,7 @@ const CHAPTERS=[
   {n:1,name:'Real Numbers',ready:true},
   {n:2,name:'Polynomials',ready:true},{n:3,name:'Pair of Linear Equations in Two Variables',ready:true},
   {n:4,name:'Quadratic Equations',ready:true},{n:5,name:'Arithmetic Progressions',ready:true},{n:6,name:'Triangles',ready:true},
-  {n:7,name:'Coordinate Geometry'},{n:8,name:'Introduction to Trigonometry'},
+  {n:7,name:'Coordinate Geometry',ready:true},{n:8,name:'Introduction to Trigonometry'},
   {n:9,name:'Some Applications of Trigonometry'},{n:10,name:'Circles'},
   {n:11,name:'Areas Related to Circles'},{n:12,name:'Surface Areas and Volumes'},
   {n:13,name:'Statistics'},{n:14,name:'Probability'}
@@ -1809,6 +1905,259 @@ cs(15,[],`In ΔABC, DE ∥ BC with D on AB and E on AC. AD = 2 cm and DB = 3 cm.
 CUR=1;
 
 
+/* ===================== CHAPTER 7: COORDINATE GEOMETRY ===================== */
+CUR=7;
+
+/* coordinate-plane figure helpers (built on plot) */
+const mk=(ps,o)=>{const dots=ps.map(p=>[p[1],p[2]]),lb=ps.map(p=>[p[1]+(p[3]===undefined?0.25:p[3]),p[2]+(p[4]===undefined?0.25:p[4]),p[0],p[5]||'start']);
+  return plot(Object.assign({grid:true,ticks:true,dots,lb},o));};
+const SG=(d,str,col)=>str.split(' ').filter(Boolean).map(t=>[d[t[0]][0],d[t[0]][1],d[t[1]][0],d[t[1]][1],col]);
+const nline=(pts,alt)=>{let s='<line x1="25" y1="35" x2="255" y2="35" stroke="currentColor" stroke-width="1.8"/>';
+  pts.forEach(p=>{s+=`<circle cx="${p[0]}" cy="35" r="3.5" fill="currentColor"/>`+tx(p[0],58,p[1],'middle',13);});
+  return box(280,75,s,alt||'Line segment with marked points');};
+
+/* ===== 1 mark: MCQ ===== */
+mcq(1,[],`The coordinates of a point A on y-axis at a distance of 4 units from x-axis and below it are`,['(4, 0)','(0, 4)','(−4, 0)','(0, −4)'],3,`A point on the y-axis has x-coordinate 0. Below the x-axis the y-coordinate is negative, so A = (0, −4).`);
+mcq(2,[2025],`The distance of which of the following points from origin is less than 5 units?`,['(3, 4)','(2, 6)','(−3, −4)','(1, 4)'],3,`Distance from the origin = √{x^{2} + y^{2}}. (3, 4) → 5; (2, 6) → √{40}; (−3, −4) → 5; (1, 4) → √{17} < 5.`);
+mcq(3,[2025],`The distance of the point A from x-axis is 3 units. Which of the following cannot be the coordinate of the point A?`,['(1, 3)','(−3, −3)','(−3, 3)','(3, 1)'],3,`The distance from the x-axis is the absolute value of the y-coordinate, which must be 3. In (3, 1) the y-coordinate is 1, so it cannot be A.`);
+mcq(4,[],`The co-ordinates of the point which is reflection of point (−3, 5) in x-axis are`,['(3, 5)','(3, −5)','(−3, −5)','(−3, 5)'],2,`Reflection in the x-axis changes the sign of the y-coordinate only: (−3, −5).`);
+mcq(5,[2023],`The distance between the points (0, 2√{5}) & (−2√{5}, 0) is`,['2√{10} units','4√{10} units','2√{20} units','0'],0,`d^{2} = (2√{5})^{2} + (2√{5})^{2} = 20 + 20 = 40, so d = √{40} = 2√{10}.`);
+mcq(6,[2023],`The distance between the points P(−[[11|3]], 5), Q(−[[2|3]], 5) is`,['6 units','4 units','2 units','3 units'],3,`The y-coordinates are equal, so the distance = |−[[2|3]] − (−[[11|3]])| = [[9|3]] = 3 units.`);
+mcq(7,[],`The distance between the points (a cos θ + b sin θ, 0) and (0, a sin θ − b cos θ) is`,['a^{2} + b^{2}','a^{2} − b^{2}','√{a^{2} + b^{2}}','√{a^{2} − b^{2}}'],2,`d^{2} = (a cos θ + b sin θ)^{2} + (a sin θ − b cos θ)^{2} = a^{2}(cos^{2}θ + sin^{2}θ) + b^{2}(sin^{2}θ + cos^{2}θ) = a^{2} + b^{2}. So d = √{a^{2} + b^{2}}.`);
+mcq(8,[2024],`The distance between the points (a cos θ, −a sin θ) and (a sin θ, a cos θ) is`,['a','a√{2}','0','2a'],1,`d^{2} = a^{2}(cos θ − sin θ)^{2} + a^{2}(cos θ + sin θ)^{2} = a^{2}(2) = 2a^{2}. So d = a√{2}.`);
+mcq(9,[2023,2025],`The distance of the point (−1, 7) from x-axis is`,['−1','7','6','√{50}'],1,`The distance from the x-axis is the absolute value of the y-coordinate = 7.`);
+mcq(10,[2023],`The distance of the point (−6, 8) from origin is`,['6','−6','8','10'],3,`d = √{36 + 64} = √{100} = 10.`);
+mcq(11,[2023,2025],`The end points of a diameter of a circle are (2, 4), (−3, −1). The radius of the circle is`,['2√{5}','[[5|2]]√{5}','[[5|2]]√{2}','5√{2}'],2,`Diameter = √{(2 + 3)^{2} + (4 + 1)^{2}} = √{50} = 5√{2}. Radius = [[5√{2}|2]] = [[5|2]]√{2}.`);
+mcq(12,[2024],`XOYZ is a rectangle with vertices X(−3, 0), O(0, 0), Y(0, 4) & Z(x, y). The length of its each diagonal is`,['5 units','√{5} units','x^{2} + y^{2} units','4 units'],0,`The diagonal XY = √{(0 + 3)^{2} + (4 − 0)^{2}} = √{9 + 16} = 5 units (the other diagonal OZ has the same length).`);
+mcq(13,[2025],`The perimeter of the triangle formed by the vertices (0, 0), (2, 0) and (0, 2) is`,['4 units','6 units','6√{2} units','4 + 2√{2} units'],3,`The sides are 2, 2 and √{4 + 4} = 2√{2}. Perimeter = 4 + 2√{2}.`);
+mcq(14,[],`If the distance between the points A(4, p) and B(1, 0) is 5 units then the value(s) of p is(are)`,['4 only','−4 only','±4','0'],2,`AB^{2} = 9 + p^{2} = 25, so p^{2} = 16 and p = ±4.`);
+mcq(15,[2024],`If the distance between the points (3, −5) and (x, −5) is 15 units, then the values of x are`,['12, −18','−12, 18','18, 5','−9, −12'],1,`|x − 3| = 15, so x = 18 or x = −12.`);
+mcq(16,[2023,2025],`The points (−4, 0), (4, 0), (0, 3) are the vertices of a`,['Right triangle','isosceles','equilateral','scalene'],1,`The sides are 8, √{16 + 9} = 5 and 5. Two sides are equal, and 5^{2} + 5^{2} = 50 ≠ 64, so it is isosceles (not right-angled).`);
+mcq(17,[],`If points A(−3, 12), B(7, 6), C(x, 9) are collinear then the value of x is`,['2','3','4','5'],0,`Slope of AB = [[6 − 12|7 + 3]] = −[[3|5]]. Slope of AC = [[9 − 12|x + 3]] = −[[3|x + 3]]. Equal slopes give x + 3 = 5, so x = 2.`);
+mcq(18,[],`The point P on x-axis equidistant from the points A(−1, 0), B(5, 0) is`,['(2, 0)','(0, 2)','(3, 0)','(−3, 5)'],0,`P is the mid-point of AB: (2, 0).`);
+mcq(19,[],`The point on x-axis which is equidistant from the points A(−2, 3), B(5, 4) is`,['(0, 2)','(2, 0)','(3, 0)','(−2, 0)'],1,`Let P = (x, 0). (x + 2)^{2} + 9 = (x − 5)^{2} + 16, so 4x + 13 = −10x + 41 and x = 2. P = (2, 0).`);
+mcq(20,[2023],`If AB is a chord of a circle with centre at O(2, 3), where the coordinates of A and B are (4, 3), (x, 5) respectively, then the value of x is`,['2','3','4','5'],0,`OA = √{4 + 0} = 2, so OB = 2 as well. (x − 2)^{2} + 4 = 4, so x = 2.`);
+mcq(21,[2025],`In the given figure, points P, Q, R divides the line segment AB in four equal parts. The points Q divides PB in the ratio`,['1 : 3','2 : 3','1 : 2','1 : 1'],2,`Each part has the same length, say 1. PQ = 1 and QB = QR + RB = 2. So PQ : QB = 1 : 2.`,{fig:nline([[30,'A'],[87,'P'],[145,'Q'],[202,'R'],[255,'B']],'A, P, Q, R, B equally spaced on a line')});
+mcq(22,[2025],`The point P divides the line segment AB in the ratio 3 : 1 as shown below. The value of [[AB|PB]] is`,['3','[[1|4]]','4','[[1|3]]'],2,`AP : PB = 3 : 1, so AB = AP + PB = 4 parts and PB = 1 part. [[AB|PB]] = 4.`,{fig:nline([[30,'A'],[205,'P'],[255,'B']],'P divides AB in the ratio 3 : 1')});
+mcq(23,[],`The point which divides the line segment joining the points (8, −9) and (2, 3) in the ratio 1 : 2 internally lies in the`,['I quadrant','II quadrant','III quadrant','IV quadrant'],3,`x = [[1(2) + 2(8)|3]] = 6 and y = [[1(3) + 2(−9)|3]] = −5. The point (6, −5) has x > 0 and y < 0: IV quadrant.`);
+mcq(24,[2025],`The coordinate of the point dividing the line segment joining the points A(1, 3), B(4, 6) in the ratio 2 : 1 is`,['(5, 3)','(3, 5)','(4, 6)','(6, 4)'],1,`x = [[2(4) + 1(1)|3]] = 3 and y = [[2(6) + 1(3)|3]] = 5. The point is (3, 5).`);
+mcq(25,[2024],`Point P divides the line segment joining the points A(4, −5) & B(1, 2) in the ratio 5 : 2. Co-ordinates of P are`,['([[5|2]], −[[3|2]])','([[11|7]], 0)','([[13|7]], 0)','(0, [[13|7]])'],2,`x = [[5(1) + 2(4)|7]] = [[13|7]] and y = [[5(2) + 2(−5)|7]] = 0. P = ([[13|7]], 0).`);
+mcq(26,[2023],`The point of intersection of the line represented by 3x − y = 3 and y-axis is given by`,['(0, −3)','(0, 3)','(2, 0)','(−2, 0)'],0,`On the y-axis x = 0, so −y = 3 and y = −3. The point is (0, −3).`);
+mcq(27,[2023],`The coordinates of the point where the line 2y = 4x + 5 crosses x-axis is`,['(0, −[[5|4]])','(0, [[5|2]])','(−[[5|4]], 0)','(−[[5|2]], 0)'],2,`On the x-axis y = 0, so 4x + 5 = 0 and x = −[[5|4]]. The point is (−[[5|4]], 0).`);
+mcq(28,[2023],`In what ratio, does x-axis divide the line segment joining the points A(3, 6), B(−12, −3)?`,['1 : 2','1 : 4','4 : 1','2 : 1'],3,`Let the ratio be k : 1. The y-coordinate of the dividing point is [[−3k + 6|k + 1]] = 0, so k = 2. The ratio is 2 : 1.`);
+mcq(29,[],`The ratio in which the point (2, y) divides the join of (−4, 3) and (6, 3) hence the value of y is`,['2 : 3, y = 3','3 : 2, y = 4','3 : 2, y = 3','3 : 2, y = 2'],2,`Let the ratio be k : 1. [[6k − 4|k + 1]] = 2 gives k = [[3|2]], so the ratio is 3 : 2. The y-coordinate is 3 (both end points have y = 3).`);
+mcq(30,[],`If the point P(6, 2) divides the line segment joining A(6, 5) and B(4, y) in the ratio 3 : 1 then the value of y is`,['1','2','3','4'],0,`Using the y-coordinate: [[3y + 5|4]] = 2, so 3y = 3 and y = 1. (Note: the x-coordinate of P would then be [[3(4) + 6|4]] = 4.5, so the question as printed is not fully consistent; the expected answer uses the y-coordinate.)`);
+mcq(31,[],`If the point P(k, 0) divides the line segment joining the points A(2, −2), B(−7, 4) in the ratio 1 : 2 then the value of k is`,['1','2','−1','−2'],2,`k = [[1(−7) + 2(2)|3]] = [[−3|3]] = −1.`);
+mcq(32,[],`If the point C(k, 4) divides the line segment joining two points A(2, 6), B(5, 1) in ratio 2 : 3 then the value of k is`,['[[5|16]]','[[16|5]]','[[9|5]]','[[5|9]]'],1,`k = [[2(5) + 3(2)|5]] = [[16|5]]. (Check: y = [[2(1) + 3(6)|5]] = 4 ✓.)`);
+mcq(33,[2025],`The midpoint of the line segment joining the points P(−4, 5) and Q(4, 6) lies on`,['x-axis','origin','y-axis','neither x-axis nor y-axis'],2,`The mid-point is ([[−4 + 4|2]], [[5 + 6|2]]) = (0, 5.5). Its x-coordinate is 0, so it lies on the y-axis.`);
+mcq(34,[],`C is the mid-point of PQ, if P(4, x), C(y, −1), Q(−2, 4) then x and y respectively are`,['−6 and 1','−6 and 2','6 and −1','6 and −2'],0,`y = [[4 − 2|2]] = 1 and −1 = [[x + 4|2]], so x = −6.`);
+mcq(35,[],`If A([[m|3]], 5) is the mid-point of the line segment joining the points Q(−6, 7), R(−2, 3) then the value of m is`,['−12','−4','12','−6'],0,`[[m|3]] = [[−6 − 2|2]] = −4, so m = −12.`);
+mcq(36,[2025],`If the midpoint of the line segment joining the points (a, 4) and (2, 2b) is (2, 6) then the value of (a + b) is`,['6','7','8','16'],0,`[[a + 2|2]] = 2 gives a = 2, and [[4 + 2b|2]] = 6 gives b = 4. So a + b = 6.`);
+mcq(37,[],`If the centre of a circle is (3, 5) and end points of a diameter are (4, 7) and (2, y) then the value of y is`,['3','−3','7','4'],0,`The centre is the mid-point of the diameter: [[7 + y|2]] = 5, so y = 3.`);
+mcq(38,[2024],`The centre of a circle is at (2, 0). If one end of a diameter is at (6, 0) then the other end is at`,['(0, 0)','(4, 0)','(−2, 0)','(−6, 0)'],2,`Let the other end be (x, y). [[6 + x|2]] = 2 gives x = −2, and y = 0. The other end is (−2, 0).`);
+mcq(39,[],`If the mid-point of the line segment joining the points A(3, 4), B(k, 6) is P(x, y) and x + y − 10 = 0 the value of k will be`,['4','5','6','7'],3,`P = ([[3 + k|2]], 5). x + y = 10 gives [[3 + k|2]] + 5 = 10, so 3 + k = 10 and k = 7.`);
+mcq(40,[],`If x − 2y + k = 0 is a median of the triangle whose vertices are at points A(−1, 3), B(0, 4), C(−5, 2) then the value of k is`,['2','4','6','8'],3,`The median from B goes to the mid-point of AC, which is (−3, [[5|2]]). Substituting: −3 − 5 + k = 0, so k = 8.`);
+mcq(41,[2024],`AD is a median of ΔABC with vertices A(5, −6), B(6, 4) & C(0, 0), length of AD is`,['√{68} units','2√{15} units','√{101} units','10 units'],0,`D is the mid-point of BC = (3, 2). AD = √{(5 − 3)^{2} + (−6 − 2)^{2}} = √{4 + 64} = √{68}.`);
+mcq(42,[],`Points A(3, 1), B(5, 1), C(a, b) and D(4, 3) are vertices of a parallelogram. The values of a and b are`,['6 and 3','2 and 1','4 and 2','none of these'],0,`The diagonals AC and BD bisect each other: [[3 + a|2]] = [[5 + 4|2]] and [[1 + b|2]] = [[1 + 3|2]]. So a = 6 and b = 3.`);
+mcq(43,[2023],`The coordinates of the vertex A of a rectangle ABCD whose three vertices are given as B(0, 0), C(3, 0) & D(0, 4) are`,['(4, 0)','(0, 3)','(3, 4)','(4, 3)'],2,`The three given points B(0, 0), C(3, 0) and D(0, 4) are three corners of a 3 × 4 rectangle, so the fourth vertex is (3, 4). (The labelling of the vertices is not in order, but the missing vertex is (3, 4).)`);
+mcq(44,[2024],`If the vertices of the parallelogram PQRS taken in order are P(3, 4), Q(−2, 3) and R(−3, −2) then the co-ordinates of its fourth vertex S are`,['(−2, −1)','(−2, −3)','(2, −1)','(1, 2)'],2,`The diagonals PR and QS bisect each other, so P + R = Q + S: S = (3 − 3 + 2, 4 − 2 − 3) = (2, −1).`);
+mcq(45,[2025],`AOBC is a rectangle whose three vertices are A(0, 2), B(4, 0) and O(0, 0). The square of the length of its diagonal is equal to`,['36','20','16','4'],1,`The diagonal AB (the other diagonal is OC) has AB^{2} = 4^{2} + 2^{2} = 20.`);
+mcq(46,[],`The centroid of the triangle whose vertices are (3, −7), (−8, 6) and (5, 10) is`,['(0, 9)','(0, 3)','(1, 3)','(3, 5)'],1,`Centroid = ([[3 − 8 + 5|3]], [[−7 + 6 + 10|3]]) = (0, 3).`);
+
+/* ===== Assertion-Reason ===== */
+ar(47,[],`The point (0, 4) lies on y-axis.`,`The x coordinate on the point on y-axis is zero.`,0,`Every point on the y-axis has x-coordinate 0, and (0, 4) has x = 0. A is true and R explains it.<br><span class="ans">Answer: (a)</span>`);
+ar(48,[],`The point (3, 0) lies on x-axis.`,`The x coordinate on the point on y-axis is zero.`,1,`A point with y-coordinate 0 lies on the x-axis, so A is true. R is also a true statement, but it is about the y-axis and does not explain why (3, 0) is on the x-axis.<br><span class="ans">Answer: (b)</span>`);
+ar(49,[2023],`Point P(0, 2) is the point of intersection of y-axis with the line 3x + 2y = 4.`,`The distance of point P(0, 2) from x-axis is 2 units.`,1,`At x = 0 the line gives 2y = 4, so y = 2 and P(0, 2) is the intersection. A is true. R is also true, but the distance from the x-axis has nothing to do with why P is the intersection point.<br><span class="ans">Answer: (b)</span>`);
+ar(50,[],`The value of y is 6, for which the distance between the points P(2, −3) and Q(10, y) is 10.`,`Distance between two given points A(x_{1}, y_{1}) and B(x_{2}, y_{2}) is given AB = √{(x_{2} − x_{1})^{2} + (y_{2} − y_{1})^{2}}.`,3,`PQ^{2} = 64 + (y + 3)^{2} = 100, so (y + 3)^{2} = 36 and y = 3 or y = −9. So y = 6 is not correct and A is false. R is the correct distance formula.<br><span class="ans">Answer: (d)</span>`);
+ar(51,[2024],`The point which divides the line segment joining the points A(1, 2) and B(−1, 1) internally in the ratio 1 : 2 is (−[[1|3]], [[5|3]]).`,`The coordinates of the point which divides the line segment joining the points A(x_{1}, y_{1}) & B(x_{2}, y_{2}) in the ratio m_{1} : m_{2} are ([[m_{1}x_{2} + m_{2}x_{1}|m_{1} + m_{2}]], [[m_{1}y_{2} + m_{2}y_{1}|m_{1} + m_{2}]]).`,3,`By the section formula the point is ([[1(−1) + 2(1)|3]], [[1(1) + 2(2)|3]]) = ([[1|3]], [[5|3]]), not (−[[1|3]], [[5|3]]). So A is false. R is the correct section formula.<br><span class="ans">Answer: (d)</span>`);
+ar(52,[],`The point (−1, 6) divides the line segment joining the points (−3, 10) and (6, −8) in the ratio 2 : 7 internally.`,`Given three points A, B and C form an equilateral triangle then AB = BC = AC.`,1,`With ratio 2 : 7: x = [[2(6) + 7(−3)|9]] = −1 and y = [[2(−8) + 7(10)|9]] = 6. So A is true. R is also a true statement, but it has no connection with the section formula, so it is not the explanation.<br><span class="ans">Answer: (b)</span>`);
+ar(53,[2023],`If the points A(4, 3), B(x, 5) lie on a circle with centre O(2, 3) then the value of x is 2.`,`Centre of a circle is the mid-point of each chord of the circle.`,2,`OA = 2, so OB = 2: (x − 2)^{2} + 4 = 4 and x = 2. A is true. R is false: the centre is the mid-point only of a diameter, not of every chord.<br><span class="ans">Answer: (c)</span>`);
+ar(54,[2024],`Mid-point of a line segment divides the line segment in the ratio 1 : 1.`,`The ratio in which the point (−3, k) divides the line segment joining the points (−5, 4) & (−2, 3) is 1 : 2.`,2,`The mid-point divides the segment into two equal parts, so A is true. For R: [[m(−2) + n(−5)|m + n]] = −3 gives −2m − 5n = −3m − 3n, so m = 2n and the ratio is 2 : 1, not 1 : 2. So R is false.<br><span class="ans">Answer: (c)</span>`);
+
+/* ===== 2 marks ===== */
+vsa(1,[],`What is the distance of the point P(3, 4) from x-axis?`,`The distance from the x-axis is the absolute value of the y-coordinate, so it is <b>4 units</b>.`);
+vsa(2,[],`The ordinate of a point A on y-axis is 5 and B has coordinates (−3, 1). Find the length of AB?`,`A is on the y-axis, so A = (0, 5). AB = √{(−3 − 0)^{2} + (1 − 5)^{2}} = √{9 + 16} = <b>5 units</b>.`);
+vsa(3,[],`If the distance between the points A(4, p), B(1, 0) is 5 units then what are the values of p?`,`AB^{2} = (4 − 1)^{2} + p^{2} = 9 + p^{2} = 25, so p^{2} = 16 and <b>p = ±4</b>.`);
+vsa(4,[2023],`Find the points on the x-axis, each of which is at a distance of 10 units from the point A(11, −8).`,`Let the point be P(x, 0). PA^{2} = (x − 11)^{2} + 64 = 100, so (x − 11)^{2} = 36 and x − 11 = ±6.<br>x = 17 or x = 5. The points are <b>(17, 0) and (5, 0)</b>.`);
+vsa(5,[2024],`Find the type of triangle ABC formed whose vertices are A(1, 0), B(−5, 0) & C(−2, 5).`,`AB = 6. AC = √{(−2 − 1)^{2} + 5^{2}} = √{34}. BC = √{(−2 + 5)^{2} + 5^{2}} = √{34}.<br>AC = BC ≠ AB, so ΔABC is an <b>isosceles triangle</b>.`,{fig:mk([['A',1,0,0.3,0.5],['B',-5,0,-0.6,0.5,'end'],['C',-2,5,0.3,0.3]],{alt:'Triangle ABC',w:270,h:220,x0:-7,x1:3,y0:-1,y1:6,segs:[[1,0,-5,0],[-5,0,-2,5],[-2,5,1,0]]})});
+vsa(6,[],`If A(5, 2), B(2, −2) and C(−2, t) are the vertices of a right angled triangle with ∠B = 90° then find the value of t.`,`∠B = 90°, so AB^{2} + BC^{2} = AC^{2}.<br>AB^{2} = 9 + 16 = 25, BC^{2} = 16 + (t + 2)^{2}, AC^{2} = 49 + (t − 2)^{2}.<br>25 + 16 + t^{2} + 4t + 4 = 49 + t^{2} − 4t + 4, so 8t = 8 and <b>t = 1</b>.`);
+vsa(7,[2023],`Show that the points (−2, 3), (8, 3), (6, 7) are the vertices of a right angled triangle.`,`Let A(−2, 3), B(8, 3), C(6, 7). AB^{2} = 100, BC^{2} = 4 + 16 = 20, AC^{2} = 64 + 16 = 80.<br>BC^{2} + AC^{2} = 20 + 80 = 100 = AB^{2}. By the converse of Pythagoras the triangle is right-angled at C.`);
+vsa(8,[2023],`Show that the points (−3, −3), (3, 3), (−3√{3}, 3√{3}) are the vertices of an equilateral triangle.`,`Let A(−3, −3), B(3, 3), C(−3√{3}, 3√{3}).<br>AB = √{36 + 36} = 6√{2}. BC^{2} = (3 + 3√{3})^{2} + (3 − 3√{3})^{2} = 2(9) + 2(27) = 72, so BC = 6√{2}. CA^{2} = (3√{3} − 3)^{2} + (3√{3} + 3)^{2} = 2(27) + 2(9) = 72, so CA = 6√{2}.<br>AB = BC = CA, so the triangle is equilateral.`);
+vsa(9,[],`If three points (0, 0), (3, √{3}) and (3, λ) form an equilateral triangle, then what is the value of λ?`,`The side joining (0, 0) and (3, √{3}) = √{9 + 3} = 2√{3}.<br>The distance from (0, 0) to (3, λ) must also be 2√{3}: 9 + λ^{2} = 12, so λ = ±√{3}.<br>The distance between (3, √{3}) and (3, λ) is |λ − √{3}| = 2√{3}, which holds only for λ = −√{3}.<br><b>λ = −√{3}</b>.`);
+vsa(10,[2023],`Prove that A(4, 3), B(6, 4), C(5, 6), D(3, 5) are the vertices of a square.`,`AB = √{4 + 1} = √{5}, BC = √{1 + 4} = √{5}, CD = √{4 + 1} = √{5}, DA = √{1 + 4} = √{5}. All four sides are equal.<br>Diagonals: AC = √{1 + 9} = √{10} and BD = √{9 + 1} = √{10}, which are equal.<br>A quadrilateral with equal sides and equal diagonals is a square. Hence proved.`);
+vsa(11,[2023],`Show that A(0, −1), B(6, 7), C(−2, 3), D(8, 3) are the vertices of a rectangle ABCD.`,`(Taking the points as printed, the vertices go round the figure in the order A, C, B, D; with the labels B and C swapped the figure is the rectangle ABCD.)<br>Sides: AC = √{(−2 − 0)^{2} + (3 + 1)^{2}} = √{20}, CB = √{(6 + 2)^{2} + (7 − 3)^{2}} = √{80}, BD = √{(8 − 6)^{2} + (3 − 7)^{2}} = √{20}, DA = √{(8 − 0)^{2} + (3 + 1)^{2}} = √{80}. Opposite sides are equal, so it is a parallelogram.<br>Diagonals: AB = √{36 + 64} = 10 and CD = √{(8 + 2)^{2} + 0} = 10. The diagonals are equal.<br>Mid-point of AB = (3, 3) and mid-point of CD = (3, 3), so the diagonals bisect each other.<br>A parallelogram with equal diagonals is a rectangle. Hence shown.`);
+vsa(12,[],`The x coordinate of a point P is twice its y coordinate. If P is equidistant from Q(2, −5), R(−3, 6), find the coordinates of P.`,`Let P = (2y, y). PQ^{2} = PR^{2}: (2y − 2)^{2} + (y + 5)^{2} = (2y + 3)^{2} + (y − 6)^{2}.<br>5y^{2} + 2y + 29 = 5y^{2} + 45, so 2y = 16 and y = 8.<br>P = <b>(16, 8)</b>.`);
+vsa(13,[],`If the point P(x, y) is equidistant from the points Q(a + b, b − a), R(a − b, a + b) then prove that bx = ay.`,`PQ^{2} = PR^{2}: (x − a − b)^{2} + (y − b + a)^{2} = (x − a + b)^{2} + (y − a − b)^{2}.<br>Expanding and cancelling the squares: −2x(a + b) − 2y(b − a) + [(a + b)^{2} + (b − a)^{2}] = −2x(a − b) − 2y(a + b) + [(a − b)^{2} + (a + b)^{2}].<br>The bracketed terms are equal, so −2xa − 2xb − 2yb + 2ya = −2xa + 2xb − 2ya − 2yb, i.e. −4bx + 4ay = 0.<br>Hence bx = ay.`);
+vsa(14,[2024],`Find a relation between x and y such that the point P(x, y) is equidistant from the points A(7, 1) and B(3, 5).`,`PA^{2} = PB^{2}: (x − 7)^{2} + (y − 1)^{2} = (x − 3)^{2} + (y − 5)^{2}.<br>−14x + 50 − 2y = −6x + 34 − 10y, so −8x + 8y + 16 = 0.<br><b>x − y = 2</b>.`);
+vsa(15,[2023],`The point P(x, y) is equidistant from points A(5, 1), B(1, 5). Prove that x = y.`,`PA^{2} = PB^{2}: (x − 5)^{2} + (y − 1)^{2} = (x − 1)^{2} + (y − 5)^{2}.<br>−10x − 2y + 26 = −2x − 10y + 26, so −8x + 8y = 0.<br>Hence x = y.`);
+vsa(16,[],`If the points A(4, 3), B(x, 5) are on the circle with centre O(2, 3) then what is the value of x?`,`OA = √{(4 − 2)^{2} + 0} = 2. OB = OA, so (x − 2)^{2} + (5 − 3)^{2} = 4, i.e. (x − 2)^{2} = 0.<br><b>x = 2</b>.`);
+vsa(17,[2025],`Prove that abscissa of a point P which is equidistant from points A(7, 1) and B(3, 5) is 2 more than its ordinate.`,`Let P = (x, y). PA^{2} = PB^{2}: (x − 7)^{2} + (y − 1)^{2} = (x − 3)^{2} + (y − 5)^{2}.<br>−14x − 2y + 50 = −6x − 10y + 34, so −8x + 8y + 16 = 0, i.e. x = y + 2.<br>So the abscissa is 2 more than the ordinate. Hence proved.`);
+vsa(18,[],`Find the coordinate of the point dividing the line segment joining the points A(1, 3) and B(4, 6) in the ratio 2 : 1.`,`P = ([[2(4) + 1(1)|3]], [[2(6) + 1(3)|3]]) = <b>(3, 5)</b>.`);
+vsa(19,[2023],`The line segment joining the points A(4, −5), B(4, 5) is divided by the point P such that AP : AB = 2 : 5. Find the coordinates of P.`,`AP : AB = 2 : 5, so AP : PB = 2 : 3.<br>P = ([[2(4) + 3(4)|5]], [[2(5) + 3(−5)|5]]) = (4, −1).<br>P = <b>(4, −1)</b>.`);
+vsa(20,[2025],`The coordinates of the end points of the line segment AB are A(−2, −2) and B(2, −4). P is the point on AB such that BP = [[4|7]]AB. Find the coordinates of point P.`,`BP = [[4|7]]AB, so BP : PA = 4 : 3, i.e. AP : PB = 3 : 4.<br>P = ([[3(2) + 4(−2)|7]], [[3(−4) + 4(−2)|7]]) = <b>(−[[2|7]], −[[20|7]])</b>.`);
+vsa(21,[2025],`Find the coordinates of the point C which lies on the line AB produced such that AC = 2BC where the coordinates of points A(−1, 7) and B(4, −3).`,`AC = 2BC with C on AB produced (beyond B), so B is the mid-point of AC.<br>[[−1 + x|2]] = 4 and [[7 + y|2]] = −3, so x = 9 and y = −13.<br>C = <b>(9, −13)</b>.`);
+vsa(22,[2023],`Find the ratio in which y-axis divides the line segment joining the points (5, −6), (−1, −4).`,`Let the ratio be k : 1. The x-coordinate of the dividing point = [[k(−1) + 5|k + 1]] = 0, so k = 5.<br>The ratio is <b>5 : 1</b>.`);
+vsa(23,[],`Find the ratio in which the point P([[3|4]], [[5|12]]) divides the line segment joining the points A([[1|2]], [[3|2]]) and (2, −5).`,`Let the ratio be k : 1. [[2k + 1/2|k + 1]] = [[3|4]], so 8k + 2 = 3k + 3 and k = [[1|5]].<br>(Check: y = [[−5(1/5) + 3/2|6/5]] = [[5|12]] ✓.) The ratio is <b>1 : 5</b>.`);
+vsa(24,[2023,2024],`Find the ratio in which line y = x divides the line segment joining the points (6, −3), (1, 6).`,`Let the ratio be k : 1 and the point be (x, x). x = [[k(1) + 6|k + 1]] and y = [[6k − 3|k + 1]].<br>x = y gives k + 6 = 6k − 3, so k = [[9|5]].<br>The ratio is <b>9 : 5</b>.`);
+vsa(25,[2023],`Find the ratio in which the point (−1, k) divides the line segment joining the points (−3, 10), (6, −8). Also find the value of k.`,`Let the ratio be m : 1. [[6m − 3|m + 1]] = −1 gives 7m = 2, so m = [[2|7]]. The ratio is <b>2 : 7</b>.<br>k = [[−8(2/7) + 10|9/7]] = [[−16 + 70|9]] = <b>6</b>.`);
+vsa(26,[],`The mid-point of the line segment AB is P(0, 4), if the coordinates of B are (−2, 3) then find the coordinates of A.`,`Let A = (x, y). [[x − 2|2]] = 0 and [[y + 3|2]] = 4, so x = 2 and y = 5.<br>A = <b>(2, 5)</b>.`);
+vsa(27,[],`If A([[m|3]], 5) is the mid-point of the line segment joining the points Q(−6, 7), R(−2, 3) then what is the value of m?`,`[[m|3]] = [[−6 − 2|2]] = −4, so <b>m = −12</b>. (Check: y = [[7 + 3|2]] = 5 ✓.)`);
+vsa(28,[2023],`A line intersects y-axis and x-axis at point P and Q respectively. If R(2, 5) is the mid-point of line segment PQ, then find the coordinates of P and Q.`,`Let P = (0, a) and Q = (b, 0). The mid-point is ([[b|2]], [[a|2]]) = (2, 5), so b = 4 and a = 10.<br>P = <b>(0, 10)</b> and Q = <b>(4, 0)</b>.`);
+vsa(29,[],`If the centre of a circle is (3, 5) and end points of a diameter are (4, 7) and (2, y). What is the value of y?`,`The centre is the mid-point of the diameter: [[7 + y|2]] = 5, so <b>y = 3</b>.`);
+vsa(30,[2024],`Points A(−1, y) & B(5, 7) lie on a circle O(2, −3y) such that AB is a diameter of the circle. Find the value of y. Also, find the radius of the circle.`,`O is the mid-point of AB: [[y + 7|2]] = −3y, so y + 7 = −6y and <b>y = −1</b>.<br>Then A = (−1, −1) and O = (2, 3). Radius = OA = √{(2 + 1)^{2} + (3 + 1)^{2}} = √{25} = <b>5 units</b>.`);
+vsa(31,[2023],`If A(−2, −1), B(a, 0), C(4, b), D(1, 2) are the vertices of a parallelogram ABCD then find the values of a and b.`,`The diagonals AC and BD bisect each other, so A + C = B + D.<br>(−2 + 4, −1 + b) = (a + 1, 0 + 2), so a + 1 = 2 and b − 1 = 2.<br><b>a = 1 and b = 3</b>.`);
+vsa(32,[2023],`The three vertices of a parallelogram ABCD taken in order, are A(−1, 0), B(3, 1), C(2, 2). Find the coordinates of the fourth vertex D.`,`The diagonals bisect each other, so A + C = B + D.<br>D = (−1 + 2 − 3, 0 + 2 − 1) = <b>(−2, 1)</b>.`);
+vsa(33,[2023],`Show that the points A(6, 4), B(5, −2), C(7, −2) are the vertices of an isosceles triangle. Also, find the length of the median through point A.`,`AB = √{1 + 36} = √{37}, AC = √{1 + 36} = √{37}, BC = 2. AB = AC, so the triangle is isosceles.<br>The median through A goes to the mid-point D of BC = (6, −2). AD = √{0 + 36} = <b>6 units</b>.`);
+vsa(34,[2025],`Find the length of the median through the point B of ΔABC with vertices A(9, −2), B(−3, 7) and C(−1, 10).`,`The median through B goes to the mid-point E of AC = (4, 4).<br>BE = √{(4 + 3)^{2} + (4 − 7)^{2}} = √{49 + 9} = <b>√{58} units</b>.`);
+vsa(35,[2024],`A(3, 0), B(6, 4), C(−1, 3) are vertices of a triangle ABC. Find length of its median BE.`,`E is the mid-point of AC = (1, [[3|2]]).<br>BE = √{(6 − 1)^{2} + (4 − [[3|2]])^{2}} = √{25 + [[25|4]]} = √{[[125|4]]} = <b>[[5√{5}|2]] units</b>.`);
+
+
+/* ===== 3 marks ===== */
+sa(1,[2024],`Show that A(6, 4), B(5, −2) and C(7, −2) are the vertices of an isosceles triangle.`,`AB = √{(5 − 6)^{2} + (−2 − 4)^{2}} = √{1 + 36} = √{37}.<br>AC = √{(7 − 6)^{2} + (−2 − 4)^{2}} = √{1 + 36} = √{37}.<br>BC = √{(7 − 5)^{2} + 0} = 2.<br>AB = AC, so ΔABC is an isosceles triangle.`);
+sa(2,[],`Show that A(−1, 0), B(3, 1), C(2, 2) and D(−2, 1) are the vertices of a parallelogram.`,`Mid-point of diagonal AC = ([[−1 + 2|2]], [[0 + 2|2]]) = ([[1|2]], 1). Mid-point of diagonal BD = ([[3 − 2|2]], [[1 + 1|2]]) = ([[1|2]], 1).<br>The diagonals bisect each other, so ABCD is a parallelogram.<br>(Check with sides: AB = √{17} = CD and BC = √{2} = DA.)`);
+sa(3,[2025],`P(x, y), Q(−2, −3) and R(2, 3) are the vertices of a right triangle PQR right angled at P. Find the relationship between x and y. Hence find all possible values of x for which y = 2.`,`∠P = 90°, so PQ^{2} + PR^{2} = QR^{2}.<br>(x + 2)^{2} + (y + 3)^{2} + (x − 2)^{2} + (y − 3)^{2} = 16 + 36 = 52.<br>2x^{2} + 2y^{2} + 26 = 52, so <b>x^{2} + y^{2} = 13</b>.<br>For y = 2: x^{2} = 9, so <b>x = ±3</b>.`);
+sa(4,[2025],`Find a relation between x and y such that P(x, y) is equidistant from the points A(3, 5) and B(7, 1). Hence, write the coordinates of the points on x-axis and y-axis which are equidistant from points A and B.`,`PA^{2} = PB^{2}: (x − 3)^{2} + (y − 5)^{2} = (x − 7)^{2} + (y − 1)^{2}.<br>−6x − 10y + 34 = −14x − 2y + 50, so 8x − 8y = 16, i.e. <b>x − y = 2</b>.<br>On the x-axis (y = 0): x = 2, so the point is <b>(2, 0)</b>. On the y-axis (x = 0): y = −2, so the point is <b>(0, −2)</b>.`);
+sa(5,[],`If the distance of P(x, y) from A(6, 2) and B(−2, 6) are equal. Prove that y = 2x.`,`PA^{2} = PB^{2}: (x − 6)^{2} + (y − 2)^{2} = (x + 2)^{2} + (y − 6)^{2}.<br>−12x − 4y + 40 = 4x − 12y + 40, so −16x + 8y = 0.<br>Hence y = 2x.`);
+sa(6,[2023],`If Q(0, 1) is equidistant from P(5, −3) & R(x, 6) find the values of x.`,`QP^{2} = 25 + 16 = 41 and QR^{2} = x^{2} + 25.<br>QP = QR gives x^{2} = 16, so <b>x = ±4</b>.`);
+sa(7,[],`In the given figure, ΔABC is an equilateral triangle of side 3 units. Find the co-ordinates of the other two vertices.`,`From the figure, A = (2, 0) and B lies on the x-axis, 3 units to the right of A: <b>B = (5, 0)</b>.<br>The third vertex C lies above the mid-point of AB, at x = [[2 + 5|2]] = [[7|2]]. Its height is the altitude of the equilateral triangle: [[√{3}|2]] × 3 = [[3√{3}|2]].<br><b>C = ([[7|2]], [[3√{3}|2]])</b>. (Check: AC^{2} = [[9|4]] + [[27|4]] = 9 ✓.)`,{fig:mk([['A',2,0,-0.3,-0.9,'end'],['B',5,0,0.2,-0.9],['C',3.5,2.6,0.25,0.25]],{alt:'Equilateral triangle ABC with AB on the x-axis',w:280,h:200,x0:-1,x1:8,y0:-1,y1:4,segs:[[2,0,5,0],[5,0,3.5,2.6],[3.5,2.6,2,0]]})});
+sa(8,[2023],`If (−5, 3) & (5, 3) are two vertices of an equilateral triangle then find co-ordinates of the third vertex given that origin lies inside the triangle. (Use √{3} = 1.7)`,`The side = 10 units. The third vertex lies on the perpendicular bisector of the side, the y-axis, at a distance [[√{3}|2]] × 10 = 5√{3} = 8.5 from the side y = 3.<br>The origin lies inside the triangle, and the side is above the origin, so the third vertex is below the side: y = 3 − 8.5 = −5.5.<br>The third vertex is <b>(0, −5.5)</b>.`);
+sa(9,[],`Find the coordinates of the points of trisection of the line segment joining the points A(1, −2) and B(−3, 4).`,`The points P and Q divide AB in the ratios 1 : 2 and 2 : 1.<br>P = ([[1(−3) + 2(1)|3]], [[1(4) + 2(−2)|3]]) = <b>(−[[1|3]], 0)</b>.<br>Q = ([[2(−3) + 1(1)|3]], [[2(4) + 1(−2)|3]]) = <b>(−[[5|3]], 2)</b>.`);
+sa(10,[2024],`P(−2, 5) & Q(3, 2) are two points. Find the coordinates of the point R on line segment PQ such that PR = 2QR.`,`PR : RQ = 2 : 1.<br>R = ([[2(3) + 1(−2)|3]], [[2(2) + 1(5)|3]]) = <b>([[4|3]], 3)</b>.`);
+sa(11,[],`If the co-ordinates of points A and B are (−2, −2) and (2, −4) respectively. Find the coordinates of P such that AP = [[3|7]]AB where P lies on the line segment AB.`,`AP = [[3|7]]AB, so AP : PB = 3 : 4.<br>P = ([[3(2) + 4(−2)|7]], [[3(−4) + 4(−2)|7]]) = <b>(−[[2|7]], −[[20|7]])</b>.`);
+sa(12,[],`The coordinates of the vertices of ΔABC are A(7, 2), B(9, 10) and C(1, 4). If E and F are the mid-points of AB and AC respectively. Prove that EF = [[1|2]]BC.`,`E = ([[7 + 9|2]], [[2 + 10|2]]) = (8, 6) and F = ([[7 + 1|2]], [[2 + 4|2]]) = (4, 3).<br>EF = √{(8 − 4)^{2} + (6 − 3)^{2}} = √{25} = 5.<br>BC = √{(9 − 1)^{2} + (10 − 4)^{2}} = √{100} = 10.<br>So EF = [[1|2]]BC. Hence proved.`);
+sa(13,[],`If the point C(−1, 2) divides internally the line segment joining the points A(2, 5), B(x, y) in the ratio 3 : 4. Find the coordinates of B.`,`−1 = [[3x + 4(2)|7]], so 3x + 8 = −7 and x = −5.<br>2 = [[3y + 4(5)|7]], so 3y + 20 = 14 and y = −2.<br>B = <b>(−5, −2)</b>.`);
+sa(14,[],`If the point C(−1, 2) divides internally the line segment joining the points A(2, 5), B(x, y) in the ratio 3 : 4 then find the value of x^{2} + y^{2}.`,`As in the previous question, 3x + 8 = −7 gives x = −5 and 3y + 20 = 14 gives y = −2.<br>x^{2} + y^{2} = 25 + 4 = <b>29</b>.`);
+sa(15,[],`Find the ratio in which P(4, m) divides the segment joining the points A(2, 3) and B(6, −3). Hence find m.`,`Let the ratio be k : 1. [[6k + 2|k + 1]] = 4, so 6k + 2 = 4k + 4 and k = 1. The ratio is <b>1 : 1</b>, so P is the mid-point.<br>m = [[3 + (−3)|2]] = <b>0</b>.`);
+sa(16,[2024],`Find the ratio in which the point ([[8|5]], y) divides the line segment joining the points (1, 2) & (2, 3). Also find the value of y.`,`Let the ratio be k : 1. [[2k + 1|k + 1]] = [[8|5]], so 10k + 5 = 8k + 8 and k = [[3|2]]. The ratio is <b>3 : 2</b>.<br>y = [[3(3) + 2(2)|5]] = <b>[[13|5]]</b>.`);
+sa(17,[2023],`Find the ratio in which the line segment joining the points A(6, 3), B(−2, −5) is divided by x-axis.`,`Let the ratio be k : 1. The y-coordinate of the dividing point is [[−5k + 3|k + 1]] = 0, so k = [[3|5]].<br>The ratio is <b>3 : 5</b>.`);
+sa(18,[2024],`Find the ratio in which the line segment joining the points A(5, 3) & B(−1, 6) is divided by y axis.`,`Let the ratio be k : 1. The x-coordinate of the dividing point is [[−k + 5|k + 1]] = 0, so k = 5.<br>The ratio is <b>5 : 1</b>.`);
+sa(19,[2025],`Find the ratio in which the y-axis divides the line segment joining the points (5, −6) and (−1, −4). Also find the point of intersection.`,`Let the ratio be k : 1. [[−k + 5|k + 1]] = 0, so k = 5. The ratio is <b>5 : 1</b>.<br>y = [[5(−4) + 1(−6)|6]] = −[[26|6]] = −[[13|3]]. The point of intersection is <b>(0, −[[13|3]])</b>.`);
+sa(20,[2024],`In what ratio does the x-axis divide the line segment joining the points (2, −3) & (5, 6)? Also find the coordinates of the point of intersection.`,`Let the ratio be k : 1. [[6k − 3|k + 1]] = 0, so k = [[1|2]]. The ratio is <b>1 : 2</b>.<br>x = [[5(1/2) + 2|3/2]] = [[9/2|3/2]] = 3. The point of intersection is <b>(3, 0)</b>.`);
+sa(21,[],`Find the ratio in which the line 2x + 3y − 5 = 0 divides the line segment joining the points (8, −9) and (2, 1). Also find the coordinates of the point of division.`,`Let the ratio be k : 1. The point is ([[2k + 8|k + 1]], [[k − 9|k + 1]]). It lies on the line: 2(2k + 8) + 3(k − 9) − 5(k + 1) = 0.<br>4k + 16 + 3k − 27 − 5k − 5 = 0, so 2k = 16 and k = 8. The ratio is <b>8 : 1</b>.<br>The point = ([[16 + 8|9]], [[8 − 9|9]]) = <b>([[8|3]], −[[1|9]])</b>.`);
+sa(22,[],`The vertices of ΔABC are A(6, −2), B(0, −6), C(4, 8). Find the co-ordinates of mid-points of AB, BC and AC.`,`Mid-point of AB = ([[6 + 0|2]], [[−2 − 6|2]]) = <b>(3, −4)</b>.<br>Mid-point of BC = ([[0 + 4|2]], [[−6 + 8|2]]) = <b>(2, 1)</b>.<br>Mid-point of AC = ([[6 + 4|2]], [[−2 + 8|2]]) = <b>(5, 3)</b>.`);
+sa(23,[2025],`If (a, b) is the mid-point of the line segment joining the points A(10, −6) and B(k, 4) and a − 2b = 18 then find the value of k and the distance AB.`,`a = [[10 + k|2]] and b = [[−6 + 4|2]] = −1.<br>a − 2b = 18 gives a = 16, so 10 + k = 32 and <b>k = 22</b>.<br>AB = √{(22 − 10)^{2} + (4 + 6)^{2}} = √{144 + 100} = <b>√{244} = 2√{61} units</b>.`);
+sa(24,[2025],`If the midpoint of the line segment joining the points A(3, 4) and B(k, 6) is P(x, y) and x + y − 10 = 0 then find the value of k.`,`P = ([[3 + k|2]], 5). x + y = 10 gives [[3 + k|2]] + 5 = 10, so 3 + k = 10 and <b>k = 7</b>.`);
+sa(25,[2023,2025],`The centre of a circle is (2a, a − 7). Find the values of ‘a’ if the circle passes through the point (11, −9). Radius of the circle is 5√{2} cm.`,`The distance from the centre to (11, −9) is the radius: (11 − 2a)^{2} + (−9 − a + 7)^{2} = 50.<br>121 − 44a + 4a^{2} + a^{2} + 4a + 4 = 50, so 5a^{2} − 40a + 75 = 0, i.e. a^{2} − 8a + 15 = 0.<br>(a − 3)(a − 5) = 0, so <b>a = 3 or a = 5</b>.`);
+sa(26,[],`Prove that the diagonals of a rectangle ABCD with vertices A(2, −1), B(5, −1), C(5, 6) and D(2, 6) are equal and bisect each other.`,`AC = √{(5 − 2)^{2} + (6 + 1)^{2}} = √{58} and BD = √{(2 − 5)^{2} + (6 + 1)^{2}} = √{58}. So AC = BD.<br>Mid-point of AC = ([[2 + 5|2]], [[−1 + 6|2]]) = ([[7|2]], [[5|2]]). Mid-point of BD = ([[5 + 2|2]], [[−1 + 6|2]]) = ([[7|2]], [[5|2]]).<br>The mid-points coincide, so the diagonals bisect each other. Hence proved.`);
+sa(27,[2024],`ABCD is a rectangle formed by the points A(−1, −1), B(−1, 6), C(3, 6), D(3, −1). P, Q, R and S are mid-points of sides AB, BC, CD & DA respectively. Show that diagonals of the quadrilaterals PQRS bisect each other.`,`P = (−1, [[5|2]]), Q = (1, 6), R = (3, [[5|2]]), S = (1, −1).<br>Mid-point of PR = ([[−1 + 3|2]], [[5/2 + 5/2|2]]) = (1, [[5|2]]).<br>Mid-point of QS = ([[1 + 1|2]], [[6 − 1|2]]) = (1, [[5|2]]).<br>The mid-points coincide, so the diagonals of PQRS bisect each other. Hence shown.`);
+sa(28,[2025],`If the points A(6, 1), B(p, 2), C(9, 4), D(7, q) are the vertices of a parallelogram ABCD, then find the values of p and q. Hence, check whether ABCD is a rectangle or not.`,`The diagonals bisect each other, so A + C = B + D: (15, 5) = (p + 7, 2 + q).<br><b>p = 8 and q = 3</b>.<br>Now AB = √{(8 − 6)^{2} + (2 − 1)^{2}} = √{5} and BC = √{(9 − 8)^{2} + (4 − 2)^{2}} = √{5}, so all sides are equal (it is a rhombus).<br>AC = √{9 + 9} = 3√{2} and BD = √{(7 − 8)^{2} + (3 − 2)^{2}} = √{2}. The diagonals are unequal, so ABCD is <b>not a rectangle</b>.`);
+sa(29,[2024],`Find the length of the median AD of ΔABC having vertices A(0, −1), B(2, 1) & C(0, 3).`,`D is the mid-point of BC = ([[2 + 0|2]], [[1 + 3|2]]) = (1, 2).<br>AD = √{(1 − 0)^{2} + (2 + 1)^{2}} = <b>√{10} units</b>.`);
+sa(30,[2025],`Find the coordinates of the points which divide the line segment joining the points A(−2, 2) and B(2, 8) into four equal parts.`,`The three points divide AB in the ratios 1 : 3, 1 : 1 and 3 : 1.<br>P_{1} = ([[1(2) + 3(−2)|4]], [[1(8) + 3(2)|4]]) = <b>(−1, [[7|2]])</b>.<br>P_{2} = mid-point = ([[−2 + 2|2]], [[2 + 8|2]]) = <b>(0, 5)</b>.<br>P_{3} = ([[3(2) + 1(−2)|4]], [[3(8) + 1(2)|4]]) = <b>(1, [[13|2]])</b>.`);
+
+/* ===== 5 marks ===== */
+la(1,[],`Show that the points P(2, −1), Q(3, 4), R(−2, 3) and S(−3, −2) are vertices of a rhombus but not a square.`,`PQ = √{(3 − 2)^{2} + (4 + 1)^{2}} = √{26}. QR = √{(−2 − 3)^{2} + (3 − 4)^{2}} = √{26}. RS = √{(−3 + 2)^{2} + (−2 − 3)^{2}} = √{26}. SP = √{(2 + 3)^{2} + (−1 + 2)^{2}} = √{26}.<br>All four sides are equal, so PQRS is a rhombus.<br>Diagonals: PR = √{(−2 − 2)^{2} + (3 + 1)^{2}} = √{32} = 4√{2} and QS = √{(−3 − 3)^{2} + (−2 − 4)^{2}} = √{72} = 6√{2}.<br>The diagonals are not equal, so PQRS is not a square. Hence it is a rhombus but not a square.`);
+la(2,[],`Point A lies on the line segment XY joining X(6, −6), Y(−4, −1) in such a way that [[XA|XY]] = [[2|5]]. If point A also lies on the line 3x + k(y + 1) = 0 find the value of k.`,`[[XA|XY]] = [[2|5]], so XA : AY = 2 : 3.<br>A = ([[2(−4) + 3(6)|5]], [[2(−1) + 3(−6)|5]]) = (2, −4).<br>A lies on 3x + k(y + 1) = 0: 3(2) + k(−4 + 1) = 0, so 6 − 3k = 0.<br><b>k = 2</b>.`);
+la(3,[],`The ratio in which the line x − 3y = 0 divides the line segment joining the points (−2, −5) and (6, 3). Find the coordinates of the point of intersection.`,`Let the ratio be k : 1. The point of division is ([[6k − 2|k + 1]], [[3k − 5|k + 1]]).<br>It lies on x − 3y = 0: (6k − 2) − 3(3k − 5) = 0, so 6k − 2 − 9k + 15 = 0 and k = [[13|3]].<br>The ratio is <b>13 : 3</b>.<br>x = [[6(13/3) − 2|16/3]] = [[24|16/3]] = [[9|2]] and y = [[3(13/3) − 5|16/3]] = [[8|16/3]] = [[3|2]].<br>The point of intersection is <b>([[9|2]], [[3|2]])</b>.`);
+la(4,[],`Find the ratio in which the y axis divides the line segment joining the points (−1, −4), (5, −6). Also find the coordinates of the point of intersection.`,`Let the ratio be k : 1. The x-coordinate of the dividing point is [[5k − 1|k + 1]] = 0, so k = [[1|5]]. The ratio is <b>1 : 5</b>.<br>y = [[−6(1/5) − 4|6/5]] = [[−26/5|6/5]] = −[[13|3]].<br>The point of intersection is <b>(0, −[[13|3]])</b>.`);
+la(5,[],`Find the ratio in which the point (−3, k) divides the line segment joining the points (−5, −4) and (−2, 3). Also find the value of k.`,`Let the ratio be m : 1. [[−2m − 5|m + 1]] = −3, so −2m − 5 = −3m − 3 and m = 2. The ratio is <b>2 : 1</b>.<br>k = [[2(3) + 1(−4)|3]] = <b>[[2|3]]</b>.`);
+la(6,[],`If the midpoint of the line segment joining A([[x|2]], [[y + 1|2]]) and B(x + 1, y − 3) is C(5, −2) find the value of x and y.`,`The mid-point = ([[x/2 + x + 1|2]], [[(y + 1)/2 + y − 3|2]]) = (5, −2).<br>[[3x/2 + 1|2]] = 5, so 3x/2 = 9 and <b>x = 6</b>.<br>[[(3y − 5)/2|2]] = −2, so 3y − 5 = −8 and <b>y = −1</b>.`);
+
+/* ===== Case-based ===== */
+cs(1,[],`A tiling or tessellation of a flat surface is the covering of a plane using one or more geometric shapes, called tiles, with no overlaps and no gaps. Historically, tessellations were used in ancient Rome and in Islamic art. You may find tessellation patterns on floors, walls, paintings etc. Shown below is a tiled floor in the archaeological Museum of Seville, made using squares, triangles and hexagons. A craftsman thought of making a floor pattern after being inspired by the above design. To ensure accuracy in his work, he made the pattern on the Cartesian plane. He used regular octagons, squares and triangles for his floor tessellation pattern. Use the figure to answer the questions that follow:`,[
+  {l:'(i)',m:1,q:`What is the length of the line segment joining points B and F?`},
+  {l:'(ii)',m:1,q:`The centre ‘Z’ of the figure will be the point of intersection of the diagonals of quadrilateral WXOP. Then what are the coordinates of Z?`},
+  {l:'(iii)',m:2,q:`What are the coordinates of the point on y axis equidistant from A and G?`,or:`What is the area of Trapezium AFGH?`}
+],`From the figure: A(−2, 2), B(1, 2), F(−2, 9), G(−4, 7), H(−4, 4), W(−6, 2), X(−4, 0), O(5, 9), P(3, 11).<br><b>(i)</b> BF = √{(1 + 2)^{2} + (2 − 9)^{2}} = √{9 + 49} = <b>√{58} units</b>.<br><b>(ii)</b> Z is the mid-point of the diagonal WO = ([[−6 + 5|2]], [[2 + 9|2]]) = <b>(−[[1|2]], [[11|2]])</b>. (The mid-point of XP is the same: ([[−4 + 3|2]], [[0 + 11|2]]).)<br><b>(iii)</b> Let the point be (0, y). Its distance from A and G is equal: 4 + (y − 2)^{2} = 16 + (y − 7)^{2}, so −4y + 8 = −14y + 65 and y = [[57|10]]. The point is <b>(0, [[57|10]])</b>.<br>(OR) In trapezium AFGH, AF ∥ HG (both vertical). AF = 7, HG = 3, and the distance between them is 2. Area = [[1|2]](7 + 3) × 2 = <b>10 square units</b>.`,{fig:(()=>{const TS={A:[-2,2],B:[1,2],C:[3,4],D:[3,7],E:[1,9],F:[-2,9],G:[-4,7],H:[-4,4],R:[-2,12],Q:[1,12],P:[3,11],O:[5,9],N:[6,7],M:[6,4],L:[5,2],K:[3,0],J:[1,-1],I:[-2,-1],X:[-4,0],W:[-6,2],V:[-7,4],U:[-7,7],T:[-6,9],S:[-4,11]};
+  const ps=Object.keys(TS).map(n=>{const x=TS[n][0],y=TS[n][1];const dx=x+0.5,dy=y-5,L=Math.hypot(dx,dy)||1;return [n,x,y,dx/L*0.75,dy/L*0.75-0.15,'middle'];});
+  return mk(ps,{alt:'Octagon tessellation pattern on the coordinate plane',w:340,h:430,x0:-8,x1:7,y0:-2,y1:13,segs:SG(TS,'AB BC CD DE EF FG GH HA','r').concat(SG(TS,'RQ QP PO ON NM ML LK KJ JI IX XW WV VU UT TS SR FR EQ FS EP GT DO GU DN HV CM HW CL AX BK AI BJ'))});})()});
+cs(2,[],`Tharunya was thrilled to know that the football tournament is fixed with a monthly timeframe from 20th July to 20th August 2023 and for the first time in the FIFA Women’s World Cup’s history, two nations host in 10 venues. Her father felt that the game can be better understood if the position of players is represented as points on a coordinate plane.`,[
+  {l:'(i)',m:1,q:`At an instance, the midfielders and forward formed a parallelogram. Find the position of the central midfielder (D) if the position of other players who formed the parallelogram are :- A(1, 2), B(4, 3) and C(6, 6).`},
+  {l:'(ii)',m:2,q:`Check if the Goal keeper G(−3, 5), Sweeper H(3, 1) and Wing-back K(0, 3) fall on a same straight line.`,or:`Check if the Full-back J(5, −3) and centre-back I(−4, 6) are equidistant from forward C(0, 1) and if C is the mid-point of IJ.`},
+  {l:'(iii)',m:1,q:`If Defensive midfielder A(1, 4), Attacking midfielder B(2, −3) and Striker E(a, b) lie on the same straight line and B is equidistant from A and E, find the position of E.`}
+],`<b>(i)</b> ABCD is a parallelogram, so the diagonals bisect each other: A + C = B + D. D = (1 + 6 − 4, 2 + 6 − 3) = <b>(3, 5)</b>.<br><b>(ii)</b> GH = √{(3 + 3)^{2} + (1 − 5)^{2}} = √{52} = 2√{13}. GK = √{(0 + 3)^{2} + (3 − 5)^{2}} = √{13}. KH = √{(3 − 0)^{2} + (1 − 3)^{2}} = √{13}. GK + KH = 2√{13} = GH, so <b>G, K and H lie on a straight line</b> (K is the mid-point of GH).<br>(OR) CJ = √{25 + 16} = √{41} and CI = √{16 + 25} = √{41}, so J and I are <b>equidistant from C</b>. The mid-point of IJ = ([[−4 + 5|2]], [[6 − 3|2]]) = ([[1|2]], [[3|2]]) ≠ (0, 1), so <b>C is not the mid-point of IJ</b>.<br><b>(iii)</b> B is equidistant from A and E and the three points are collinear, so B is the mid-point of AE: [[1 + a|2]] = 2 and [[4 + b|2]] = −3, so a = 3 and b = −10. E = <b>(3, −10)</b>.`,{fig:mk([['A',1,2,0.2,-0.9],['B',4,3,0.25,-0.9],['C',6,6,0.25,0.25],['D',3,5,-0.4,0.35,'end'],['G',-3,5,-0.2,0.5],['H',3,1,0.25,-0.9],['K',0,3,0.25,0.3]],{alt:'Positions of players on the coordinate plane',w:330,h:230,x0:-5,x1:8,y0:-1,y1:8,segs:[[1,2,4,3],[4,3,6,6],[6,6,3,5],[3,5,1,2],[-3,5,3,1]]})});
+cs(3,[],`Resident Welfare Association (RWA) of a Gulmohar Society in Delhi have installed three electric poles A, B and C in a society’s common park. Despite these three poles, some parts of the park are still in dark. So, RWA decides to have one more electric pole D in the park. The park can be modelled as a coordinate system as shown.`,[
+  {l:'(i)',m:1,q:`What is the distance of the pole B from the corner O of the park?`},
+  {l:'(ii)',m:1,q:`Find the position of the fourth pole D so that four points A, B, C and D form a parallelogram.`},
+  {l:'(iii)',m:2,q:`What is the distance between poles A and C?`,or:`What is the distance between poles B and D?`}
+],`From the figure: A(2, 7), B(6, 6), C(5, 4).<br><b>(i)</b> OB = √{6^{2} + 6^{2}} = <b>6√{2} units</b>.<br><b>(ii)</b> For the parallelogram ABCD the diagonals AC and BD bisect each other: A + C = B + D. D = (2 + 5 − 6, 7 + 4 − 6) = <b>(1, 5)</b>.<br><b>(iii)</b> AC = √{(5 − 2)^{2} + (4 − 7)^{2}} = √{18} = <b>3√{2} units</b>.<br>(OR) BD = √{(6 − 1)^{2} + (6 − 5)^{2}} = <b>√{26} units</b>.`,{fig:mk([['A',2,7,0.25,0.25],['B',6,6,0.25,0.25],['C',5,4,0.25,0.25],['O',0,0,-0.6,-0.8,'end']],{alt:'Poles A, B and C in the park',w:300,h:260,x0:-1,x1:10,y0:-1,y1:10})});
+cs(4,[],`Satellite Images: Satellite images are images of Earth collected by imaging satellites operated by governments and businesses around the world. Satellite imaging companies sell images by licensing them to governments and businesses such as Apple Maps and Google Maps. Barun lives in Jaipur in Vaishali. Satellite image of his colony is shown in given figure. In this view, his house is pointed out by a flag, which is situated at the point of intersection of x and y - axes. If he goes 2 cm east and 3 cm north from the house, then he reaches to a grocery store, If he goes 4 cm west and 6 cm south from the house, then he reaches to his office. If he goes 6 cm east and 8 cm south from the house, then he reaches to a food court. If he goes 6 cm west and 8 cm north from the house, he reaches to his kid’s school.`,[
+  {l:'(i)',m:1,q:`Find the distance between grocery store and food court.`},
+  {l:'(ii)',m:1,q:`Find the distance of the school from the house.`},
+  {l:'(iii)',m:2,q:`If the grocery store and office lie on a line, what is the ratio of distance of house from grocery store to that from office?`,or:`What shape is formed by the coordinates of positions of school, grocery store, food court and office?`}
+],`Taking the house as the origin: grocery store G(2, 3), office O(−4, −6), food court F(6, −8), school S(−6, 8).<br><b>(i)</b> GF = √{(6 − 2)^{2} + (−8 − 3)^{2}} = √{16 + 121} = <b>√{137} cm</b>.<br><b>(ii)</b> HS = √{36 + 64} = <b>10 cm</b>.<br><b>(iii)</b> HG = √{4 + 9} = √{13} and HO = √{16 + 36} = √{52} = 2√{13}. So HG : HO = <b>1 : 2</b>.<br>(OR) SG = √{64 + 25} = √{89}, GF = √{137}, FO = √{100 + 4} = √{104}, OS = √{4 + 196} = √{200}. All four sides are different, and the diagonals SF (mid-point (0, 0)) and GO (mid-point (−1, −[[3|2]])) do not bisect each other. So the figure is a <b>general quadrilateral</b> (not a parallelogram, rectangle, rhombus or square).`,{fig:mk([['House',0,0,0.4,-0.9],['Grocery',2,3,0.3,0.3],['Office',-4,-6,-0.3,-0.9,'end'],['Food court',6,-8,-0.5,-1.1,'end'],['School',-6,8,0.3,0.4]],{alt:'Positions of the places on the map with the house at the origin',w:320,h:320,x0:-8,x1:8,y0:-10,y1:10,step:2,segs:[[0,0,2,3],[0,0,-4,-6],[0,0,6,-8],[0,0,-6,8]]})});
+cs(5,[],`Morning assembly is an integral part of the school’s schedule. Almost all the schools conduct morning assemblies which include prayers, information of latest happenings, inspiring thoughts, speech, national anthem, etc. A good school is always particular about their morning assembly schedule. Have you noticed that in school assembly you always stand in row and column and this makes a coordinate system. Suppose a school have 100 students and they all assemble in prayer in 10 rows as shown in the figure. Here A, B, C and D are four friend Amar, Bharat, Colin and Dravid.`,[
+  {l:'(i)',m:1,q:`What is the distance between A and B?`},
+  {l:'(ii)',m:1,q:`What is the distance between C and D?`},
+  {l:'(iii)',m:2,q:`What is the distance between A and C?`,or:`What is the distance between D and B?`}
+],`From the figure: A(3, 4), B(6, 7), C(9, 4), D(6, 1).<br><b>(i)</b> AB = √{(6 − 3)^{2} + (7 − 4)^{2}} = √{18} = <b>3√{2} units</b>.<br><b>(ii)</b> CD = √{(9 − 6)^{2} + (4 − 1)^{2}} = √{18} = <b>3√{2} units</b>.<br><b>(iii)</b> AC = √{(9 − 3)^{2} + 0} = <b>6 units</b>.<br>(OR) DB = √{0 + (7 − 1)^{2}} = <b>6 units</b>.`,{fig:mk([['A',3,4,-0.4,0.3,'end'],['B',6,7,0.25,0.25],['C',9,4,0.25,0.25],['D',6,1,0.25,-0.8]],{alt:'Four students A, B, C and D on the assembly grid',w:300,h:260,x0:-1,x1:11,y0:-1,y1:10})});
+cs(6,[],`Carpooling is the sharing of car journeys so that more than one person travels in a car, and prevents the need for others to have to drive to a location themselves. By having more people using one vehicle, carpooling reduces each person’s travel costs such as: fuel costs, tolls, and the stress of driving. Three friends Amar, Bandhu and Chakradev live in societies represented by the points A, B and C respectively. They all work in offices located in the same building represented by the point O. Since they all go to the same building every day, they decided to do carpooling to save money on petrol.`,[
+  {l:'(i)',m:1,q:`Which society is nearest to the office?`},
+  {l:'(ii)',m:1,q:`What is the distance between A and C?`},
+  {l:'(iii)',m:2,q:`Find the least distance between AB, OA and BC?`,or:`If Bandhu and Chakradev planned to meet at a club situated at the mid-point of the line joining the points B and C, find the coordinates of this point.`}
+],`From the figure: A(2, 8), B(7, 7), C(5, 3), and the office O is the origin.<br><b>(i)</b> OA = √{4 + 64} = √{68} ≈ 8.2, OB = √{49 + 49} = √{98} ≈ 9.9, OC = √{25 + 9} = √{34} ≈ 5.8. The nearest is society <b>C</b> (Chakradev’s).<br><b>(ii)</b> AC = √{(5 − 2)^{2} + (3 − 8)^{2}} = <b>√{34} units</b>.<br><b>(iii)</b> AB = √{25 + 1} = √{26} ≈ 5.1, OA = √{68} ≈ 8.2, BC = √{4 + 16} = √{20} = 2√{5} ≈ 4.5. The least distance is <b>BC = 2√{5} units</b>.<br>(OR) The mid-point of BC = ([[7 + 5|2]], [[7 + 3|2]]) = <b>(6, 5)</b>.`,{fig:mk([['A',2,8,0.25,0.25],['B',7,7,0.25,0.25],['C',5,3,0.25,-0.8],['O',0,0,-0.5,-0.8,'end']],{alt:'Societies A, B, C and the office O',w:300,h:260,x0:-1,x1:10,y0:-1,y1:10})});
+cs(7,[],`To conduct sports day activities, in a rectangular shaped school ground ABCD, lines have been drawn with chalk powder at a distance of 1 m each. 100 flower pots have been placed at a distance of 1 m from each other along AB, as shown in the figure. Nishtha runs [[1|4]]^{th} of the distance AB on the 2nd line and posts a green flag. Suman runs [[1|5]]^{th} of the distance AB on the 8th line and posts a red flag.`,[
+  {l:'(i)',m:1,q:`What is the position of green flag?`},
+  {l:'(ii)',m:1,q:`What is the position of red flag?`},
+  {l:'(iii)',m:2,q:`What is the distance between both the flags?`,or:`What is the distance of red flag from point A?`}
+],`Taking A as the origin, AD along the x-axis and AB along the y-axis, with AB = 10 m (the figure shows 10 flower pots along AB).<br><b>(i)</b> Nishtha runs [[1|4]] × 10 = 2.5 m on the 2nd line: green flag at <b>(2, 2.5)</b>.<br><b>(ii)</b> Suman runs [[1|5]] × 10 = 2 m on the 8th line: red flag at <b>(8, 2)</b>.<br><b>(iii)</b> Distance = √{(8 − 2)^{2} + (2 − 2.5)^{2}} = √{36 + 0.25} = √{36.25} = <b>[[√{145}|2]] m</b> (≈ 6.02 m).<br>(OR) Distance of the red flag from A = √{8^{2} + 2^{2}} = √{68} = <b>2√{17} m</b>.`,{fig:mk([['G',2,2.5,0.25,0.2],['R',8,2,0.25,0.2],['A',0,0,-0.4,-0.9,'end'],['B',0,10,-0.4,0.2,'end'],['C',10,10,0.2,0.3],['D',10,0,0.25,-0.9]],{alt:'School ground ABCD with the green and red flags',w:320,h:300,x0:-1,x1:11,y0:-1,y1:11,segs:[[0,0,0,10],[0,10,10,10],[10,10,10,0],[10,0,0,0],[1,0,1,10],[2,0,2,10],[3,0,3,10],[4,0,4,10],[5,0,5,10],[6,0,6,10],[7,0,7,10],[8,0,8,10],[9,0,9,10]]})});
+cs(8,[2024],`A garden is in the shape of rectangle. Gardener grew sapling of Ashoka tree on the boundary of garden at the distance of 1 meter from each other. He wants to decorate the garden with rose plants. He chooses a triangular region inside the park to grow rose plants. On the above situation, the gardener took help from the students of class 10th. They made a chart for it which looks like the figure.`,[
+  {l:'(i)',m:1,q:`If A is taken as origin, what are the coordinates of triangle PQR?`},
+  {l:'(ii)',m:1,q:`Find out if ΔPQR is an isosceles triangle.`},
+  {l:'(iii)',m:2,q:`Find distances PQ & QR?`,or:`Find the coordinates of the point which divides the line segment joining the points P and R in the ratio 2 : 1 internally.`}
+],`Taking A as the origin and 1 grid square = 1 unit, the figure gives P(4, 6), Q(3, 2), R(6, 5).<br><b>(i)</b> P(4, 6), Q(3, 2), R(6, 5).<br><b>(ii)</b> PQ = √{1 + 16} = √{17}, QR = √{9 + 9} = √{18}, PR = √{4 + 1} = √{5}. All three sides are different, so ΔPQR is <b>not an isosceles triangle</b> (it is scalene).<br><b>(iii)</b> PQ = <b>√{17} units</b> and QR = <b>3√{2} units</b>.<br>(OR) The point = ([[2(6) + 1(4)|3]], [[2(5) + 1(6)|3]]) = <b>([[16|3]], [[16|3]])</b>.`,{fig:mk([['P',4,6,-0.3,0.3,'end'],['Q',3,2,-0.4,-0.7,'end'],['R',6,5,0.25,0.2],['A',0,0,-0.4,-0.9,'end'],['B',0,10,-0.4,0.2,'end'],['C',10,10,0.2,0.3],['D',10,0,0.25,-0.9]],{alt:'Garden ABCD with the triangle PQR',w:300,h:290,x0:-1,x1:11,y0:-1,y1:11,polys:[[[4,6],[3,2],[6,5]]],segs:[[0,0,0,10],[0,10,10,10],[10,10,10,0],[10,0,0,0],[4,6,3,2],[3,2,6,5],[6,5,4,6]]})});
+cs(9,[2023],`Jagdish has a field which is in the shape of a right angled triangle AQC. He wants to leave a space in the form of a square PQRS inside the field for growing wheat and the remaining for growing vegetables (as shown in the figure). In the field, there is a pole marked as O.`,[
+  {l:'(i)',m:1,q:`Taking O as origin, coordinates of P are (−200, 0) and of Q are (200, 0). PQRS being a square, what are the coordinates of R and S?`},
+  {l:'(ii)',m:2,q:`What is the area of square PQRS?`,or:`What is the length of diagonal PR in square PQRS?`},
+  {l:'(iii)',m:1,q:`If S divides CA in the ratio K : 1, what is the value of K, where point A is (200, 800)?`}
+],`<b>(i)</b> PQ = 400, so the square has side 400. R = <b>(200, 400)</b> and S = <b>(−200, 400)</b>.<br><b>(ii)</b> Area = 400 × 400 = <b>160000 square units</b>.<br>(OR) PR = √{(200 + 200)^{2} + (400 − 0)^{2}} = √{320000} = <b>400√{2} units</b>.<br><b>(iii)</b> The line CA passes through S(−200, 400) and A(200, 800), so its slope is 1 and it meets the x-axis at C(−600, 0). Then S divides CA in the ratio K : 1: [[200K − 600|K + 1]] = −200, so 400K = 400 and <b>K = 1</b> (S is the mid-point of CA).`,{fig:mk([['C',-600,0,-30,-90,'middle'],['P',-200,0,-30,-90,'middle'],['O',0,0,30,-90,'middle'],['Q',200,0,30,-90,'middle'],['A',200,800,30,30],['B',0,600,30,30],['R',200,400,30,30],['S',-200,400,-30,30,'end']],{alt:'Right triangle AQC with the square PQRS',w:330,h:300,x0:-800,x1:400,y0:-200,y1:1000,step:200,segs:[[-600,0,200,800],[-200,400,200,400],[-200,400,-200,0],[200,400,200,0],[200,0,-600,0],[200,800,200,0]]})});
+cs(10,[2024],`Ryan, from a very young age, was fascinated by the twinkling of stars and the vastness of space. He always dreamt of becoming an astronaut one day. So he started to sketch his own rocket designs on the graph sheet. One such design is given in the figure.`,[
+  {l:'(i)',m:1,q:`Find the mid-point of the segment joining F and G.`},
+  {l:'(ii)',m:2,q:`What is the distance between the points A and C?`,or:`Find the coordinates of the point which divides the line segment joining the points A and B in the ratio 1 : 3 internally.`},
+  {l:'(iii)',m:1,q:`What are the coordinates of the point D?`}
+],`From the graph: A(3, 4), B(3, 2), C(−1, −2), D(−2, −5), F(−3, 0), G(1, 4).<br><b>(i)</b> Mid-point of FG = ([[−3 + 1|2]], [[0 + 4|2]]) = <b>(−1, 2)</b>.<br><b>(ii)</b> AC = √{(3 + 1)^{2} + (4 + 2)^{2}} = √{16 + 36} = <b>2√{13} units</b>.<br>(OR) The point = ([[1(3) + 3(3)|4]], [[1(2) + 3(4)|4]]) = <b>(3, [[7|2]])</b>.<br><b>(iii)</b> D = <b>(−2, −5)</b>.`,{fig:(()=>{const R={G:[1,4],A:[3,4],B:[3,2],C:[-1,-2],c1:[-1,-4],c2:[-2,-3],D:[-2,-5],c3:[-3,-3],c4:[-4,-5],c5:[-4,-3],c6:[-6,-3],c7:[-4,-2],c8:[-6,-1],c9:[-4,-1],E:[-5,0],F:[-3,0]};
+  const order=['G','A','B','C','c1','c2','D','c3','c4','c5','c6','c7','c8','c9','E','F','G'];const segs=[];for(let i=0;i<order.length-1;i++)segs.push([R[order[i]][0],R[order[i]][1],R[order[i+1]][0],R[order[i+1]][1]]);
+  return mk([['G',1,4,-0.2,0.35,'middle'],['A',3,4,0.2,0.3],['B',3,2,0.25,0.1],['C',-1,-2,0.25,-0.2],['D',-2,-5,0.1,-0.7,'middle'],['E',-5,0,-0.1,0.4,'middle'],['F',-3,0,0.1,0.4,'middle']],{alt:'Rocket design on the graph sheet',w:340,h:300,x0:-7,x1:5,y0:-6,y1:6,segs});})()});
+
+/* ===== Chapter 7: extra assertion-reason (practice) ===== */
+ar(55,[],`The distance of the point (3, 4) from the origin is 5 units.`,`The distance of a point (x, y) from the origin is √{x^{2} + y^{2}}.`,0,`√{9 + 16} = 5, so A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(56,[],`The mid-point of the line segment joining the points (2, 3) and (4, 7) is (3, 5).`,`The mid-point of the segment joining (x_{1}, y_{1}) and (x_{2}, y_{2}) is ([[x_{1} + x_{2}|2]], [[y_{1} + y_{2}|2]]).`,0,`([[2 + 4|2]], [[3 + 7|2]]) = (3, 5), so A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(57,[],`The points (1, 1), (2, 2) and (3, 3) are collinear.`,`Three points are collinear if the sum of two of the distances between them equals the third distance.`,0,`The distances are √{2}, √{2} and 2√{2}, and √{2} + √{2} = 2√{2}. So the points are collinear. A is true and R is the criterion used.<br><span class="ans">Answer: (a)</span>`);
+ar(58,[],`The point (−3, 0) lies on the y-axis.`,`Every point on the y-axis has its x-coordinate equal to 0.`,3,`The x-coordinate of (−3, 0) is −3, not 0, so it lies on the x-axis and A is false. R is a true statement.<br><span class="ans">Answer: (d)</span>`);
+ar(59,[],`The x-axis divides the line segment joining (1, 2) and (3, −4) in the ratio 1 : 2.`,`Every point on the x-axis has its y-coordinate equal to 0.`,0,`Let the ratio be k : 1. [[−4k + 2|k + 1]] = 0 gives k = [[1|2]], i.e. 1 : 2. A is true, and R is the property used to find it.<br><span class="ans">Answer: (a)</span>`);
+ar(60,[],`The triangle with vertices (0, 0), (3, 0) and (0, 4) has a hypotenuse of length 5.`,`The distance between (x_{1}, y_{1}) and (x_{2}, y_{2}) is √{(x_{2} − x_{1})^{2} + (y_{2} − y_{1})^{2}}.`,0,`The hypotenuse joins (3, 0) and (0, 4): √{9 + 16} = 5. A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(61,[],`The point (−1, 6) divides the line segment joining (−3, 10) and (6, −8) in the ratio 2 : 3.`,`The section formula gives the point dividing the segment joining (x_{1}, y_{1}) and (x_{2}, y_{2}) in the ratio m : n as ([[mx_{2} + nx_{1}|m + n]], [[my_{2} + ny_{1}|m + n]]).`,3,`For the ratio 2 : 3 the x-coordinate would be [[2(6) + 3(−3)|5]] = [[3|5]], not −1 (the correct ratio is 2 : 7). So A is false. R is the correct section formula.<br><span class="ans">Answer: (d)</span>`);
+
+/* ===== Chapter 7: extra case-based (practice) ===== */
+cs(11,[],`In a town map drawn on the coordinate plane, a school S(2, 3), a library L(8, 3) and a park P(5, 7) are marked.`,[
+  {l:'(i)',m:1,q:`Find the distance between the school and the library.`},
+  {l:'(ii)',m:1,q:`Find the coordinates of the mid-point of SL.`},
+  {l:'(iii)',m:2,q:`(a) Is ΔSLP an isosceles triangle?`,or:`(b) Find the coordinates of the point that divides SP in the ratio 2 : 3.`}
+],`<b>(i)</b> SL = √{(8 − 2)^{2} + 0} = <b>6 units</b>.<br><b>(ii)</b> Mid-point of SL = ([[2 + 8|2]], [[3 + 3|2]]) = <b>(5, 3)</b>.<br><b>(iii)(a)</b> SP = √{9 + 16} = 5 and LP = √{9 + 16} = 5. SP = LP, so ΔSLP is <b>isosceles</b>.<br>(OR) <b>(b)</b> The point = ([[2(5) + 3(2)|5]], [[2(7) + 3(3)|5]]) = <b>([[16|5]], [[23|5]])</b>.`,{fig:mk([['S',2,3,-0.3,-0.9,'end'],['L',8,3,0.25,-0.9],['P',5,7,0.2,0.3]],{alt:'School, library and park on the map',w:300,h:240,x0:-1,x1:10,y0:-1,y1:9,segs:[[2,3,8,3],[8,3,5,7],[5,7,2,3]]})});
+cs(12,[],`Ria stands at R(1, 2) and her friend Sam stands at S(7, 10) on a coordinate grid of a playground. They plan to meet on the straight line joining them.`,[
+  {l:'(i)',m:1,q:`Find the distance RS between them.`},
+  {l:'(ii)',m:1,q:`Where should they meet if they want to meet at the mid-point of RS?`},
+  {l:'(iii)',m:2,q:`(a) Find the point that divides RS in the ratio 1 : 3.`,or:`(b) Check whether Tara, standing at T(13, 18), is on the line through R and S.`}
+],`<b>(i)</b> RS = √{(7 − 1)^{2} + (10 − 2)^{2}} = √{36 + 64} = <b>10 units</b>.<br><b>(ii)</b> Mid-point = ([[1 + 7|2]], [[2 + 10|2]]) = <b>(4, 6)</b>.<br><b>(iii)(a)</b> The point = ([[1(7) + 3(1)|4]], [[1(10) + 3(2)|4]]) = <b>([[5|2]], 4)</b>.<br>(OR) <b>(b)</b> The slope of RS = [[10 − 2|7 − 1]] = [[4|3]]. The slope of RT = [[18 − 2|13 − 1]] = [[16|12]] = [[4|3]]. The slopes are equal, so <b>T lies on the line RS</b>. (Also RS + ST = 10 + 10 = 20 = RT.)`,{fig:mk([['R',1,2,0.25,-0.9],['S',7,10,0.25,0.2],['T',13,18,0.25,0.2]],{alt:'Ria, Sam and Tara on the grid',w:300,h:270,x0:-1,x1:15,y0:-1,y1:20,step:2,segs:[[1,2,13,18]]})});
+cs(13,[],`A rectangular garden ABCD is drawn on the coordinate plane with A(0, 0), B(8, 0), C(8, 6) and D(0, 6).`,[
+  {l:'(i)',m:1,q:`Find the length of the diagonal AC.`},
+  {l:'(ii)',m:1,q:`Find the coordinates of the centre of the garden (the point where the diagonals meet).`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the garden.`,or:`(b) Find the point on AC that divides it in the ratio 2 : 3.`}
+],`<b>(i)</b> AC = √{8^{2} + 6^{2}} = <b>10 units</b>.<br><b>(ii)</b> The diagonals of a rectangle bisect each other, so the centre is the mid-point of AC = <b>(4, 3)</b>.<br><b>(iii)(a)</b> Area = AB × BC = 8 × 6 = <b>48 square units</b>.<br>(OR) <b>(b)</b> The point = ([[2(8) + 3(0)|5]], [[2(6) + 3(0)|5]]) = <b>([[16|5]], [[12|5]])</b>.`,{fig:mk([['A',0,0,-0.4,-0.9,'end'],['B',8,0,0.25,-0.9],['C',8,6,0.25,0.25],['D',0,6,-0.4,0.25,'end']],{alt:'Rectangle ABCD with its diagonals',w:290,h:230,x0:-1,x1:10,y0:-1,y1:8,segs:[[0,0,8,0],[8,0,8,6],[8,6,0,6],[0,6,0,0],[0,0,8,6],[8,0,0,6]]})});
+cs(14,[],`A rhombus-shaped flower bed ABCD has vertices A(0, 0), B(4, 3), C(8, 0) and D(4, −3) on the coordinate plane.`,[
+  {l:'(i)',m:1,q:`Find the length of the side AB.`},
+  {l:'(ii)',m:1,q:`Find the lengths of the diagonals AC and BD.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the flower bed.`,or:`(b) Show that the diagonals AC and BD bisect each other.`}
+],`<b>(i)</b> AB = √{16 + 9} = <b>5 units</b>. (BC = CD = DA = 5 as well.)<br><b>(ii)</b> AC = <b>8 units</b> and BD = <b>6 units</b>.<br><b>(iii)(a)</b> Area of a rhombus = [[1|2]] × AC × BD = [[1|2]] × 8 × 6 = <b>24 square units</b>.<br>(OR) <b>(b)</b> Mid-point of AC = ([[0 + 8|2]], 0) = (4, 0). Mid-point of BD = ([[4 + 4|2]], [[3 − 3|2]]) = (4, 0). The mid-points coincide, so the diagonals bisect each other.`,{fig:mk([['A',0,0,-0.4,-0.2,'end'],['B',4,3,0.1,0.35,'middle'],['C',8,0,0.3,-0.2],['D',4,-3,0.1,-0.8,'middle']],{alt:'Rhombus ABCD',w:300,h:240,x0:-1,x1:10,y0:-4,y1:5,segs:[[0,0,4,3],[4,3,8,0],[8,0,4,-3],[4,-3,0,0],[0,0,8,0],[4,3,4,-3]]})});
+cs(15,[],`A park PQRS is drawn on the coordinate plane with P(0, 0), Q(10, 0), R(7, 4) and S(3, 4).`,[
+  {l:'(i)',m:1,q:`Are the sides PQ and SR parallel?`},
+  {l:'(ii)',m:1,q:`Find the lengths of PQ and SR.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the park.`,or:`(b) Show that the non-parallel sides PS and QR are equal.`}
+],`<b>(i)</b> PQ lies on the x-axis (y = 0) and SR lies on the line y = 4, so both are horizontal: they are <b>parallel</b>. PQRS is a trapezium.<br><b>(ii)</b> PQ = <b>10 units</b> and SR = 7 − 3 = <b>4 units</b>.<br><b>(iii)(a)</b> The distance between the parallel sides is 4. Area = [[1|2]](10 + 4) × 4 = <b>28 square units</b>.<br>(OR) <b>(b)</b> PS = √{9 + 16} = 5 and QR = √{(10 − 7)^{2} + 16} = 5. So PS = QR (an isosceles trapezium).`,{fig:mk([['P',0,0,-0.4,-0.9,'end'],['Q',10,0,0.25,-0.9],['R',7,4,0.25,0.25],['S',3,4,-0.4,0.25,'end']],{alt:'Trapezium PQRS',w:310,h:220,x0:-1,x1:12,y0:-1,y1:6,segs:[[0,0,10,0],[10,0,7,4],[7,4,3,4],[3,4,0,0]]})});
+
+/* ===== Chapter 7: extra long answer (practice) ===== */
+la(7,[],`Find the coordinates of the points which divide the line segment joining A(−4, 0) and B(0, 6) into four equal parts.`,`The three points divide AB in the ratios 1 : 3, 1 : 1 and 3 : 1.<br>P_{1} = ([[1(0) + 3(−4)|4]], [[1(6) + 3(0)|4]]) = <b>(−3, [[3|2]])</b>.<br>P_{2} = mid-point = ([[−4 + 0|2]], [[0 + 6|2]]) = <b>(−2, 3)</b>.<br>P_{3} = ([[3(0) + 1(−4)|4]], [[3(6) + 1(0)|4]]) = <b>(−1, [[9|2]])</b>.`);
+la(8,[],`Prove that the points A(2, 3), B(−2, 2), C(−1, −2) and D(3, −1) are the vertices of a square.`,`AB = √{16 + 1} = √{17}, BC = √{1 + 16} = √{17}, CD = √{16 + 1} = √{17}, DA = √{1 + 16} = √{17}. All the sides are equal.<br>AC = √{(−1 − 2)^{2} + (−2 − 3)^{2}} = √{34} and BD = √{(3 + 2)^{2} + (−1 − 2)^{2}} = √{34}. The diagonals are equal.<br>A quadrilateral with all sides equal and equal diagonals is a square. Hence proved.`);
+la(9,[],`Find the ratio in which the line x + y − 4 = 0 divides the line segment joining the points (1, −1) and (5, 7). Also find the coordinates of the point of division.`,`Let the ratio be k : 1. The point is ([[5k + 1|k + 1]], [[7k − 1|k + 1]]). It lies on x + y = 4: (5k + 1) + (7k − 1) = 4(k + 1), so 12k = 4k + 4 and k = [[1|2]].<br>The ratio is <b>1 : 2</b>.<br>The point = ([[5/2 + 1|3/2]], [[7/2 − 1|3/2]]) = <b>([[7|3]], [[5|3]])</b>. (Check: [[7|3]] + [[5|3]] = 4 ✓.)`);
+la(10,[],`Find the point on the y-axis which is equidistant from the points (−5, 2) and (9, −2). Also find the radius of the circle with that point as centre passing through the two points.`,`Let the point be (0, y). Its squared distances: 25 + (y − 2)^{2} = 81 + (y + 2)^{2}.<br>29 − 4y = 85 + 4y, so −8y = 56 and y = −7.<br>The point is <b>(0, −7)</b>.<br>Radius = √{25 + (−7 − 2)^{2}} = √{25 + 81} = <b>√{106} units</b>.`);
+la(11,[],`Show that the points (0, 0), (6, 0) and (3, 3√{3}) are the vertices of an equilateral triangle. Hence find its centroid.`,`Let A(0, 0), B(6, 0), C(3, 3√{3}). AB = 6. BC = √{(3 − 6)^{2} + 27} = √{36} = 6. CA = √{9 + 27} = 6.<br>AB = BC = CA, so the triangle is equilateral.<br>Centroid = ([[0 + 6 + 3|3]], [[0 + 0 + 3√{3}|3]]) = <b>(3, √{3})</b>.`);
+la(12,[],`Find the coordinates of the point R on the line segment joining P(1, 3) and Q(4, 6) that divides it in the ratio 2 : 1, and verify that PR = 2RQ.`,`R = ([[2(4) + 1(1)|3]], [[2(6) + 1(3)|3]]) = <b>(3, 5)</b>.<br>PR = √{(3 − 1)^{2} + (5 − 3)^{2}} = √{8} = 2√{2}. RQ = √{(4 − 3)^{2} + (6 − 5)^{2}} = √{2}.<br>PR = 2√{2} = 2 × √{2} = 2RQ. Verified.`);
+la(13,[],`Show that the points A(0, 0), B(5, 5) and C(−5, 5) are the vertices of an isosceles right triangle.`,`AB = √{25 + 25} = 5√{2}. AC = √{25 + 25} = 5√{2}. BC = √{100 + 0} = 10.<br>AB = AC, so the triangle is isosceles.<br>AB^{2} + AC^{2} = 50 + 50 = 100 = BC^{2}, so by the converse of Pythagoras the angle at A is 90°.<br>Hence it is an isosceles right triangle.`);
+la(14,[],`Find the point on the x-axis which is equidistant from the points (2, −5) and (−2, 9).`,`Let the point be (x, 0). (x − 2)^{2} + 25 = (x + 2)^{2} + 81.<br>−4x + 29 = 4x + 85, so −8x = 56 and x = −7.<br>The point is <b>(−7, 0)</b>.`);
+la(15,[],`Show that A(2, 1), B(5, 2), C(6, 4) and D(3, 3) are the vertices of a parallelogram. Is it a rectangle or a rhombus?`,`Mid-point of AC = ([[2 + 6|2]], [[1 + 4|2]]) = (4, [[5|2]]). Mid-point of BD = ([[5 + 3|2]], [[2 + 3|2]]) = (4, [[5|2]]). The diagonals bisect each other, so ABCD is a parallelogram.<br>AB = √{9 + 1} = √{10} and BC = √{1 + 4} = √{5}. Adjacent sides are unequal, so it is not a rhombus.<br>AC = √{16 + 9} = 5 and BD = √{4 + 1} = √{5}. The diagonals are unequal, so it is not a rectangle.<br>So ABCD is a parallelogram but neither a rectangle nor a rhombus.`);
+
+CUR=1;
+
+
 /* ---------- state ---------- */
 const KEY='khanclasses-pyq-v1';
 let prog={done:{},mcq:{}};
@@ -1939,6 +2288,34 @@ $('reset').addEventListener('click',()=>{
 });
 
 renderAll();
+</script>
+
+<script>
+/* portal menu (☰) toggle */
+(function(){
+  var b=document.getElementById('spBurger'),n=document.getElementById('spNav');
+  if(!b||!n)return;
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
+  n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+})();
+</script>
+<script>
+/* content protection (added): deterrents against casual copying and inspecting */
+(function(){
+  'use strict';
+  var stop=function(e){e.preventDefault();if(e.stopPropagation)e.stopPropagation();return false;};
+  ['contextmenu','copy','cut','dragstart','selectstart'].forEach(function(t){document.addEventListener(t,stop,true);});
+  window.addEventListener('keydown',function(e){
+    var key=(e.key||'').toLowerCase(),code=e.code||'';
+    var letter=code.indexOf('Key')===0?code.slice(3).toLowerCase():key;
+    var mod=e.ctrlKey||e.metaKey,block=false;
+    if(e.key==='F12'||e.keyCode===123)block=true;                                   /* F12 */
+    else if(mod&&!e.altKey&&'cxus'.indexOf(letter)>-1&&letter.length===1)block=true; /* Ctrl/Cmd + C, X, U, S (and +Shift+C) */
+    else if(e.ctrlKey&&e.shiftKey&&'ijc'.indexOf(letter)>-1&&letter.length===1)block=true; /* Ctrl+Shift+I / J / C */
+    else if(e.metaKey&&e.altKey&&'ijcu'.indexOf(letter)>-1&&letter.length===1)block=true;  /* macOS Cmd+Option+I / J / C / U */
+    if(block)return stop(e);
+  },true);
+})();
 </script>
 </body>
 </html>
