@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Class 10 Maths PYQ Practice · Khan Study Portal</title>
+<title>Class 10 Maths PYQ Practice · khanclasses.in</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -114,32 +114,9 @@ sup,sub{line-height:0}
 .rt .rb{border-top:1px solid currentColor;padding:0 .1em}
 .ol{text-decoration:overline}
 
-/* ---- Khan Study Portal header / footer ---- */
-.sp-header{background:#14213D;color:#fff;position:relative;z-index:10}
-.sp-bar{max-width:1100px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.sp-title{font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:.01em;color:#fff;text-decoration:none}
-.sp-nav{display:flex;flex-wrap:wrap;gap:4px 6px;align-items:center}
-.sp-nav a{color:#fff;text-decoration:none;font-family:var(--display);font-weight:600;font-size:15px;padding:8px 12px;border-radius:8px;min-height:40px;display:inline-flex;align-items:center}
-.sp-nav a:hover,.sp-nav a:focus-visible{background:rgba(255,255,255,.14)}
-.sp-nav a[aria-current="page"]{background:#2F5BEA}
-.sp-burger{display:none;background:transparent;border:1.5px solid rgba(255,255,255,.55);color:#fff;border-radius:8px;font-size:22px;line-height:1;min-width:44px;min-height:44px;cursor:pointer}
-.sp-crumb{background:var(--card);border-bottom:1px solid var(--line);font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink2)}
-.sp-crumb .wrap{padding-top:8px;padding-bottom:8px}
-.sp-crumb a{color:var(--pen);text-decoration:none}
-.sp-crumb a:hover{text-decoration:underline}
-.pyq-tools .wrap{padding-top:4px;padding-bottom:26px;text-align:right}
-.pyq-tools .btn{min-height:38px;font-size:13px}
-.sp-footer{background:#14213D;color:#fff;text-align:center;padding:20px 16px;margin:0;font-family:var(--display)}
-.sp-footer p{margin:4px 0;font-size:14.5px}
-.sp-footer a{color:#fff;font-weight:700;text-decoration:underline}
-@media (max-width:760px){
-  .sp-burger{display:inline-flex;align-items:center;justify-content:center}
-  .sp-nav{display:none;width:100%;flex-direction:column;align-items:stretch;gap:2px;padding-top:6px}
-  .sp-nav.open{display:flex}
-  .sp-nav a{padding:12px 12px;font-size:16px}
-  .sp-title{font-size:20px}
-  .pyq-tools .wrap{text-align:center}
-}
+footer{border-top:2px solid var(--red);background:var(--card)}
+footer .wrap{padding-top:16px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center;font-family:var(--display);font-weight:600;font-size:14px}
+footer .btn{min-height:38px;font-size:13px}
 
 @media (max-width:560px){
   body{font-size:16px}
@@ -207,24 +184,7 @@ input,textarea{-webkit-user-select:text;user-select:text}
 </head>
 <body>
 
-<!-- PORTAL HEADER (matches Khan Study Portal) -->
-<header class="sp-header">
-  <div class="sp-bar">
-    <a class="sp-title" href="https://abdal1999.github.io/Study-Portal/index.html">Khan Study Portal</a>
-    <button class="sp-burger" id="spBurger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="spNav">&#9776;</button>
-    <nav class="sp-nav" id="spNav" aria-label="Main">
-      <a href="https://abdal1999.github.io/Study-Portal/index.html">Home</a>
-      <a href="https://abdal1999.github.io/Study-Portal/class9.html">Class 9</a>
-      <a href="https://abdal1999.github.io/Study-Portal/class10.html" aria-current="page">Class 10</a>
-      <a href="#">Class 11</a>
-      <a href="#">Class 12</a>
-      <a href="https://abdal1999.github.io/Study-Portal/blog.html">Blog</a>
-      <a href="https://www.khanclasses.in">&#128640; Learn With Me</a>
-    </nav>
-  </div>
-</header>
-<div class="sp-crumb"><div class="wrap"><a href="https://abdal1999.github.io/Study-Portal/class10.html">&lsaquo; Class 10</a> <span>/ Mathematics / PYQ Practice</span></div></div>
-</div>
+<div class="brandbar"><div class="wrap">khanclasses.in by MD ABDAL KHAN</div></div>
 
 <header class="hero">
   <div class="wrap">
@@ -258,13 +218,11 @@ input,textarea{-webkit-user-select:text;user-select:text}
   </div>
 </main>
 
-<!-- reset button kept from the original page (progress is stored on the student's own device) -->
-<div class="pyq-tools"><div class="wrap"><button class="btn" id="reset" type="button">Reset my progress</button></div></div>
-
-<!-- PORTAL FOOTER (matches Khan Study Portal) -->
-<footer class="sp-footer">
-  <p>Created with &#10084;&#65039; by <a href="https://khanclasses.in/" title="About Me">MD ABDAAL KHAN</a></p>
-  <p>&copy; 2025 Khan Study Portal</p>
+<footer>
+  <div class="wrap">
+    <span>khanclasses.in by MD ABDAL KHAN</span>
+    <button class="btn" id="reset" type="button">Reset my progress</button>
+  </div>
 </footer>
 
 <script>
@@ -285,7 +243,7 @@ const CHAPTERS=[
   {n:4,name:'Quadratic Equations',ready:true},{n:5,name:'Arithmetic Progressions',ready:true},{n:6,name:'Triangles',ready:true},
   {n:7,name:'Coordinate Geometry',ready:true},{n:8,name:'Introduction to Trigonometry',ready:true},
   {n:9,name:'Some Applications of Trigonometry',ready:true},{n:10,name:'Circles',ready:true},
-  {n:11,name:'Areas Related to Circles'},{n:12,name:'Surface Areas and Volumes'},
+  {n:11,name:'Areas Related to Circles',ready:true},{n:12,name:'Surface Areas and Volumes'},
   {n:13,name:'Statistics'},{n:14,name:'Probability'}
 ];
 const LEVELS=[
@@ -1655,7 +1613,7 @@ function geo(o){
   const T=(x,y,t,a,z)=>`<text x="${f(x)}" y="${f(y)}" text-anchor="${a||'middle'}" font-size="${z||11}" font-family="Arial,sans-serif" fill="currentColor">${t}</text>`;
   let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${o.alt||'geometry figure'}" style="max-width:100%;height:auto;color:var(--ink)">`;
   const segs=(str,dash)=>{(str||'').split(' ').filter(Boolean).forEach(t=>{const a=S[t[0]],b=S[t[1]];if(!a||!b)return;s+=`<line x1="${f(a[0])}" y1="${f(a[1])}" x2="${f(b[0])}" y2="${f(b[1])}" stroke="currentColor" stroke-width="1.6" ${dash?'stroke-dasharray="5 4"':''}/>`;});};
-  const fcol=n=>n==='w'?'var(--card,#fff)':'rgba(47,91,234,.28)';
+  const fcol=n=>n==='w'?'var(--card,#fff)':'#c7d5f7';
   const mp=(x,y)=>[ox+(x-mnx)*sc,H-oy-(y-mny)*sc];
   const pa=(cx,cy,r,a)=>mp(cx+r*Math.cos(a*Math.PI/180),cy+r*Math.sin(a*Math.PI/180));
   (o.sh||[]).forEach(h=>{const k=h[0];let d='',fl='sh',st=false;
@@ -2811,6 +2769,182 @@ la(15,[],`A circle touches the sides AB, BC and CA of ΔABC at P, Q and R respec
 CUR=1;
 
 
+/* ===================== CHAPTER 11: AREAS RELATED TO CIRCLES ===================== */
+CUR=11;
+const SF=(o)=>geo(Object.assign({w:250,h:215,pad:28,alt:'Figure from the question'},o));
+
+/* ===== 1 mark: MCQ ===== */
+mcq(1,[2024],`Perimeter of a sector of a circle whose central angle is 90° and radius 7 cm is`,['35 cm','11 cm','22 cm','25 cm'],3,`Perimeter = arc + 2r = [[90|360]] × 2π × 7 + 14 = [[1|4]] × 44 + 14 = 11 + 14 = 25 cm. (Taking π = [[22|7]].)`);
+mcq(2,[2024],`The perimeter of the sector of a circle of radius 21 cm which subtends an angle of 60° at the centre of circle is`,['22 cm','43 cm','64 cm','462 cm'],2,`Arc = [[60|360]] × 2π × 21 = [[1|6]] × 132 = 22 cm. Perimeter = 22 + 2 × 21 = 64 cm.`);
+mcq(3,[2024],`If the area of the sector of a circle is [[7|20]] of the area of the circle, then the angle at the centre is equal to`,['110°','130°','100°','126°'],3,`[[θ|360°]] = [[7|20]], so θ = [[7 × 360°|20]] = 126°.`);
+mcq(4,[2024],`The area of the sector of a circle of radius 12 cm is 60π cm². The central angle of this sector is`,['120°','6°','75°','150°'],3,`[[θ|360°]] × π × 144 = 60π, so θ = [[60 × 360°|144]] = 150°.`);
+mcq(5,[2024],`The length of an arc of a circle with radius 12 cm is 10π cm. The angle subtended by the arc at the centre of the circle is`,['120°','6°','75°','150°'],3,`[[θ|360°]] × 2π × 12 = 10π, so θ = [[10 × 360°|24]] = 150°.`);
+mcq(6,[2025],`If a sector of a circle has an area of 40π sq. units and a central angle of 72° the radius of the circle`,['200 units','100 units','20 units','10√{2} units'],3,`[[72°|360°]] × πr² = 40π, so [[r²|5]] = 40 and r² = 200. r = 10√{2} units.`);
+mcq(7,[2024],`In the given figure, ∠C = ∠D = 90°, ∠B = 60° and AP = 3 cm then the area of the shaded region is`,['3π cm²','6π cm²','7π cm²','9π cm²'],0,`The angles of the quadrilateral add up to 360°: ∠A = 360° − 90° − 90° − 60° = 120°. The shaded region is a sector of radius 3 cm and angle 120°.<br>Area = [[120°|360°]] × π × 3² = [[1|3]] × 9π = 3π cm².`,{fig:SF({p:{C:[0,8],B:[8,8],D:[0,0],A:[3.38,0],P:[0.38,0]},s:'CB BA AD DC',sh:[['s',3.38,0,3,60,180,'sh']],ra:[['C','B','D'],['D','C','A']],t:{PA:'3 cm'},tx:[[6.4,7.0,'60°']],alt:'Quadrilateral with a shaded sector at A'})});
+mcq(8,[2023],`What is the length of the arc of the sector of a circle with radius 14 cm and of central angle 90°?`,['22 cm','44 cm','88 cm','11 cm'],0,`Arc = [[90°|360°]] × 2π × 14 = [[1|4]] × 88 = 22 cm.`);
+mcq(9,[2023],`The hour hand of a clock is 6 cm long. The angle swept by it between 7:20 a.m and 7:55 a.m is`,['([[35|4]])°','([[35|2]])°','35°','70°'],1,`The time interval = 35 minutes. The hour hand turns 0.5° in one minute (30° in 60 minutes). Angle = 35 × [[1|2]] = ([[35|2]])° = 17.5°.`);
+mcq(10,[2023],`The circumferences of two circles are in the ratio 4 : 5. What is the ratio of their radii?`,['16 : 25','25 : 16','2 : √{5}','4 : 5'],3,`Circumference = 2πr, so the circumferences are in the same ratio as the radii: 4 : 5.`);
+mcq(11,[],`A sector is cut from a circular sheet of radius 100 cm, the angle of the sector being 240°. If another circle of the area same as the sector is formed, then the radius of the new circle is`,['79.5 cm','81.5 cm','83.4 cm','88.5 cm'],1,`Area of the sector = [[240°|360°]] × π × 100² = [[2|3]] × 10000π. For the new circle πr² = [[2|3]] × 10000π, so r² = 6666.7 and r ≈ 81.6 cm, i.e. the nearest option is 81.5 cm.`);
+mcq(12,[],`The area of the circle that can be inscribed in a square of side 6 cm is`,['36π cm²','18π cm²','12π cm²','9π cm²'],3,`The diameter of the inscribed circle = side of the square = 6 cm, so r = 3 cm. Area = π × 3² = 9π cm².`);
+mcq(13,[2025],`If a large circular pizza is divided into 5 equal sectors then the central angle of each sector is`,['60°','90°','45°','72°'],3,`Central angle = [[360°|5]] = 72°.`);
+mcq(14,[2025],`An arc of a circle is of length 5π cm and the sector it bounds has an area of 20π cm². Its radius is`,['10 cm','1 cm','5 cm','8 cm'],3,`Area of a sector = [[1|2]] × r × (arc length): 20π = [[1|2]] × r × 5π, so r = 8 cm.`);
+mcq(15,[2025],`If an arc of a circle of diameter 10 cm subtends an angle of 144° at the centre of the circle, then the length of the arc is`,['2π cm','4π cm','5π cm','6π cm'],1,`r = 5 cm. Arc = [[144°|360°]] × 2π × 5 = [[2|5]] × 10π = 4π cm.`);
+mcq(16,[2025],`If the area of a sector of circle of radius 36 cm is 54π cm² then the length of the corresponding arc of the sector is`,['8π cm','6π cm','4π cm','3π cm'],3,`Area = [[1|2]] × r × l: 54π = [[1|2]] × 36 × l, so l = [[54π|18]] = 3π cm.`);
+mcq(17,[2025],`The diameter of a wheel is 63 cm. The distance travelled by the wheel in 100 revolutions is`,['99 m','198 m','63 m','136 m'],1,`Circumference = π × 63 = [[22|7]] × 63 = 198 cm. In 100 revolutions the distance = 19800 cm = 198 m.`);
+mcq(18,[2025],`A piece of wire 20 cm long is bent into the form of an arc of a circle of radius [[60|π]] cm. The angle subtended by the arc at the centre of the circle is`,['30°','60°','90°','50°'],1,`Arc = [[θ|360°]] × 2π × [[60|π]] = [[θ|360°]] × 120 = 20, so θ = [[20 × 360°|120]] = 60°.`);
+
+/* ===== Assertion-Reason (practice) ===== */
+ar(19,[],`The length of the arc of a sector of angle 60° in a circle of radius 21 cm is 22 cm.`,`The length of the arc of a sector of angle θ in a circle of radius r is [[θ|360°]] × 2πr.`,0,`[[60|360]] × 2 × [[22|7]] × 21 = [[1|6]] × 132 = 22 cm. A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(20,[],`The area of a sector of angle 90° in a circle of radius 14 cm is 154 cm².`,`The area of a sector of angle θ in a circle of radius r is [[θ|360°]] × πr².`,0,`[[1|4]] × [[22|7]] × 196 = 154 cm². A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(21,[],`If the circumference of a circle is 44 cm, then its area is 154 cm².`,`If 2πr = 44 cm then r = 7 cm, and the area of a circle is πr².`,0,`2πr = 44 gives r = 7 cm, so the area = [[22|7]] × 49 = 154 cm². A is true and R is the working used.<br><span class="ans">Answer: (a)</span>`);
+ar(22,[],`The perimeter of a semicircle of radius r is πr.`,`The perimeter of a semicircle includes its diameter, so it is πr + 2r.`,3,`The perimeter of a semicircle is πr + 2r, not πr, so A is false. R is true.<br><span class="ans">Answer: (d)</span>`);
+ar(23,[],`The area of the largest circle that can be inscribed in a square of side 10 cm is 25π cm².`,`The diameter of the largest inscribed circle is equal to the side of the square.`,0,`r = 5 cm, so the area = π × 25 = 25π cm². A is true and R gives the radius.<br><span class="ans">Answer: (a)</span>`);
+ar(24,[],`The area of a quadrant of a circle of radius 7 cm is 38.5 cm².`,`The area of a quadrant of a circle of radius r is [[πr²|4]].`,0,`[[1|4]] × [[22|7]] × 49 = 38.5 cm². A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(25,[],`If the areas of two circles are in the ratio 4 : 9, then their circumferences are in the ratio 2 : 3.`,`The circumference is proportional to the radius, and the area is proportional to the square of the radius.`,0,`The radii are in the ratio 2 : 3 (the square roots of 4 : 9), and the circumferences are in the same ratio as the radii. A is true and R explains it.<br><span class="ans">Answer: (a)</span>`);
+ar(26,[],`Doubling the radius of a circle doubles its area.`,`The area of a circle is proportional to the square of its radius.`,3,`If r becomes 2r, the area π(2r)² = 4πr² becomes four times. So A is false. R is true.<br><span class="ans">Answer: (d)</span>`);
+ar(27,[],`A wheel of diameter 28 cm covers 88 m in 100 revolutions.`,`The distance covered in one revolution is equal to the circumference of the wheel.`,0,`Circumference = [[22|7]] × 28 = 88 cm. In 100 revolutions: 8800 cm = 88 m. A is true and R explains it.<br><span class="ans">Answer: (a)</span>`);
+ar(28,[],`The area of the minor segment of a circle is the area of the corresponding sector minus the area of the triangle formed by the two radii and the chord.`,`The area of a segment is the sum of the area of the sector and the area of the triangle.`,2,`Minor segment = sector − triangle, so A is true. R is false (the area is the difference, not the sum).<br><span class="ans">Answer: (c)</span>`);
+ar(29,[],`The area of the ring between two concentric circles of radii 7 cm and 3.5 cm is 115.5 cm².`,`The area of a ring between concentric circles of radii R and r is π(R² − r²).`,0,`π(49 − 12.25) = [[22|7]] × 36.75 = 115.5 cm². A is true and R is the formula used.<br><span class="ans">Answer: (a)</span>`);
+ar(30,[],`An arc of a sector of angle 90° in a circle of radius 14 cm is 22 cm long.`,`The ratio of the length of an arc to the circumference of the circle is equal to [[θ|360°]].`,1,`The arc = [[1|4]] × 88 = 22 cm, so A is true. R is also true, but it only states the ratio; the working that gives 22 cm needs the circumference 2πr, so R is not the full explanation.<br><span class="ans">Answer: (b)</span>`);
+ar(31,[],`The hour hand of a clock turns through 30° in one hour.`,`The hour hand completes one full turn in 24 hours.`,2,`The hour hand completes a full turn in 12 hours (360° ÷ 12 = 30° per hour), so A is true. R is false: it is 12 hours, not 24.<br><span class="ans">Answer: (c)</span>`);
+ar(32,[],`If a circle and a square have the same perimeter, then their areas are equal.`,`Among all closed shapes of a given perimeter, the circle encloses the largest area.`,3,`For the same perimeter the circle has a larger area than the square, so A is false. R is true.<br><span class="ans">Answer: (d)</span>`);
+ar(33,[],`The length of the arc of a sector of angle 36° in a circle of radius 10 cm is 2π cm.`,`The circumference of a circle of radius 10 cm is 20π cm.`,1,`Arc = [[36|360]] × 20π = 2π cm, so A is true. R is also true, but it does not explain the 36° angle part by itself, so it is not the complete explanation.<br><span class="ans">Answer: (b)</span>`);
+
+/* ===== 2 marks ===== */
+vsa(1,[2024],`The minute hand of a clock is 14 cm long. Find the area on the face of the clock described by the minute hand is 5 minutes.`,`In 60 minutes the minute hand turns 360°, so in 5 minutes it turns 30°.<br>Area = [[30°|360°]] × π × 14² = [[1|12]] × [[22|7]] × 196 = <b>[[154|3]] cm²</b> ≈ 51.3 cm².`);
+vsa(2,[2024],`Find the length of the arc of a circle which subtends an angle of 60° at the centre of the circle of radius 42 cm.`,`Arc = [[60°|360°]] × 2π × 42 = [[1|6]] × 2 × [[22|7]] × 42 = <b>44 cm</b>.`);
+vsa(3,[2025],`In the given figure, the shape of the top of a table is that of a sector of a circle with centre O and ∠AOB = 90°. If AO = OB = 42 cm, then find the perimeter of the top of the table.`,`The top of the table is the major sector, whose angle is 360° − 90° = 270°.<br>Arc length = [[270°|360°]] × 2π × 42 = [[3|4]] × 264 = 198 cm.<br>Perimeter = arc + OA + OB = 198 + 42 + 42 = <b>282 cm</b>.`,{fig:SF({p:{O:[0,0],A:AT(5,225),B:AT(5,-45)},s:'OA OB',sh:[['c',0,0,5,-45,225]],ra:[['O','A','B']],dt:'O',lc:[0,1],alt:'Table top shaped like a major sector'})});
+vsa(4,[2025],`In the given figure, three sectors of a circle of radius 5 cm, making angles 35°, 50° and 95° at the centre are shaded. Find the area of the shaded region.`,`The total angle of the three shaded sectors = 35° + 50° + 95° = 180°, i.e. half the circle.<br>Area = [[180°|360°]] × π × 5² = [[25π|2]] = <b>39.25 cm²</b> (using π = 3.14).`,{fig:SF({cir:[[0,0,5]],p:{O:[0,0],a:AT(5,85),b:AT(5,-50),c:AT(5,-90),d:AT(5,-125),l:[-5,0],r:[5,0]},s:'Oa Ob Oc Od lr',sh:[['s',0,0,5,85,180,'sh'],['s',0,0,5,-50,0,'sh'],['s',0,0,5,-125,-90,'sh']],nl:'O',tx:[[-2.4,1.7,'95°'],[2.6,-0.9,'50°'],[-0.8,-2.7,'35°']],alt:'Circle with three shaded sectors'})});
+vsa(5,[],`Find the circumference of a circle whose area is 154 cm².`,`πr² = 154, so r² = 154 × [[7|22]] = 49 and r = 7 cm.<br>Circumference = 2πr = 2 × [[22|7]] × 7 = <b>44 cm</b>.`);
+vsa(6,[],`Find the area of a sector of a circle of radius 10.5 cm and angle 120°.`,`Area = [[120°|360°]] × [[22|7]] × (10.5)² = [[1|3]] × [[22|7]] × 110.25 = <b>115.5 cm²</b>.`);
+vsa(7,[],`Find the perimeter of a quadrant of a circle of radius 14 cm.`,`Arc = [[1|4]] × 2 × [[22|7]] × 14 = 22 cm. Perimeter = arc + 2r = 22 + 28 = <b>50 cm</b>.`);
+vsa(8,[],`The diameter of a wheel is 70 cm. How many revolutions does it make to cover 2.2 km?`,`Circumference = π × 70 = 220 cm. Distance = 2.2 km = 220000 cm.<br>Number of revolutions = [[220000|220]] = <b>1000</b>.`);
+vsa(9,[],`Find the length of an arc of angle 72° in a circle of radius 10 cm. (Use π = 3.14)`,`Arc = [[72°|360°]] × 2π × 10 = [[1|5]] × 20π = 4π = 4 × 3.14 = <b>12.56 cm</b>.`);
+vsa(10,[],`Find the area of the ring between two concentric circles of radii 9 cm and 5 cm.`,`Area = π(9² − 5²) = [[22|7]] × 56 = <b>176 cm²</b>.`);
+vsa(11,[],`Through what angle does the minute hand of a clock turn in 10 minutes?`,`The minute hand turns 360° in 60 minutes, i.e. 6° per minute. In 10 minutes it turns 10 × 6° = <b>60°</b>.`);
+vsa(12,[],`Find the area of the circle inscribed in a square of side 14 cm.`,`The diameter of the inscribed circle = 14 cm, so r = 7 cm. Area = [[22|7]] × 49 = <b>154 cm²</b>.`);
+vsa(13,[],`An arc of length 11 cm subtends an angle of 90° at the centre of a circle. Find the radius of the circle.`,`Arc = [[1|4]] × 2πr = [[πr|2]] = 11, so r = [[22|π]] = [[22 × 7|22]] = <b>7 cm</b>.`);
+vsa(14,[],`Find the area of a semicircle of radius 14 cm.`,`Area = [[1|2]] × [[22|7]] × 196 = <b>308 cm²</b>.`);
+vsa(15,[],`The circumference of a circle is 88 cm. Find the length of the arc of this circle that subtends an angle of 45° at the centre.`,`Arc = [[45°|360°]] × circumference = [[1|8]] × 88 = <b>11 cm</b>.`);
+
+/* ===== 3 marks ===== */
+sa(1,[2024],`An arc of a circle of radius 10 cm subtends a right angle at the centre of the circle. Find the area of the corresponding major sector. (Use π = 3.14)`,`The angle of the major sector = 360° − 90° = 270°.<br>Area = [[270°|360°]] × π × 10² = [[3|4]] × 314 = <b>235.5 cm²</b>.`);
+sa(2,[2025],`An arc of a circle of radius 10 cm subtends a right angle at the centre of the circle. Find the area of the corresponding minor segment. (Use π = 3.14)`,`Area of the minor sector = [[90°|360°]] × π × 10² = [[1|4]] × 314 = 78.5 cm².<br>Area of the triangle formed by the two radii = [[1|2]] × 10 × 10 = 50 cm².<br>Area of the minor segment = 78.5 − 50 = <b>28.5 cm²</b>.`);
+sa(3,[2024],`A sector is cut from a circle of radius 21 cm. The central angle of the sector is 150°. Find the length of the arc of this sector and the area of the sector.`,`Arc length = [[150°|360°]] × 2π × 21 = [[5|12]] × 132 = <b>55 cm</b>.<br>Area of the sector = [[150°|360°]] × π × 21² = [[5|12]] × [[22|7]] × 441 = <b>577.5 cm²</b>.`);
+sa(4,[2023],`In a circle of radius 21 cm, an arc subtends an angle of 60° at the centre. Find the area of the sector formed by the arc. Also, find the length of the arc.`,`Area of the sector = [[60°|360°]] × π × 21² = [[1|6]] × [[22|7]] × 441 = <b>231 cm²</b>.<br>Length of the arc = [[60°|360°]] × 2π × 21 = [[1|6]] × 132 = <b>22 cm</b>.`);
+sa(5,[2023],`A car has two wipers which do not overlap. Each wiper has a blade of length 21 cm sweeping through an angle of 120°. Find the total area cleaned at each sweep of the two blades.`,`Area cleaned by one blade = [[120°|360°]] × π × 21² = [[1|3]] × [[22|7]] × 441 = 462 cm².<br>The wipers do not overlap, so the total area = 2 × 462 = <b>924 cm²</b>.`);
+sa(6,[2023],`Reeti prepares a Rakhi for her brother Ronit. The Rakhi consists of a rectangle of length 8 cm and breadth 6 cm inscribed in a circle as shown in the figure. Find the area of the shaded region. (Use π = 3.14)`,`The diagonal of the rectangle is the diameter of the circle: d = √{8² + 6²} = 10 cm, so r = 5 cm.<br>Area of the circle = 3.14 × 25 = 78.5 cm². Area of the rectangle = 8 × 6 = 48 cm².<br>Area of the shaded region = 78.5 − 48 = <b>30.5 cm²</b>.`,{fig:SF({cir:[[0,0,5]],p:{a:[-4,3],b:[4,3],c:[4,-3],d:[-4,-3]},sh:[['s',0,0,5,0,360,'sh'],['p','w',[-4,3],[4,3],[4,-3],[-4,-3]]],s:'ab bc cd da ac',t:{ab:'8 cm',da:'6 cm'},lc:[0,0],alt:'Rakhi: a rectangle inscribed in a circle'})});
+sa(7,[2023],`In the given figure, AB and CD are diameters of a circle with centre O perpendicular to each other. If OA = 7 cm find the area of shaded region.`,`The shaded region is made of two equal segments on the chords BC and AC. Each is a quadrant minus a right triangle with legs 7 cm: Area = [[1|4]] × [[22|7]] × 49 − [[1|2]] × 7 × 7 = 38.5 − 24.5 = 14 cm².<br>Total shaded area = 2 × 14 = <b>28 cm²</b>.`,{fig:SF({cir:[[0,0,7]],p:{O:[0,0],A:[0,-7],B:[0,7],C:[7,0],D:[-7,0]},sh:[['g',0,0,7,0,90,'sh'],['g',0,0,7,-90,0,'sh']],s:'AB CD BC AC',dt:'O',lc:[0,0],alt:'Circle with two shaded segments'})});
+sa(8,[],`In the given figure, PQ and AB are two arcs of concentric circles of radii 7 cm and 3.5 cm respectively, with centre O. If ∠POQ = 30° then the area of shaded region.`,`The shaded region is the part of the sector of angle 30° between the two arcs.<br>Area = [[30°|360°]] × π(7² − 3.5²) = [[1|12]] × [[22|7]] × (49 − 12.25) = [[1|12]] × [[22|7]] × 36.75 = <b>9.625 cm²</b> (= [[77|8]] cm²).`,{fig:SF({p:{O:[0,0],P:AT(7,-15),Q:AT(7,15),A:AT(3.5,-15),B:AT(3.5,15)},s:'OP OQ',sh:[['a',0,0,3.5,7,-15,15,'sh'],['c',0,0,7,-15,15],['c',0,0,3.5,-15,15]],tx:[[1.8,0,'30°']],lc:[-4,0],alt:'Concentric arcs PQ and AB'})});
+sa(9,[],`Three horses are tied each with 7 m long rope at three corners of a triangular field having sides 20 m, 34 m and 42 m. Find the area of the plot which can be grazed by the horses.`,`(The question prints the rope as 7 cm; the field is in metres, so the rope is taken as 7 m.)<br>Each horse grazes a sector of radius 7 m at one corner, with the angles equal to the angles of the triangle. The three angles add up to 180°.<br>Area grazed = [[A + B + C|360°]] × π × 7² = [[180°|360°]] × [[22|7]] × 49 = <b>77 m²</b>.`);
+sa(10,[],`In the given figure, AOB is a sector of angle 60° of a circle with centre O and radius 17 cm. If AP ⊥ OB and AP = 15 cm find the area of the shaded region. (Use π = 3.14)`,`The shaded region is the minor segment cut off by the chord AB: segment = sector AOB − ΔAOB.<br>Area of the sector = [[60°|360°]] × 3.14 × 17² = [[1|6]] × 907.46 = 151.24 cm².<br>AP ⊥ OB, so AP is the height of ΔAOB on the base OB: area = [[1|2]] × OB × AP = [[1|2]] × 17 × 15 = 127.5 cm².<br>Area of the shaded region = 151.24 − 127.5 = <b>23.74 cm²</b>.`,{fig:SF({cir:[[0,0,17]],p:{O:[0,0],A:AT(17,240),B:AT(17,300),P:[4,-6.93]},sh:[['g',0,0,17,240,300,'sh']],s:'OA OB AB AP',dt:'O',tx:[[0,-4.5,'60°']],lc:[0,0],alt:'Sector AOB with the perpendicular AP'})});
+sa(11,[],`In the given figure, a chord AB of the circle with centre O and radius 10 cm, that subtends a right angle at the centre of the circle. Find the area of the minor segment AQBP. Hence find the area of major segment ALBQA. (Use π = 3.14).`,`Area of the sector OAPB = [[1|4]] × 3.14 × 100 = 78.5 cm². Area of ΔOAB = [[1|2]] × 10 × 10 = 50 cm².<br>Area of the minor segment AQBP = 78.5 − 50 = <b>28.5 cm²</b>.<br>Area of the circle = 3.14 × 100 = 314 cm². Area of the major segment = 314 − 28.5 = <b>285.5 cm²</b>.`,{fig:SF({cir:[[0,0,10]],p:{O:[0,0],A:AT(10,225),B:AT(10,315),Q:[0,-7.07],P:[0,-10],L:[0,10]},sh:[['g',0,0,10,225,315,'sh']],s:'OA OB AB',dt:'OQPL',tx:[[0,-2.3,'90°']],lc:[0,0],alt:'Chord AB subtending a right angle at the centre'})});
+sa(12,[],`Find the area of shaded region shown in the figure, where a circular arc of radius 6 cm has been drawn with vertex O of an equilateral triangle OAB of side 12 cm as centre. (Use π = 3.14 and √{3} = 1.73)`,`The shaded region = the equilateral triangle + the circle − the part common to both (the 60° sector at O inside the triangle), i.e. the triangle plus the major sector (300°) of the circle.<br>Area of the triangle = [[√{3}|4]] × 12² = 36√{3} = 36 × 1.73 = 62.28 cm².<br>Area of the major sector = [[300°|360°]] × π × 6² = [[5|6]] × 3.14 × 36 = 94.2 cm².<br>Area of the shaded region = 62.28 + 94.2 = <b>156.48 cm²</b>.`,{fig:SF({cir:[[0,10.39,6]],p:{O:[0,10.39],A:[-6,0],B:[6,0],P:[0,4.39]},sh:[['s',0,10.39,6,0,360,'sh'],['p','sh',[0,10.39],[-6,0],[6,0]]],s:'OA OB AB',dt:'OP',lc:[0,6],alt:'Equilateral triangle with a circle centred at O'})});
+sa(13,[],`In the given figure, find the area of shaded region enclosed between two concentric circles of radii 7 cm and 14 cm where ∠AOC = 40°.`,`The shaded region is the whole ring minus the part of the ring inside the angle ∠AOC = 40°. So its angle is 360° − 40° = 320°.<br>Area = [[320°|360°]] × π(14² − 7²) = [[8|9]] × [[22|7]] × 147 = [[8|9]] × 462 = <b>410.67 cm²</b>.`,{fig:SF({cir:[[0,0,7],[0,0,14]],p:{O:[0,0],A:AT(14,250),C:AT(14,290),B:AT(7,250),D:AT(7,290),P:[0,7],Q:[0,14]},sh:[['a',0,0,7,14,290,610,'sh']],s:'OA OC',dt:'OPQ',tx:[[0,-3.4,'40°']],lc:[0,0],alt:'Ring between two concentric circles'})});
+sa(14,[],`In the given figure, ΔPQR is an equilateral triangle of side 8 cm and D, E, F are centres of circular arcs each of radius 4 cm. Find the area of shaded region. (Use π = 3.14 and √{3} = 1.732)`,`(The arcs of radius 4 cm are drawn at the three corners P, Q, R of the triangle and meet at the mid-points D, E, F of the sides.)<br>Area of the triangle = [[√{3}|4]] × 8² = 16√{3} = 27.712 cm².<br>The three arcs belong to three sectors of angle 60° and radius 4 cm; together = 3 × [[60°|360°]] × π × 16 = 8π = 25.12 cm².<br>Area of the shaded region = 27.712 − 25.12 = <b>2.592 cm²</b>.`,{fig:SF({p:{P:[4,6.93],Q:[0,0],R:[8,0],D:[2,3.46],F:[6,3.46],E:[4,0]},sh:[['p','sh',[4,6.93],[0,0],[8,0]],['s',4,6.93,4,240,300,'w'],['s',0,0,4,0,60,'w'],['s',8,0,4,120,180,'w'],['c',4,6.93,4,240,300],['c',0,0,4,0,60],['c',8,0,4,120,180]],s:'PQ QR RP',dt:'DEF',alt:'Triangle with three arcs'})});
+sa(15,[],`A circular park of radius 14 m has a path 3.5 m wide all around it on the outside. Find the area of the path.`,`Outer radius = 14 + 3.5 = 17.5 m.<br>Area of the path = π(17.5² − 14²) = [[22|7]] × (306.25 − 196) = [[22|7]] × 110.25 = <b>346.5 m²</b>.`);
+
+/* ===== 5 marks ===== */
+la(1,[2024],`An arc of circle of radius 21 cm subtends an angle of 60° at the centre. Find the length of an arc and the area of the minor segment of the circle made by the corresponding chord. (Use √{3} = 1.73)`,`Length of the arc = [[60°|360°]] × 2π × 21 = [[1|6]] × 132 = <b>22 cm</b>.<br>Area of the sector = [[60°|360°]] × π × 21² = [[1|6]] × [[22|7]] × 441 = 231 cm².<br>The two radii and the chord form an equilateral triangle (angle 60°, equal sides): its area = [[√{3}|4]] × 21² = [[1.73 × 441|4]] = 190.73 cm².<br>Area of the minor segment = 231 − 190.73 = <b>40.27 cm²</b>.`);
+la(2,[2023],`A chord of circle of radius 14 cm subtends an angle of 60° at the centre. Find the area of the corresponding minor segment of the circle. Also find the area of major segment of the circle. (Use √{3} = 1.73)`,`Area of the sector = [[60°|360°]] × [[22|7]] × 14² = [[1|6]] × 616 = 102.67 cm².<br>The triangle formed by the radii and the chord is equilateral with side 14 cm: area = [[√{3}|4]] × 196 = 49√{3} = 84.77 cm².<br>Minor segment = 102.67 − 84.77 = <b>17.90 cm²</b>.<br>Area of the circle = [[22|7]] × 196 = 616 cm². Major segment = 616 − 17.90 = <b>598.10 cm²</b>.`);
+la(3,[2024],`In the given figure, diameters AC and BD of the circle intersect at O. If ∠AOB = 60° and OA = 10 cm then find the length of the chord AB and find the area of the shaded region. (Use π = 3.14 and √{3} = 1.73)`,`OA = OB = 10 cm and ∠AOB = 60°, so ΔAOB is equilateral and <b>AB = 10 cm</b>.<br>The shaded region = the sector BOC + the minor segment APB. ∠BOC = 180° − 60° = 120°.<br>Area of the sector BOC = [[120°|360°]] × 3.14 × 100 = 104.67 cm².<br>Segment APB = sector AOB − ΔAOB = [[60°|360°]] × 314 − [[√{3}|4]] × 100 = 52.33 − 43.25 = 9.08 cm².<br>Area of the shaded region = 104.67 + 9.08 = <b>113.75 cm²</b>.`,{fig:SF({cir:[[0,0,10]],p:{O:[0,0],A:[-10,0],C:[10,0],B:AT(10,240),D:AT(10,60),P:AT(10,210)},sh:[['s',0,0,10,-120,0,'sh'],['g',0,0,10,180,240,'sh']],s:'AC BD AB',dt:'O',tx:[[-1.9,-1.1,'60°']],lc:[0,0],alt:'Circle with diameters AC and BD'})});
+la(4,[2024],`The perimeter of a certain sector of a circle of radius 5.6 m is 20 m. Find the area of the sector.`,`Perimeter = arc + 2r, so the arc = 20 − 2 × 5.6 = 20 − 11.2 = 8.8 m.<br>Area of the sector = [[1|2]] × r × (arc) = [[1|2]] × 5.6 × 8.8 = <b>24.64 m²</b>.`);
+la(5,[2023],`A horse is tied to a beg at one corner of a square shaped grass field of side 15 m by means of a 5 m long rope. Find the area of that part of the field in which the horse can graze. Also, find the increase in grazing area if length of the rope is increased to 10 m. (Use π = 3.14)`,`At a corner of the square the horse can graze a quadrant (angle 90°) of radius equal to the rope.<br>With the 5 m rope: area = [[1|4]] × 3.14 × 25 = <b>19.625 m²</b>.<br>With the 10 m rope (10 m < 15 m, so it stays within the field): area = [[1|4]] × 3.14 × 100 = 78.5 m².<br>Increase in the grazing area = 78.5 − 19.625 = <b>58.875 m²</b>.`);
+la(6,[],`In the given figure, a square OABC is inscribed in a quadrant OPBQ. If OA = 15 cm find the area of the shaded region. (Use π = 3.14).`,`The diagonal OB of the square is the radius of the quadrant: OB = 15√{2} cm, so r² = 225 × 2 = 450.<br>Area of the quadrant = [[1|4]] × 3.14 × 450 = 353.25 cm². Area of the square = 15² = 225 cm².<br>Area of the shaded region = 353.25 − 225 = <b>128.25 cm²</b>.`,{fig:SF({p:{O:[0,0],A:[10.61,10.61],B:[0,21.21],C:[-10.61,10.61],P:AT(21.21,45),Q:AT(21.21,135)},sh:[['s',0,0,21.21,45,135,'sh'],['p','w',[0,0],[10.61,10.61],[0,21.21],[-10.61,10.61]],['c',0,0,21.21,45,135]],s:'OP OQ AB BC',ra:[['O','P','Q']],t:{OA:'15 cm'},alt:'Square OABC inscribed in a quadrant'})});
+
+/* ===== Case-based ===== */
+cs(1,[2024],`A stable owner has four horses. He usually tie these horses with 7 m long rope to pegs at each corner of a square shaped grass field of 20 m length, to graze in his farm. But tying with rope sometimes results in injuries to his horses, so he decided to build fence around the area so that each horse can graze.`,[
+  {l:'(i)',m:1,q:`Find the area of the square shaped grass field.`},
+  {l:'(ii)',m:2,q:`(a) Find the area of the total field in which these horses can graze.`,or:`(b) If the length of the rope of each horse is increased from 7 m to 10 m, find the area grazed by one horse. (Use π = 3.14)`},
+  {l:'(iii)',m:1,q:`What is the area of the field that is left un grazed, if the length of the rope of each horse is 7 m?`}
+],`<b>(i)</b> Area of the square = 20 × 20 = <b>400 m²</b>.<br><b>(ii)(a)</b> Each horse grazes a quadrant of radius 7 m. Four quadrants make one full circle: area = π × 7² = [[22|7]] × 49 = <b>154 m²</b>.<br>(OR) <b>(b)</b> Area grazed by one horse = [[1|4]] × 3.14 × 10² = <b>78.5 m²</b>.<br><b>(iii)</b> Area un-grazed = 400 − 154 = <b>246 m²</b>.`,{fig:SF({p:{A:[0,20],D:[20,20],B:[0,0],C:[20,0]},sh:[['s',0,20,7,270,360,'sh'],['s',20,20,7,180,270,'sh'],['s',0,0,7,0,90,'sh'],['s',20,0,7,90,180,'sh']],s:'AB BC CD DA',t:{AB:'20 m'},tx:[[3.2,18.2,'7 m']],alt:'Square field with a quadrant at each corner'})});
+cs(2,[2023],`The discus throw is an event in which an athlete attempts to throw a discus. The athlete spins anti clockwise around one and a half times through a circle, then releases the throw. When released, the discus travels along tangent to the circular spin orbit. In the given figure, AB is one such tangent to a circle of radius 75 cm. Point O is centre of the circle and ∠ABO = 30°. PQ is parallel to OA.`,[
+  {l:'(i)',m:1,q:`Find the length of AB.`},
+  {l:'(ii)',m:2,q:`(a) Find the length of AP.`,or:`(b) Find the length of PQ.`},
+  {l:'(iii)',m:1,q:`Find the length of OB.`}
+],`OA ⊥ AB (a tangent is perpendicular to the radius), so ΔOAB is right-angled at A with OA = 75 cm and ∠B = 30°.<br><b>(i)</b> tan 30° = [[OA|AB]], so AB = [[75|1/√{3}]] = <b>75√{3} cm</b> ≈ 129.9 cm.<br><b>(iii)</b> sin 30° = [[OA|OB]], so OB = [[75|1/2]] = <b>150 cm</b>.<br><b>(ii)</b> Q is on the circle and on OB, so OQ = 75 cm and QB = 150 − 75 = 75 cm = [[1|2]]OB. PQ ∥ OA, so ΔBPQ ~ ΔBAO with ratio [[BQ|BO]] = [[1|2]].<br>(a) BP = [[1|2]]AB = [[75√{3}|2]], so AP = AB − BP = <b>[[75√{3}|2]] cm</b> ≈ 65 cm.<br>(OR) (b) PQ = [[1|2]]OA = <b>37.5 cm</b>.`,{fig:SF({cir:[[0,0,7.5]],p:{O:[0,0],A:[0,-7.5],B:[12.99,-7.5],Q:[6.495,-3.75],P:[6.495,-7.5]},s:'OA AB OB PQ',ra:[['A','O','B']],dt:'O',t:{OA:'75 cm'},tx:[[10.4,-6.6,'30°']],lc:[0,0],w:270,h:210,alt:'Discus tangent AB to a circle of radius 75 cm'})});
+cs(3,[2023],`In an annual day function of a school, the organizers wanted to give a cash prize along with a memento to their best students. Each memento is made as shown in the figure and its base ABCD is shown from the front side. The rate of silver plating is Rs 20 per cm². (In the figure O is the centre of the circle, OA = OB = 10 cm, ∠AOB = 90°, OD = OC = 7 cm, and AD = BC = 3 cm.)`,[
+  {l:'(i)',m:1,q:`What is the area of the quadrant ODCO?`},
+  {l:'(ii)',m:2,q:`(a) What is the total cost of silver plating the shaded part ABCD?`,or:`(b) What is the length of arc CD?`},
+  {l:'(iii)',m:1,q:`Find the area of ΔAOB.`}
+],`<b>(i)</b> Area of the quadrant ODCO = [[1|4]] × [[22|7]] × 7² = <b>38.5 cm²</b>.<br><b>(iii)</b> Area of ΔAOB = [[1|2]] × OA × OB = [[1|2]] × 10 × 10 = <b>50 cm²</b>.<br><b>(ii)(a)</b> Area of the shaded part ABCD = area of ΔAOB − area of the quadrant = 50 − 38.5 = 11.5 cm². Cost = 11.5 × 20 = <b>Rs 230</b>.<br>(OR) <b>(b)</b> Arc CD = [[1|4]] × 2π × 7 = [[1|4]] × 44 = <b>11 cm</b>.`,{fig:SF({cir:[[0,0,7]],p:{O:[0,0],A:AT(10,225),B:AT(10,315),D:AT(7,225),C:AT(7,315)},sh:[['p','sh',[0,0],AT(10,225),AT(10,315)],['s',0,0,7,225,315,'w']],s:'OA OB AB',ra:[['O','A','B']],dt:'O',t:{OC:'7 cm'},tx:[[-8.3,-5.8,'3 cm'],[8.3,-5.8,'3 cm']],lc:[0,2],w:260,h:230,alt:'Memento: circle with the shaded base ABCD'})});
+cs(4,[2024],`Governing council of a local public development authority of Dehradun decided to build an adventurous playground on the top of a hill, which will have adequate space for parking. After survey, it was decided to build rectangular playground, with a semi-circular area allotted for parking at one end of the playground. The length and breadth of the rectangular playground are 14 units and 7 units, respectively. There are two quadrants of radius 2 units on one side for special seats.`,[
+  {l:'(i)',m:1,q:`What is the total perimeter of the parking area?`},
+  {l:'(ii)',m:2,q:`(a) What is the total area of parking and the two quadrants?`,or:`(b) What is the ratio of area of playground to the area of parking area?`},
+  {l:'(iii)',m:1,q:`Find the cost of fencing the playground and parking area at the rate of Rs 2 per unit.`}
+],`The parking area is a semicircle on the 7-unit side, so its radius is 3.5 units.<br><b>(i)</b> Perimeter = arc + diameter = π × 3.5 + 7 = 11 + 7 = <b>18 units</b>.<br><b>(ii)(a)</b> Area of the parking = [[1|2]] × [[22|7]] × (3.5)² = 19.25 sq. units. Area of the two quadrants of radius 2 = 2 × [[1|4]] × [[22|7]] × 4 = [[44|7]] ≈ 6.29 sq. units. Total = 19.25 + 6.29 = <b>25.54 sq. units</b>.<br>(OR) <b>(b)</b> Area of the playground (the rectangle) = 14 × 7 = 98. Ratio = 98 : 19.25 = <b>56 : 11</b>.<br><b>(iii)</b> The boundary to be fenced = left side 7 + top 14 + bottom 14 + the semicircular arc 11 = 46 units. Cost = 46 × 2 = <b>Rs 92</b>.`,{fig:SF({p:{a:[0,0],b:[14,0],c:[14,7],d:[0,7]},s:'ab bc cd da',sh:[['s',14,3.5,3.5,-90,90,'sh'],['s',0,7,2,270,360,'sh'],['s',0,0,2,0,90,'sh'],['c',14,3.5,3.5,-90,90]],tx:[[6.5,3.5,'PLAYGROUND'],[15.9,3.5,'PARKING'],[0.9,5.7,'I'],[0.9,1.1,'II'],[7,-1.3,'14 Units'],[-1.6,3.5,'7 Units']],w:320,h:190,pad:46,alt:'Rectangular playground with a semicircular parking area'})});
+cs(5,[],`A brooch is a decorative piece often worn on clothing like jackets, blouses or dresses to add elegance. One such brooch is made with silver wire in the form of a circle with diameter 35 mm. The wire is also used in making 5 diameters which divide the circle into 10 equal sectors as shown in the figure.`,[
+  {l:'(i)',m:1,q:`Find the central angle of each sector.`},
+  {l:'(ii)',m:1,q:`Find the length of the arc ACB.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of each sector of the brooch.`,or:`(b) Find the total length of the silver wire used.`}
+],`The radius is 17.5 mm.<br><b>(i)</b> Central angle = [[360°|10]] = <b>36°</b>.<br><b>(ii)</b> Arc ACB = [[36°|360°]] × 2π × 17.5 = [[1|10]] × 110 = <b>11 mm</b>.<br><b>(iii)(a)</b> Area of each sector = [[1|10]] × π × (17.5)² = [[1|10]] × [[22|7]] × 306.25 = <b>96.25 mm²</b>.<br>(OR) <b>(b)</b> Circumference = 2π × 17.5 = 110 mm. 5 diameters = 5 × 35 = 175 mm. Total wire = 110 + 175 = <b>285 mm</b>.`,{fig:geo({cir:[[0,0,17.5]],p:{O:[0,0],A:AT(17.5,36),B:AT(17.5,72),C:AT(17.5,54),a:AT(17.5,0),b:AT(17.5,180),c:AT(17.5,36),d:AT(17.5,216),e:AT(17.5,72),f:AT(17.5,252),g:AT(17.5,108),h:AT(17.5,288),i:AT(17.5,144),j:AT(17.5,324)},s:'ab cd ef gh ij',dt:'OC',nl:'O',lc:[0,0],w:250,h:230,pad:28,alt:'Brooch: circle divided into 10 equal sectors'})});
+cs(6,[2025],`The Olympic symbol comprising five interlocking rings represents the union of the five continents of the world and the meeting of athletics from all over the world at the Olympic Games. In order to spread awareness about Olympic Games, students of class X took part in various activities organized by the school. One such group of students made 5 circular rings in the school lawn with the help of ropes. Each circular ring required 44 m of rope. Also, in the shaded regions as shown in the figure, students made rangoli showcasing various sports and games. It is given that ΔOAB is an equilateral triangle and all un shaded regions are congruent.`,[
+  {l:'(i)',m:1,q:`Find the radius of each circular ring.`},
+  {l:'(ii)',m:1,q:`What is the measure of ∠AOB?`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the shaded region R₁.`,or:`(b) Find the length of the rope around the unshaded region.`}
+],`<b>(i)</b> Circumference = 44 m, so 2πr = 44 and r = <b>7 m</b>.<br><b>(ii)</b> ΔOAB is equilateral, so ∠AOB = <b>60°</b>.<br><b>(iii)(a)</b> An unshaded region (where two rings overlap) is the common part of two circles, with the common chord AB = 7 m: it consists of two equal segments, each = sector 60° − ΔOAB = [[1|6]] × [[22|7]] × 49 − [[√{3}|4]] × 49 = 25.67 − 21.22 = 4.45 m² (using √{3} = 1.732). So one overlap = 2 × 4.45 = 8.9 m².<br>Taking R₁ as the ring with its two overlaps removed (the ring overlaps two neighbours): R₁ = π × 49 − 2 × 8.9 = 154 − 17.8 = <b>136.2 m²</b> (approximately).<br>(OR) <b>(b)</b> The rope around one unshaded region = two arcs, each of angle 60° and radius 7 m: 2 × [[60°|360°]] × 2π × 7 = 2 × [[22|3]] = <b>[[44|3]] m</b> ≈ 14.67 m.`,{fig:SF({cir:[[0,0,7],[12.12,0,7]],p:{O:[0,0],A:[6.06,-3.5],B:[6.06,3.5]},s:'OA OB AB',dt:'O',tx:[[-3.6,0,'R₁']],lc:[3,0],w:290,h:200,pad:24,alt:'Two interlocking rings with the equilateral triangle OAB'})});
+cs(7,[2025],`A farmer has a circular piece of land. He wishes to construct his house in the form of largest possible square within the land as shown in the figure. The radius of the circular piece of land is 35 m.`,[
+  {l:'(i)',m:1,q:`Find the length of wire needed to fence the entire land.`},
+  {l:'(ii)',m:1,q:`Find the length of each side of the square land on which house will be constructed.`},
+  {l:'(iii)',m:2,q:`(a) The farmer wishes to grow grass on the shaded region around the house. Find the cost of growing the grass at the rate of Rs 50 per square meter.`,or:`(b) Find the ratio of area of land on which house is built to remaining area of circular piece of land.`}
+],`<b>(i)</b> Length of wire = circumference = 2π × 35 = <b>220 m</b>.<br><b>(ii)</b> The diagonal of the largest square = the diameter = 70 m, so the side = [[70|√{2}]] = 35√{2} = <b>49.5 m</b> (≈).<br><b>(iii)(a)</b> Area of the square = [[(diagonal)²|2]] = [[4900|2]] = 2450 m². Area of the circle = [[22|7]] × 1225 = 3850 m². Grass area = 3850 − 2450 = 1400 m². Cost = 1400 × 50 = <b>Rs 70000</b>.<br>(OR) <b>(b)</b> Ratio = 2450 : 1400 = <b>7 : 4</b>.`,{fig:geo({cir:[[0,0,35]],p:{O:[0,0],a:AT(35,45),b:AT(35,135),c:AT(35,225),d:AT(35,315)},sh:[['g',0,0,35,-45,45,'sh'],['g',0,0,35,45,135,'sh'],['g',0,0,35,135,225,'sh'],['g',0,0,35,225,315,'sh']],s:'ab bc cd da',nl:'O',lc:[0,0],w:230,h:215,pad:26,alt:'Largest square inscribed in a circular piece of land'})});
+cs(8,[2025],`Anurag purchased a farmhouse which is in the form of a semicircle of diameter 70 m. He divides it into three parts by taking a point P on the semicircle in such a way that ∠PAB = 30° as shown in the figure, where O is the centre of semicircle. In part I, he planted saplings of Mango tree, in part II, he grew tomatoes and in part III, he grew oranges.`,[
+  {l:'(i)',m:1,q:`What is the measure of ∠POA?`},
+  {l:'(ii)',m:1,q:`Find the length of wire needed to fence entire piece of land.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the region in which saplings of Mango tree are planted.`,or:`(b) Find the length of wire needed to fence the region III.`}
+],`The radius is 35 m. Region I is the segment on chord PB, region II is the triangle APB and region III is the segment on chord AP.<br><b>(i)</b> ∠PAB = 30°, so the arc PB subtends 60° at O: ∠POB = 60° and ∠POA = 180° − 60° = <b>120°</b>.<br><b>(ii)</b> Wire = semicircular arc + diameter = π × 35 + 70 = 110 + 70 = <b>180 m</b>.<br><b>(iii)(a)</b> Region I = sector POB − ΔPOB (∠POB = 60° and OP = OB = 35, so ΔPOB is equilateral): = [[1|6]] × [[22|7]] × 1225 − [[√{3}|4]] × 1225 = 641.67 − 530.4 = <b>111.3 m²</b> (using √{3} = 1.732).<br>(OR) <b>(b)</b> Region III is bounded by the chord AP and the arc AP (angle 120°). Chord AP = 2 × 35 × sin 60° = 35√{3} ≈ 60.6 m. Arc AP = [[120°|360°]] × 2π × 35 = [[220|3]] ≈ 73.3 m. Wire = 60.6 + 73.3 = <b>133.9 m</b>.`,{fig:SF({p:{A:[-35,0],B:[35,0],O:[0,0],P:AT(35,60)},sh:[['g',0,0,35,0,60,'sh'],['g',0,0,35,60,180,'sh'],['c',0,0,35,0,180]],s:'AB AP PB',dt:'O',tx:[[21,7,'I'],[0,9,'II'],[-15,25,'III'],[-28.5,2.2,'30°']],lc:[0,10],w:290,h:190,pad:28,alt:'Semicircular farmhouse divided into three parts'})});
+
+/* ===== Chapter 11: extra case-based (practice, no figures) ===== */
+cs(9,[],`A circular lawn of radius 14 m has a path of width 3.5 m all around it on the outside.`,[
+  {l:'(i)',m:1,q:`Find the outer radius of the path.`},
+  {l:'(ii)',m:1,q:`Find the area of the lawn.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the path.`,or:`(b) Find the cost of fencing the outer boundary of the path at Rs 10 per metre.`}
+],`<b>(i)</b> Outer radius = 14 + 3.5 = <b>17.5 m</b>.<br><b>(ii)</b> Area of the lawn = [[22|7]] × 14² = <b>616 m²</b>.<br><b>(iii)(a)</b> Area of the path = π(17.5² − 14²) = [[22|7]] × (306.25 − 196) = <b>346.5 m²</b>.<br>(OR) <b>(b)</b> Outer circumference = 2 × [[22|7]] × 17.5 = 110 m. Cost = 110 × 10 = <b>Rs 1100</b>.`);
+cs(10,[],`A clock has a minute hand 14 cm long and an hour hand 7 cm long.`,[
+  {l:'(i)',m:1,q:`Through what angle does the minute hand turn in 15 minutes?`},
+  {l:'(ii)',m:1,q:`Find the area swept by the minute hand in 15 minutes.`},
+  {l:'(iii)',m:2,q:`(a) Through what angle does the hour hand turn in 2 hours?`,or:`(b) Find the area swept by the hour hand in 2 hours.`}
+],`<b>(i)</b> The minute hand turns 6° per minute, so in 15 minutes it turns <b>90°</b>.<br><b>(ii)</b> Area = [[90°|360°]] × [[22|7]] × 14² = <b>154 cm²</b>.<br><b>(iii)(a)</b> The hour hand turns 30° per hour, so in 2 hours: <b>60°</b>.<br>(OR) <b>(b)</b> Area = [[60°|360°]] × [[22|7]] × 7² = [[77|3]] = <b>25.67 cm²</b>.`);
+cs(11,[],`The diameter of a wheel of a cart is 42 cm.`,[
+  {l:'(i)',m:1,q:`Find the circumference of the wheel.`},
+  {l:'(ii)',m:1,q:`Find the distance covered by the cart in 50 revolutions of the wheel.`},
+  {l:'(iii)',m:2,q:`(a) How many revolutions does the wheel make to cover 1.32 km?`,or:`(b) If the wheel makes 100 revolutions per minute, find the distance covered in one minute (in metres).`}
+],`<b>(i)</b> Circumference = [[22|7]] × 42 = <b>132 cm</b>.<br><b>(ii)</b> Distance = 50 × 132 = 6600 cm = <b>66 m</b>.<br><b>(iii)(a)</b> 1.32 km = 132000 cm. Revolutions = [[132000|132]] = <b>1000</b>.<br>(OR) <b>(b)</b> Distance = 100 × 132 = 13200 cm = <b>132 m</b>.`);
+cs(12,[],`A sector-shaped garden has a radius of 21 m and a central angle of 120°.`,[
+  {l:'(i)',m:1,q:`Find the area of the garden.`},
+  {l:'(ii)',m:1,q:`Find the length of the boundary of the garden (perimeter).`},
+  {l:'(iii)',m:2,q:`(a) Find the cost of fencing the boundary at Rs 20 per metre.`,or:`(b) Find the cost of laying turf over the garden at Rs 5 per square metre.`}
+],`<b>(i)</b> Area = [[120°|360°]] × [[22|7]] × 21² = <b>462 m²</b>.<br><b>(ii)</b> Arc = [[1|3]] × 2 × [[22|7]] × 21 = 44 m. Perimeter = 44 + 2 × 21 = <b>86 m</b>.<br><b>(iii)(a)</b> Cost of fencing = 86 × 20 = <b>Rs 1720</b>.<br>(OR) <b>(b)</b> Cost of turf = 462 × 5 = <b>Rs 2310</b>.`);
+cs(13,[],`A circular cake of radius 14 cm is cut into 8 equal sectors.`,[
+  {l:'(i)',m:1,q:`Find the central angle of each piece.`},
+  {l:'(ii)',m:1,q:`Find the length of the curved edge of each piece.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the top of each piece.`,or:`(b) Find the perimeter of each piece.`}
+],`<b>(i)</b> Central angle = [[360°|8]] = <b>45°</b>.<br><b>(ii)</b> Arc = [[1|8]] × 2 × [[22|7]] × 14 = <b>11 cm</b>.<br><b>(iii)(a)</b> Area = [[1|8]] × [[22|7]] × 196 = <b>77 cm²</b>.<br>(OR) <b>(b)</b> Perimeter = arc + 2r = 11 + 28 = <b>39 cm</b>.`);
+cs(14,[],`Two concentric circular roads have radii 35 m and 28 m, with a strip of land between them.`,[
+  {l:'(i)',m:1,q:`Find the area enclosed by the outer road.`},
+  {l:'(ii)',m:1,q:`Find the area enclosed by the inner road.`},
+  {l:'(iii)',m:2,q:`(a) Find the area of the strip between the two roads.`,or:`(b) Find the cost of laying grass on the strip at Rs 12 per square metre.`}
+],`<b>(i)</b> Area = [[22|7]] × 35² = <b>3850 m²</b>.<br><b>(ii)</b> Area = [[22|7]] × 28² = <b>2464 m²</b>.<br><b>(iii)(a)</b> Area of the strip = 3850 − 2464 = <b>1386 m²</b>.<br>(OR) <b>(b)</b> Cost = 1386 × 12 = <b>Rs 16632</b>.`);
+cs(15,[],`The top of a table is in the shape of a semicircle of radius 14 cm.`,[
+  {l:'(i)',m:1,q:`Find the perimeter of the table top.`},
+  {l:'(ii)',m:1,q:`Find the area of the table top.`},
+  {l:'(iii)',m:2,q:`(a) Find the cost of polishing the top at Rs 2 per cm².`,or:`(b) Find the cost of putting an edging strip along the whole boundary at Rs 5 per cm.`}
+],`<b>(i)</b> Perimeter = π × 14 + 28 = 44 + 28 = <b>72 cm</b>.<br><b>(ii)</b> Area = [[1|2]] × [[22|7]] × 196 = <b>308 cm²</b>.<br><b>(iii)(a)</b> Cost of polishing = 308 × 2 = <b>Rs 616</b>.<br>(OR) <b>(b)</b> Cost of edging = 72 × 5 = <b>Rs 360</b>.`);
+
+/* ===== Chapter 11: extra long answer (practice, no figures) ===== */
+la(7,[],`Find the area of the minor segment of a circle of radius 10 cm which subtends an angle of 60° at the centre. Also find the area of the major segment. (Use π = 3.14 and √{3} = 1.73)`,`Area of the sector = [[60°|360°]] × 3.14 × 100 = 52.33 cm².<br>The two radii and the chord form an equilateral triangle of side 10 cm: area = [[√{3}|4]] × 100 = 43.25 cm².<br>Minor segment = 52.33 − 43.25 = <b>9.08 cm²</b>.<br>Area of the circle = 3.14 × 100 = 314 cm². Major segment = 314 − 9.08 = <b>304.92 cm²</b>.`);
+la(8,[],`A chord of a circle of radius 12 cm subtends an angle of 120° at the centre. Find the areas of the minor and the major segments. (Use π = 3.14 and √{3} = 1.73)`,`Area of the sector = [[120°|360°]] × 3.14 × 144 = 150.72 cm².<br>Area of the triangle formed by the radii and the chord = [[1|2]] × 12 × 12 × sin 120° = 72 × [[√{3}|2]] = 36√{3} = 62.28 cm².<br>Minor segment = 150.72 − 62.28 = <b>88.44 cm²</b>.<br>Area of the circle = 3.14 × 144 = 452.16 cm². Major segment = 452.16 − 88.44 = <b>363.72 cm²</b>.`);
+la(9,[],`A square ABCD of side 14 cm has four quadrants of radius 7 cm cut out at the corners (centred at A, B, C and D). Find the area of the part of the square not covered by the quadrants.`,`Area of the square = 14 × 14 = 196 cm².<br>Each corner quadrant has radius 7 cm and angle 90°. The four quadrants together make one full circle of radius 7 cm: area = [[22|7]] × 49 = 154 cm².<br>Area not covered = 196 − 154 = <b>42 cm²</b>.`);
+la(10,[],`A horse is tied to a peg at one corner of a rectangular field 20 m × 16 m by a rope 7 m long. Find the area of the part of the field in which it can graze. Find the increase in the grazing area if the rope is lengthened to 14 m.`,`At a corner of the field the horse can graze a quadrant of radius equal to the rope.<br>Rope 7 m: area = [[1|4]] × [[22|7]] × 49 = <b>38.5 m²</b>.<br>Rope 14 m (it is less than 16 m, so the quadrant stays inside the field): area = [[1|4]] × [[22|7]] × 196 = 154 m².<br>Increase = 154 − 38.5 = <b>115.5 m²</b>.`);
+la(11,[],`The minute hand of a clock is 21 cm long. Find the area swept by it in 20 minutes and the distance travelled by its tip in that time.`,`In 20 minutes the minute hand turns [[20|60]] × 360° = 120°.<br>Area swept = [[120°|360°]] × [[22|7]] × 21² = [[1|3]] × 1386 = <b>462 cm²</b>.<br>Distance travelled by the tip = arc = [[1|3]] × 2 × [[22|7]] × 21 = <b>44 cm</b>.`);
+la(12,[],`A circular pond has a diameter of 70 m. A path 7 m wide runs around it on the outside. Find the area of the path and the cost of levelling it at Rs 15 per square metre.`,`Inner radius = 35 m. Outer radius = 35 + 7 = 42 m.<br>Area of the path = π(42² − 35²) = [[22|7]] × (1764 − 1225) = [[22|7]] × 539 = <b>1694 m²</b>.<br>Cost of levelling = 1694 × 15 = <b>Rs 25410</b>.`);
+la(13,[],`A flower bed is made by attaching a semicircle (on a side of 28 m) to a rectangle 28 m × 10 m, the diameter of the semicircle coinciding with the 28 m side. Find the perimeter and the area of the whole bed.`,`The semicircle has radius 14 m.<br>Perimeter = the opposite 28 m side + the two sides of 10 m + the semicircular arc = 28 + 10 + 10 + [[22|7]] × 14 = 48 + 44 = <b>92 m</b>.<br>Area = rectangle + semicircle = 28 × 10 + [[1|2]] × [[22|7]] × 196 = 280 + 308 = <b>588 m²</b>.`);
+la(14,[],`Find the area of a sector of angle 40° of a circle of radius 21 cm. Also find the length of its arc.`,`Area of the sector = [[40°|360°]] × [[22|7]] × 21² = [[1|9]] × 1386 = <b>154 cm²</b>.<br>Length of the arc = [[40°|360°]] × 2 × [[22|7]] × 21 = [[1|9]] × 132 = <b>[[44|3]] cm</b> ≈ 14.67 cm.`);
+la(15,[],`A wire is bent into a circle of radius 7 cm. It is then straightened and bent into a square. Find the side of the square and compare the areas enclosed by the circle and the square.`,`Length of the wire = circumference of the circle = 2 × [[22|7]] × 7 = 44 cm.<br>Perimeter of the square = 44 cm, so its side = [[44|4]] = <b>11 cm</b>.<br>Area of the circle = [[22|7]] × 49 = 154 cm². Area of the square = 11 × 11 = 121 cm².<br>The circle encloses <b>33 cm²</b> more area than the square.`);
+
+CUR=1;
+
+
 /* ---------- state ---------- */
 const KEY='khanclasses-pyq-v1';
 let prog={done:{},mcq:{}};
@@ -2943,15 +3077,6 @@ $('reset').addEventListener('click',()=>{
 renderAll();
 </script>
 
-<script>
-/* portal menu (☰) toggle */
-(function(){
-  var b=document.getElementById('spBurger'),n=document.getElementById('spNav');
-  if(!b||!n)return;
-  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});
-  n.addEventListener('click',function(e){if(e.target.closest('a')){n.classList.remove('open');b.setAttribute('aria-expanded','false');}});
-})();
-</script>
 <script>
 /* content protection (added): deterrents against casual copying and inspecting */
 (function(){
