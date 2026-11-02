@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Khan Study Portal</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+  /*  body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 30px;
+    }
+*/
+   /* ===== GLOBAL ===== */
+
+  </style>
+</head>
+<header>
+    <h1><a href="index.html" style="color: white; text-decoration: none; cursor: pointer;">Khan Study Portal</h1></a>
+    <button id="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="class9.html">Class 9</a> 
+      <a href="class10.html">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="class12.html">Class 12</a>
+      <a href="blog.html">Blog</a>
+      <a href="https://www.khanclasses.in" target="_blank" class="learn-btn">
+  🚀 Learn With Me
+</a>
+    </nav>
+  </header>
+<body>
+  <!--button id="back-to-top" title="Back to top">↑</button-->
+
+<div id="navbar-placeholder"></div>
+
+<script>
+  fetch('navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+    });
+</script>
+
+  <main>
+    <h2>Class 12 Resources</h2>
+
+    <div class="subject-container">
+      <section class="subject" id="maths">
+        <div class="subject-header">
+<h2>Mathematics</h2>
+<a href="12thMathPyq.html" class="practical-btn">🎯 PYQ Practice </a>
+        </div>
+        
+        <ul>
+          <li onclick="showPDFList('maths', 'notes')">Notes</li>
+          <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('maths', 'previous')">Previous Year Questions</li>
+          <li onclick="showPDFList('maths', 'Coming Soon')">School Question Papers</li>
+        </ul>
+      </section>
+
+    <section id="assetsection">
+      <h3 id="pdfTitle"></h3>
+      <div id="pdfList" style="display: flex; gap: 40px; flex-wrap: wrap;"></div>
+
+    </section>
+  </main>
+
+ <footer>
+    <p>Created with ❤️ by <a href="https://khanclasses.in/" title="About Me" style="color: white; text-decoration: none; cursor: pointer;">MD ABDAAL KHAN</p></a>
+    <p>&copy; 2026 Khan Study Portal</p>
+         
+
+  </footer>
+
+  <script>
+    const pdfData = {
+      maths: {
+        notes: [
+          { name: "Relations and Functions-Coming Soon", url: "" },
+          { name: "Inverse Trigonometric Functions", url: "https://drive.google.com/file/d/1pvir1fGc0Ymx7QTWABK8mbPecE-VK6Xd/view?usp=drive_link" },
+          { name: "Matrices-Coming Soon", url: "" },
+          { name: "Determinants-Coming Soon", url: "" },
+          { name: "Continuity and Differentiability", url: "https://drive.google.com/file/d/1VK9j2SzjZ3TVOe6RLGwU8_VbAaFfjDUi/view?usp=drive_link" },
+          { name: "Application of Derivatives", url: "https://drive.google.com/file/d/1B68KQq-axigPQE-cGVtSKyIJ5AqcIR2k/view?usp=drive_link" },
+          { name: "Integrals", url: "https://drive.google.com/file/d/1VhK0Afi2ZYRMqNT7sW1vENA34wKzpLJX/view?usp=drive_link" },
+          { name: "Application of Integrals-Coming Soon", url: "" },
+          { name: "Differential Equations-Coming Soon", url: "" },
+          { name: "Vector Algebra-Coming Soon", url: "" },
+          { name: "Three Dimensional Geometry-Coming Soon", url: "" },
+          { name: "Linear Programming-Coming Soon", url: "" },
+          { name: "Probability-Coming Soon", url: "" }
+        ],
+        assignments: {
+          "Chapter wise  Assignment":[
+                { name: "Relations and Functions", url: "https://drive.google.com/file/d/1ZlOSAa6Dn-4gLEGLO_T-6YopEfeJ8Rq9/view?usp=drive_link" },
+          { name: "Inverse Trigonometric Functions", url: "https://drive.google.com/file/d/1ajzcv09J7paycqFOSImutLH5a9jafiEa/view?usp=drive_link" },
+          { name: "Matrices", url: "https://drive.google.com/file/d/1lfxM2jwyXJJdv5qS6Gta4Rbjhg1Xx6Ju/view?usp=drive_link" },
+          { name: "Determinants", url: "https://drive.google.com/file/d/1UI0l6JnkMKpuHmVW6uEnFTgHsGs8L3_H/view?usp=drive_link" },
+          { name: "Continuity and Differentiability", url: "https://drive.google.com/file/d/1V_auCBYLfZgZX33mkUWDGrSwnkGuXnqt/view?usp=drive_link" },
+          { name: "Application of Derivatives", url: "https://drive.google.com/file/d/13ReH4Ig6ClkU6vdIsyfV8RIy-4q4nkmB/view?usp=drive_link" },
+          { name: "Integrals", url: "https://drive.google.com/file/d/1BtGSWY4s-3BOjDbmIwFrojTEFofIkuaN/view?usp=drive_link" },
+          { name: "Application of Integrals", url: "https://drive.google.com/file/d/1rDzxnR0CzX8OgabOASg5JDX4hoszQSRW/view?usp=drive_link" },
+          { name: "Differential Equations", url: "https://drive.google.com/file/d/1XewVRSFjgPex4bt0gOJua7i9tlVL0AVE/view?usp=drive_link" },
+          { name: "Vector Algebra", url: "https://drive.google.com/file/d/1hOMAuVEYQ6RFgXq_u5Ic4BYmyupdFUzF/view?usp=drive_link" },
+          { name: "Three Dimensional Geometry", url: "https://drive.google.com/file/d/1g2HUDjZY9MaAtqljo-SoXgydGMoGXYyr/view?usp=drive_link" },
+          { name: "Linear Programming", url: "https://drive.google.com/file/d/17m0kb9R9oS0-w6t-iet8ZhJbgPDchLwp/view?usp=drive_link" },
+          { name: "Probability", url: "https://drive.google.com/file/d/19o2SYruy3OO1PwhuTcfspTyOTaksCQjh/view?usp=drive_link" },
+        ],
+        },
+        samplepapers: {
+          CBSE_SQP: [
+          { name: "Sample Paper 2020", url: "https://drive.google.com/file/d/1iu9vZB7Cl4kdewWECVOW4zJ4hA8cr7jA/view?usp=drive_link" },
+          { name: "Sample Paper 2022", url: "https://drive.google.com/file/d/1ZbXJrLGSLb_g5k3Xk4cjUBI1BZSdgfN_/view?usp=drive_link" },
+          { name: "Sample Paper 2023", url: "https://drive.google.com/file/d/1zzzGhncu5HNqhHZrenB0c4iAuTgvNECY/view?usp=drive_link" },
+          { name: "Sample Paper 2024", url: "https://drive.google.com/file/d/10SVnv6C9SHn2wqhP3lToH1SDj3yBFV0l/view?usp=drive_link" },
+          { name: "Sample Paper 2025", url: "https://drive.google.com/file/d/1jF_eWiRtZGEk41utRdwfCi5fhSH34XHG/view?usp=drive_link" },
+          { name: "Sample Paper 2026", url: "https://drive.google.com/file/d/1I_m7W8P3OQU_JJih1jPMISSb_wdHMhlY/view?usp=drive_link" },
+          { name: "Sample Paper 2027", url: "https://cbseacademic.nic.in/web_material/SQP/ClassXII_2026_27/Maths-SQP.pdf" },
+        ],
+        },
+        previous: {
+           2026: [
+          { name: "Paper 01", url: "https://drive.google.com/file/d/1YXD7KNHyKAKrNiMIXtcVp3ZOMyJHV4pb/view?usp=drive_link" },
+          {name:"Paper 02",url:"https://drive.google.com/file/d/1S44nDwHjz5iuZrbUf0O9YB_kg4JTrH73/view?usp=drive_link"},
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1p1bkYKBC-I1fNCKnmpz6JV1kE4t9roMo/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1gLfmiKUt_54-ulFSBNizn4k2HHKeN60j/view?usp=drive_link" },
+
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1wIHOYR_y4nBukHqMh7bNBEFKkF3tuZPf/view?usp=drive_link" },
+          { name: "Model Answer-Coming Soon", url: "" },
+            ],
+         2025: [
+          { name: "Paper 01", url: "https://drive.google.com/file/d/1s4pKTsB6W76y2bTbGxgx9EoGHo-va32-/view?usp=drive_link" },
+          {name:"Paper 02",url:"https://drive.google.com/file/d/10Nv_nHqJ6tx_iZLWD1ZiLA7T_KkAmtBF/view?usp=drive_link"},
+          { name: "Paper 03", url: "https://drive.google.com/file/d/192dxNrH1eOxDKJ7WSQyqKHsIQMDvlx-s/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1sHWQQyrrfkInvxsR2WKXifOAAL__SMf5/view?usp=drive_link" },
+
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1a5cF3SvVL8u_JC51akD4df4SptQSUdQQ/view?usp=drive_link" },
+          { name: "Model Answer", url: "https://drive.google.com/file/d/1epfyVhLdYkbhNoyJVQYNpxa6RJ2Zu2_Y/view?usp=drive_link" },
+            ],
+          2024: [
+           { name: "Paper 01", url: "https://drive.google.com/file/d/1K6GQiwDJ35hNrk_1bX5aUU6BxANNdpHs/view?usp=drive_link" },
+          {name:"Paper 02",url:"https://drive.google.com/file/d/1KIv-r-cdzwYQkLBQ4kROaaX1xxd_nDO-/view?usp=drive_link"},
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1TBvM_JCumh-eDYNmGPgQ8yhMTtFMzQbX/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1f0evZi2nVG4mDOO6pTkylQllb9z7yTzR/view?usp=drive_link" },
+
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1ToxgzV8M8XdrmO4G3_IPX_x3ezbh5e6n/view?usp=drive_link" },
+          { name: "Model Answer", url: "https://drive.google.com/file/d/1XTKtSGo0rxKXBL0NlGejgzxXb29YdqRJ/view?usp=drive_link" },
+     
+           ],
+        2023: [
+        { name: "Paper 01", url: "https://drive.google.com/file/d/1cMNo1NE9pcuw6neBpm6weGCHF6LxQ6c-/view?usp=drive_link" },
+          {name:"Paper 02",url:"https://drive.google.com/file/d/1sN6tNQcl9bhNFbSfjpnoHEOGQz36J_8u/view?usp=drive_link"},
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1fWuJsPqq_6uGdL9DR5GN46qRLwkFKMw5/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1-c73fOnS0DPDqZ2cszgHG0eaOBuZdkiP/view?usp=drive_link" },
+
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1rlC8o6KW9rM2cqo3NBpfAh3ExtVmz6Mh/view?usp=drive_link" },
+          { name: "Model Answer", url: "https://drive.google.com/file/d/1g_Aod3GhRGYC9U-cYss8XRklfCvWuxdy/view?usp=drive_link" },
+  ],
+  2022: [
+     { name: "Paper 01", url: "https://drive.google.com/file/d/1LQiR54DYBn3TPNFtwaa45y3pzJmNmL4L/view?usp=drive_link" },
+          {name:"Paper 02",url:"https://drive.google.com/file/d/1uwGoos7V_ZEzOGBZew2ZzwYQCsQMX8cg/view?usp=drive_link"},
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1I6tE3EsU0M9JWDWjFSNC0-SKlQuguTH-/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1lqLyUQM9YO9BbP0C0O5yGfdCYkNgXt9Z/view?usp=drive_link" },
+
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1k2Q65sjjA6HOIxULA5OE3mDzzduFUEJH/view?usp=drive_link" },
+          { name: "Model Answer", url: "https://www.cbse.gov.in/cbsenew/model-answer/2022/Term_II/XII/Mathematics_041.pdf" },
+  ],
+  2020: [
+     { name: "Paper 01", url: "https://drive.google.com/file/d/1LoF7zuBQH9FQop6-Bd3sL0r7fhnAlA34/view?usp=drive_link" },
+          {name:"Paper 02",url:"https://drive.google.com/file/d/1k5JKXKrI1BoIStU4A0trjsekapdpH_Xs/view?usp=drive_link"},
+          { name: "Paper 03", url: "https://drive.google.com/file/d/1InE_8BVBhL_kmgP-wk_LuUBb3DVy7k10/view?usp=drive_link" },
+          { name: "Paper 04", url: "https://drive.google.com/file/d/1D2SY8vAEsoi-rbIvg7Qk-4bjr7R-olMS/view?usp=drive_link" },
+
+          { name: "Paper 05", url: "https://drive.google.com/file/d/1lZV2fTibDykN977rdailSzIA7zaWtR7o/view?usp=drive_link" },
+          { name: "Model Answer", url: "https://www.cbse.gov.in/cbsenew/model-answer/2020/Mathematics%20XII.pdf" },
+  ],
+}
+
+      },
+      
+    };
+  function showPDFList(subject, type) {
+  const listEl = document.getElementById('pdfList');
+  const titleEl = document.getElementById('pdfTitle');
+  const data = pdfData[subject][type];
+
+  listEl.innerHTML = '';
+  titleEl.textContent = `${subject.charAt(0).toUpperCase() + subject.slice(1)} - ${formatType(type)}`;
+
+  // RESET STYLE (important)
+  listEl.style.display = 'flex';
+  listEl.style.flexWrap = 'wrap';
+  listEl.style.justifyContent = 'center';
+  listEl.style.gap = '30px';
+
+  // ================= PREVIOUS YEAR (NEW DROPDOWN) =================
+  if (type === 'previous') {
+
+    listEl.style.display = 'block'; // override
+
+    const wrapper = document.createElement('div');
+    wrapper.style.display = "flex";
+    wrapper.style.flexDirection = "column";
+    wrapper.style.alignItems = "center";
+    wrapper.style.marginTop = "20px";
+
+    const select = document.createElement('select');
+    select.style.padding = "10px 15px";
+    select.style.marginBottom = "20px";
+    select.style.borderRadius = "8px";
+    select.style.fontSize = "1rem";
+    select.style.cursor = "pointer";
+
+    const years = Object.keys(data).sort((a, b) => b - a);
+
+    years.forEach(year => {
+      const option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      select.appendChild(option);
+    });
+
+    wrapper.appendChild(select);
+
+    const column = document.createElement('div');
+    column.className = 'pdf-column';
+    column.style.maxWidth = "420px";
+    column.style.width = "100%";
+
+    const heading = document.createElement('h4');
+    column.appendChild(heading);
+
+    const ul = document.createElement('ul');
+    column.appendChild(ul);
+
+    function loadYear(year) {
+      heading.textContent = "📊 " + year;
+      ul.innerHTML = "";
+
+      data[year].forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+    }
+
+    // load latest year by default
+    loadYear(years[0]);
+
+    select.addEventListener('change', () => {
+      loadYear(select.value);
+    });
+
+    wrapper.appendChild(column);
+    listEl.appendChild(wrapper);
+  }
+
+  // ================= ASSIGNMENTS + SAMPLE PAPERS (OLD WORKING STYLE) =================
+  else if (typeof data === 'object' && !Array.isArray(data)) {
+
+    for (const key in data) {
+      const column = document.createElement('div');
+      column.className = 'pdf-column'; // 🔥 important (restores UI)
+
+      const heading = document.createElement('h4');
+      heading.textContent = key.toUpperCase();
+      column.appendChild(heading);
+
+      const ul = document.createElement('ul');
+
+      data[key].forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+
+        li.appendChild(link);
+        ul.appendChild(li);
+      });
+
+      column.appendChild(ul);
+      listEl.appendChild(column);
+    }
+  }
+
+  // ================= NOTES (SINGLE COLUMN) =================
+  else {
+    const column = document.createElement('div');
+    column.className = 'pdf-column';
+
+    const heading = document.createElement('h4');
+    heading.textContent = formatType(type);
+    column.appendChild(heading);
+
+    const ul = document.createElement('ul');
+
+    data.forEach(pdf => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+
+      link.href = pdf.url;
+      link.textContent = pdf.name;
+      link.target = "_blank";
+
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+
+    column.appendChild(ul);
+    listEl.appendChild(column);
+  }
+
+  document.getElementById('assetsection')
+    .scrollIntoView({ behavior: 'smooth' });
+}
+
+
+// 🔥 SAFE FORMAT FUNCTION
+function formatType(type) {
+  switch(type) {
+    case 'notes': return 'Notes';
+    case 'assignments': return 'Assignments';
+    case 'samplepapers': return 'Sample Papers';
+    case 'previous': return 'Previous Year Questions';
+    default: return type;
+  }
+}
+document.addEventListener("contextmenu", function (e) {
+  e.preventDefault();
+});
+document.addEventListener("copy", e => e.preventDefault());
+document.addEventListener("cut", e => e.preventDefault());
+document.addEventListener("paste", e => e.preventDefault());
+document.addEventListener("keydown", function (e) {
+  // Disable Ctrl combinations
+  if (
+    (e.ctrlKey && (e.key === "c" || e.key === "u" || e.key === "s" || e.key === "a")) ||
+    (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J")) ||
+    e.key === "F12"
+  ) {
+    e.preventDefault();
+  }
+});
+ // Navigation toggle
+    const nav = document.getElementById('nav-menu');
+    const navToggle = document.getElementById('nav-toggle');
+    const header = document.querySelector('header');
+
+    navToggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  //(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8t2S1JBOWt38BpunsQvo1";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+
+</script>
+
+</body>
+</html>
