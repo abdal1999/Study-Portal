@@ -252,6 +252,11 @@ body{background:radial-gradient(900px 520px at 6% -4%,var(--g1),transparent 62%)
 html{-webkit-tap-highlight-color:transparent}
 img,svg{-webkit-user-drag:none;user-drag:none}
 input,textarea{-webkit-user-select:text;user-select:text}
+
+.qt .sp{display:inline-block;min-width:2.1em;font-weight:700;color:#1d4ed8}
+.qt .orx{display:inline-block;margin:.35em 0;padding:.05em .5em;border-radius:6px;background:#eef2ff;color:#3730a3}
+.qt p{margin:.25em 0}
+.dtab{border-collapse:collapse;margin:.6em 0;font-size:.95em;width:auto;min-width:50%}.dtab th,.dtab td{border:1px solid #cbd5e1;padding:.4em .8em;text-align:center;vertical-align:middle}.dtab th{background:#eef2ff;font-weight:700}.dtab tbody tr:nth-child(even){background:#f8fafc}
 </style>
 </head>
 <body>
@@ -3078,6 +3083,20 @@ function tagsHTML(q){
   if(!q.y.length)return `<span class="tag p">Practice</span>`;
   return q.y.map(y=>`<span class="tag">Board ${y}</span>`).join('');
 }
+
+function qfmt(s){
+  let t=fmt(String(s||''));
+  t=t.replace(/\s+OR\s+/g,'<br><b class="orx">OR</b><br>');
+  t=t.replace(/(^|\s|\)|>)(\((?:[a-z]|i{1,3}|iv|v|vi{0,3}|[1-9])\))(?=\s)/g,function(m,p,mk,off){
+    if(off===0) return '<span class="sp">'+mk+'</span>';
+    if(p===')') return ')<span class="sp">'+mk+'</span>';
+    if(p==='>') return '><span class="sp">'+mk+'</span>';
+    return '<br><span class="sp">'+mk+'</span>';
+  });
+  return t;
+}
+var TBL_FIX={"8-case-4": "<p>Refer to the table below, which gives the results of the F₂ generation of a Mendelian cross.</p><table class=\"dtab\"><thead><tr><th>Seed type</th><th>Number of plants</th></tr></thead><tbody><tr><td>Round and yellow seeds (P)</td><td>315</td></tr><tr><td>Round and green seeds (Q)</td><td>108</td></tr><tr><td>Wrinkled and yellow seeds (R)</td><td>101</td></tr><tr><td>Wrinkled and green seeds (S)</td><td>32</td></tr></tbody></table>", "9-case-4": "<p>Study the data below, which gives the focal lengths of three concave mirrors (A, B and C) and the object distance used for each.</p><table class=\"dtab\"><thead><tr><th>Case</th><th>Mirror</th><th>Focal length (cm)</th><th>Object distance (cm)</th></tr></thead><tbody><tr><td>1</td><td>A</td><td>20</td><td>45</td></tr><tr><td>2</td><td>B</td><td>15</td><td>30</td></tr><tr><td>3</td><td>C</td><td>30</td><td>20</td></tr></tbody></table>", "p3131-38": "<p>The table gives the variation of image distance (v) with object distance (u) for a convex lens (u and v in cm).</p><table class=\"dtab\"><thead><tr><th>S. No.</th><th>Object distance u (cm)</th><th>Image distance v (cm)</th></tr></thead><tbody><tr><td>1</td><td>−150</td><td>+30</td></tr><tr><td>2</td><td>−75</td><td>+37.5</td></tr><tr><td>3</td><td>−50</td><td>+50</td></tr><tr><td>4</td><td>−37.5</td><td>+75</td></tr><tr><td>5</td><td>−30</td><td>+150</td></tr><tr><td>6</td><td>−15</td><td>+37.5</td></tr></tbody></table>", "p2341-37": "<p>The melting points and boiling points of some ionic compounds are given in the table below.</p><table class=\"dtab\"><thead><tr><th>Compound</th><th>Melting point (K)</th><th>Boiling point (K)</th></tr></thead><tbody><tr><td>NaCl</td><td>1074</td><td>1686</td></tr><tr><td>LiCl</td><td>887</td><td>1600</td></tr><tr><td>CaCl₂</td><td>1045</td><td>1900</td></tr><tr><td>CaO</td><td>2850</td><td>3120</td></tr><tr><td>MgCl₂</td><td>981</td><td>1685</td></tr></tbody></table><p>These compounds are ionic because electrons are transferred from a metal to a non-metal, so that each element attains a filled valence shell.</p>"};
+Q.forEach(function(x){ if(TBL_FIX[x.id]) x.q=TBL_FIX[x.id]; });
 function solHTML(q){
   const open=S.open[q.id];
   return `<div class="sol" id="sol-${q.id}" ${open?'':'hidden'}>${fmt(q.s)}</div>`;
@@ -3086,7 +3105,7 @@ function qHTML(q){
   const done=!!prog.done[q.id];let body='';
   if(q.t==='mcq'){
     const pick=prog.mcq[q.id];
-    body=`<div class="qt">${fmt(q.q)}</div>${figH(q.fig)}<div class="opts">`+q.o.map((o,i)=>{
+    body=`<div class="qt">${qfmt(q.q)}</div>${figH(q.fig)}<div class="opts">`+q.o.map((o,i)=>{
       let c='';if(pick!==undefined){if(isRight(q,i))c='right';else if(i===pick)c='wrong';}
       return `<button type="button" class="opt ${c}" data-act="pick" data-id="${q.id}" data-i="${i}" ${pick!==undefined?'disabled':''}><span class="l">${L4[i]})</span><span>${fmt(o)}</span></button>`;
     }).join('')+`</div>`;
@@ -3096,7 +3115,7 @@ function qHTML(q){
     }
   }else if(q.t==='ar'){
     const pick=prog.mcq[q.id];
-    body=`<div class="qt ar"><p><b>Assertion (A):</b> ${fmt(q.A)}</p><p><b>Reason (R):</b> ${fmt(q.R)}</p></div>
+    body=`<div class="qt ar"><p><b>Assertion (A):</b> ${qfmt(q.A)}</p><p><b>Reason (R):</b> ${qfmt(q.R)}</p></div>
     <div class="opts one">`+AR_OPTS.map((o,i)=>{
       let c='';if(pick!==undefined){if(isRight(q,i))c='right';else if(i===pick)c='wrong';}
       return `<button type="button" class="opt ${c}" data-act="pick" data-id="${q.id}" data-i="${i}" ${pick!==undefined?'disabled':''}><span class="l">${L4[i]})</span><span>${o}</span></button>`;
@@ -3106,10 +3125,10 @@ function qHTML(q){
       body+=`<div class="act"><button type="button" class="btn" data-act="retry" data-id="${q.id}">Try again</button></div>`;
     }
   }else if(q.t==='case'){
-    body=`<div class="qt"><p>${fmt(q.q)}</p></div>${figH(q.fig)}`+q.parts.map(p=>`<div class="part"><b>${p.l}</b> ${fmt(p.q)}${p.m?`<span class="pm">[${p.m}]</span>`:''}${p.or?`<div class="or">OR</div>${fmt(p.or)}${p.m?`<span class="pm">[${p.m}]</span>`:''}`:''}${figH(p.fig)}</div>`).join('')
+    body=`<div class="qt"><p>${qfmt(q.q)}</p></div>${figH(q.fig)}`+q.parts.map(p=>`<div class="part"><b>${p.l}</b> ${qfmt(p.q)}${p.m?`<span class="pm">[${p.m}]</span>`:''}${p.or?`<div class="or">OR</div>${qfmt(p.or)}${p.m?`<span class="pm">[${p.m}]</span>`:''}`:''}${figH(p.fig)}</div>`).join('')
       +`<div class="act"><button type="button" class="btn pri" data-act="sol" data-id="${q.id}" aria-expanded="${!!S.open[q.id]}">${S.open[q.id]?'Hide solution':'Show solution'}</button><button type="button" class="btn" data-act="done" data-id="${q.id}" aria-pressed="${done}">${done?'Done':'Mark as done'}</button></div>`+solHTML(q);
   }else{
-    body=`<div class="qt">${fmt(q.q)}</div>${figH(q.fig)}<div class="act"><button type="button" class="btn pri" data-act="sol" data-id="${q.id}" aria-expanded="${!!S.open[q.id]}">${S.open[q.id]?'Hide solution':'Show solution'}</button><button type="button" class="btn" data-act="done" data-id="${q.id}" aria-pressed="${done}">${done?'Done':'Mark as done'}</button></div>`+solHTML(q);
+    body=`<div class="qt">${qfmt(q.q)}</div>${figH(q.fig)}<div class="act"><button type="button" class="btn pri" data-act="sol" data-id="${q.id}" aria-expanded="${!!S.open[q.id]}">${S.open[q.id]?'Hide solution':'Show solution'}</button><button type="button" class="btn" data-act="done" data-id="${q.id}" aria-pressed="${done}">${done?'Done':'Mark as done'}</button></div>`+solHTML(q);
   }
   return `<article class="q ${done?'done':''}" id="q-${q.id}"><div class="mg"><span class="no">${q.n}</span><span class="mk">[${q.m}]</span></div><div class="bd"><div class="meta">${tagsHTML(q)}</div>${body}</div></article>`;
 }
